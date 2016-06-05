@@ -1,0 +1,3 @@
+-R . ct 
+./Functor.v
+./Category.v
