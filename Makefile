@@ -95,6 +95,7 @@ endif
 ######################
 
 VFILES:=Functor.v\
+  Instance/Functor.v\
   Instance/Category.v\
   Category.v
 
