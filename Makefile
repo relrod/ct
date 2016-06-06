@@ -94,11 +94,14 @@ endif
 #                    #
 ######################
 
-VFILES:=Functor.v\
+VFILES:=Isomorphism.v\
+  Functor.v\
+  Instance/Isomorphism.v\
   Instance/Functor.v\
   Instance/Category.v\
   Instance/Coq/Functor.v\
   Instance/Coq/Category.v\
+  NaturalTransformation.v\
   Category.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
