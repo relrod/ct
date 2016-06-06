@@ -37,3 +37,5 @@ Instance Op (C : Category) : Category :=
     id_left := fun _ _ => @id_right _ _ _;
     id_right := fun _ _ => @id_left _ _ _
   }.
+
+Notation "A ^op" := (Op A) (at level 40).
