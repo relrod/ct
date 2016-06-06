@@ -1,5 +1,6 @@
 Require Import CT.Category.
 Require Import CT.Functor.
+Require Import CT.Instance.Functor.
 Require Import Coq.Program.Tactics.
 
 (* This is the category of Coq 'Type's. *)
@@ -25,3 +26,25 @@ Program Definition CoqSet : Category :=
      comp := fun a b c (f : a -> b) (g : b -> c) x => g (f x);
      id := fun _ => fun x => x
   |}.
+
+(* This is the category of Categories. :) *)
+Program Definition Cat : Category :=
+  {| ob := Category;
+     mor := Functor;
+     comp := @ComposeFunctor;
+     id := @IdentityFunctor
+  |}.
+Next Obligation.
+Proof.
+  apply F_eq. reflexivity. reflexivity.
+Qed.
+Next Obligation.
+Proof.
+  apply F_eq. reflexivity. reflexivity.
+Qed.
+Next Obligation.
+  apply F_eq. reflexivity. reflexivity.
+Qed.
+Next Obligation.
+  apply F_eq. reflexivity. reflexivity.
+Qed.
