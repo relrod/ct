@@ -1,4 +1,4 @@
-Require Import Category.
+Require Import CT.Category.
 
 (* F : A -> B *)
 Class Functor (A B : Category) :=

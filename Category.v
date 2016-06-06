@@ -7,8 +7,10 @@ Class Category :=
     id : forall {a : ob}, mor a a;
     assoc : forall {a b c d : ob} (f : mor a b) (g : mor b c) (h : mor c d),
         comp f (comp g h) = comp (comp f g) h;
-    id_laws : forall (a b : ob) (f : mor a b),
-        comp id f = f /\ comp f id = f
+    assoc_sym : forall {a b c d : ob} (f : mor a b) (g : mor b c) (h : mor c d),
+        comp (comp f g) h = comp f (comp g h);
+    id_left : forall (a b : ob) (f : mor a b), comp id f = f;
+    id_right : forall (a b : ob) (f : mor a b), comp f id = f
   }.
 
 Bind Scope category_scope with Category.
@@ -23,3 +25,15 @@ Arguments id {_ _}, {_} _, _ _.
 (* TODO: I need to figure out how this works.
    https://coq.inria.fr/refman/Reference-Manual021.html *)
 Coercion ob : Category >-> Sortclass.
+
+(* Given a category, return its opposite category. *)
+Instance Op (C : Category) : Category :=
+  { ob := C;
+    mor := fun a b => mor b a;
+    comp := fun _ _ _ f g => comp g f;
+    id := fun a => @id C a;
+    assoc := fun _ _ _ _ _ _ _ => @assoc_sym _ _ _ _ _ _ _ _;
+    assoc_sym := fun _ _ _ _ _ _ _ => @assoc _ _ _ _ _ _ _ _;
+    id_left := fun _ _ => @id_right _ _ _;
+    id_right := fun _ _ => @id_left _ _ _
+  }.

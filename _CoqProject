@@ -1,3 +1,4 @@
--R . ct 
+-R . CT 
 ./Functor.v
+./Instance/Category.v
 ./Category.v
