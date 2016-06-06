@@ -1,4 +1,6 @@
+Require Import Coq.Program.Tactics.
 Set Primitive Projections.
+Set Universe Polymorphism.
 
 Class Category :=
   { ob : Type;
@@ -27,15 +29,15 @@ Arguments id {_ _}, {_} _, _ _.
 Coercion ob : Category >-> Sortclass.
 
 (* Given a category, return its opposite category. *)
-Instance Op (C : Category) : Category :=
-  { ob := C;
-    mor := fun a b => mor b a;
-    comp := fun _ _ _ f g => comp g f;
-    id := fun a => @id C a;
-    assoc := fun _ _ _ _ _ _ _ => @assoc_sym _ _ _ _ _ _ _ _;
-    assoc_sym := fun _ _ _ _ _ _ _ => @assoc _ _ _ _ _ _ _ _;
-    id_left := fun _ _ => @id_right _ _ _;
-    id_right := fun _ _ => @id_left _ _ _
-  }.
+Program Definition Op (C : Category) : Category :=
+  {| ob := C;
+     mor := fun a b => mor b a;
+     comp := fun _ _ _ f g => comp g f;
+     id := fun a => @id C a;
+     assoc := fun _ _ _ _ _ _ _ => @assoc_sym _ _ _ _ _ _ _ _;
+     assoc_sym := fun _ _ _ _ _ _ _ => @assoc _ _ _ _ _ _ _ _;
+     id_left := fun _ _ => @id_right _ _ _;
+     id_right := fun _ _ => @id_left _ _ _
+  |}.
 
-Notation "A ^op" := (Op A) (at level 40).
+Notation "A '^op'" := (Op A) (at level 10).
