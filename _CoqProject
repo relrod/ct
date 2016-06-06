@@ -2,4 +2,6 @@
 ./Functor.v
 ./Instance/Functor.v
 ./Instance/Category.v
+./Instance/Coq/Functor.v
+./Instance/Coq/Category.v
 ./Category.v

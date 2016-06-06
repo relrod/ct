@@ -97,6 +97,8 @@ endif
 VFILES:=Functor.v\
   Instance/Functor.v\
   Instance/Category.v\
+  Instance/Coq/Functor.v\
+  Instance/Coq/Category.v\
   Category.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
