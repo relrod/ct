@@ -9,11 +9,9 @@ Program Definition OppositeFunctor {C D : Category} (F : Functor C D) : Functor 
      F_comp_law := fun _ _ _ f g => F_comp_law F g f
   |}.
 
-Program Definition IdentityFunctor {C : Category} (F : Functor C C) : Functor C C :=
-  {| F_ob := F_ob F;
-     F_mor := fun _ _ h => F_mor F _ _ h;
-     F_id_law := fun a => F_id_law F a;
-     F_comp_law := fun _ _ _ f g => F_comp_law F f g
+Program Definition IdentityFunctor {C : Category} : Functor C C :=
+  {| F_ob := fun x => x;
+     F_mor := fun _ _ f => f;
   |}.
 
 Program Definition ComposeFunctor {A B C : Category} (F : Functor A B) (G : Functor B C): Functor A C :=
