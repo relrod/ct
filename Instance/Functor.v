@@ -9,7 +9,7 @@ Program Definition OppositeFunctor {C D : Category} (F : Functor C D) : Functor 
      F_comp_law := fun _ _ _ f g => F_comp_law F g f
   |}.
 
-Program Definition IdentityFunctor {C : Category} : Functor C C :=
+Program Definition IdentityFunctor {C : Category} : @Endofunctor C :=
   {| F_ob := fun x => x;
      F_mor := fun _ _ f => f;
   |}.
@@ -31,3 +31,4 @@ Proof.
   rewrite F_comp_law.
   reflexivity.
 Qed.
+
