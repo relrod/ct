@@ -95,9 +95,11 @@ endif
 ######################
 
 VFILES:=Isomorphism.v\
+  Space/Metric.v\
   Functor.v\
   Instance/Isomorphism.v\
   Instance/Functor.v\
+  Instance/NaturalTransformation.v\
   Instance/Category.v\
   Instance/Coq/Functor.v\
   Instance/Coq/Category.v\
