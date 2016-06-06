@@ -95,6 +95,7 @@ endif
 ######################
 
 VFILES:=Isomorphism.v\
+  Monoid.v\
   Space/Metric.v\
   Functor.v\
   Instance/Isomorphism.v\

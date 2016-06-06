@@ -1,5 +1,6 @@
 Require Import CT.Category.
 Require Import CT.Functor.
+Require Import CT.Monoid.
 Require Import CT.Instance.Functor.
 
 (** Note that Coq-related instances are in [Instance.Coq] so we don't introduce
@@ -54,3 +55,21 @@ Next Obligation.
   rewrite id_right.
   reflexivity.
 Qed.
+
+(** The category for a given monoid. A monoid is exactly a category with one
+    object.
+ *)
+Program Definition MonoidCategory {T} (M : Monoid) : Category :=
+  {| ob := unit;
+     mor := fun _ _ => T;
+     comp := fun _ _ _ => mu M;
+     id := fun a => one M;
+  |}.
+Next Obligation.
+Proof. apply monoid_assoc. Qed.
+Next Obligation.
+Proof. rewrite <- monoid_assoc. reflexivity. Qed.
+Next Obligation.
+Proof. rewrite monoid_left_one. reflexivity. Qed.
+Next Obligation.
+Proof. rewrite monoid_right_one. reflexivity. Qed.
