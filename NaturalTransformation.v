@@ -21,3 +21,17 @@ Record NaturalTransformation {A B : Category} (F G : Functor A B) :=
     nt_commutes_sym : forall x y (f : mor x y),
         comp (nt_components x) (F_mor G f) = comp (F_mor F f) (nt_components y)
   }.
+
+(** Equivalence of natural transformations *)
+Theorem nt_eq : forall A B F G (N M : NaturalTransformation F G),
+    @nt_components A B F G N = @nt_components A B F G M ->
+    N = M.
+Proof.
+  intros.
+  destruct N, M.
+  simpl in *.
+  subst.
+  f_equal.
+  apply proof_irrelevance.
+  apply proof_irrelevance.
+Qed.
