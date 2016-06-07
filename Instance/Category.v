@@ -97,3 +97,6 @@ Next Obligation.
 Proof. apply CompositionNaturalTransformation_id_left. Qed.
 Next Obligation.
 Proof. apply CompositionNaturalTransformation_id_right. Qed.
+
+(* The category of endofunctors on some category. *)
+Definition EndofunctorCategory (C : Category) := FunctorCategory C C.
