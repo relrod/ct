@@ -4,5 +4,6 @@
 *.aux
 *.ml
 *.mli
+*.d
 Makefile.bak
 html
