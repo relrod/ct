@@ -17,5 +17,7 @@ G(x) ---G(f)----> G(y)
 Record NaturalTransformation {A B : Category} (F G : Functor A B) :=
   { nt_components : forall x, mor B (F_ob F x) (F_ob G x);
     nt_commutes : forall x y (f : mor x y),
-        comp (F_mor F f) (nt_components y) = comp (nt_components x) (F_mor G f)
+        comp (F_mor F f) (nt_components y) = comp (nt_components x) (F_mor G f);
+    nt_commutes_sym : forall x y (f : mor x y),
+        comp (nt_components x) (F_mor G f) = comp (F_mor F f) (nt_components y)
   }.
