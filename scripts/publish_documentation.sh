@@ -3,7 +3,7 @@ set -e
 dir="$(mktemp -d)"
 git clone git@github.com:relrod/ct $dir/repo
 pushd $dir/repo
-./generate_CoqProject.sh
+./scripts/generate_CoqProject.sh
 make html
 mv html ..
 make clean
