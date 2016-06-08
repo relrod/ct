@@ -7,12 +7,16 @@ Require Import CT.Functor.
 A natural transformation is a family of arrows such that forall x in A,
 F(x) -> G(x) is in B and forall f : x -> y in A, the following commutes:
 
+#
+<pre>
 F(x) ---F(f)----> F(y)
  |                 |
 nt_components_x   nt_components y
  |                 |
  v                 v
 G(x) ---G(f)----> G(y)
+</pre>
+#
 *)
 Record NaturalTransformation {A B : Category} (F G : Functor A B) :=
   { nt_components : forall x, mor B (F_ob F x) (F_ob G x);
