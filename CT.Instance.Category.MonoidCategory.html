@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Category.MonoidCategory</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Category.MonoidCategory</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Monoid.html#"><span class="id" title="library">CT.Monoid</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The category for a given monoid. A monoid is exactly a category with one
+    object.
+ 
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="MonoidCategory"><span class="id" title="definition">MonoidCategory</span></a> {<span class="id" title="var">T</span>} (<span class="id" title="var">M</span> : <a class="idref" href="CT.Monoid.html#Monoid"><span class="id" title="record">Monoid</span></a>) : <a class="idref" href="CT.Category.html#Category"><span class="id" title="class">Category</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">unit</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">T</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">comp</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mu</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">M</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">id</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">one</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">M</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Monoid.html#monoid_assoc"><span class="id" title="projection">monoid_assoc</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="CT.Monoid.html#monoid_assoc"><span class="id" title="projection">monoid_assoc</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_left_one"><span class="id" title="projection">monoid_left_one</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_right_one"><span class="id" title="projection">monoid_right_one</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
