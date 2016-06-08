@@ -24,13 +24,16 @@
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.html#"><span class="id" title="library">CT.Instance.Functor</span></a>.<br/>
 
 <br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
+
+<br/>
 </div>
 
 <div class="doc">
 This is the category of Categories. :) 
 </div>
 <div class="code">
-<span class="id" title="keyword">Program Definition</span> <a name="Cat"><span class="id" title="definition">Cat</span></a> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="class">Category</span></a> :=<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="Cat"><span class="id" title="definition">Cat</span></a> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a> :=<br/>
 &nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">Category</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">Functor</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">comp</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">@</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ComposeFunctor</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
