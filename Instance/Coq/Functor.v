@@ -1,6 +1,7 @@
 Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.Instance.Coq.Category.
+Require Import CT.Instance.Functor.Endofunctor.
 Require Import FunctionalExtensionality List.
 
 (** List functor. Just for grins. :) *)

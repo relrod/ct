@@ -8,5 +8,17 @@
 ./Instance/Category.v
 ./Instance/Coq/Functor.v
 ./Instance/Coq/Category.v
+./Instance/Functor/ContravariantFunctor.v
+./Instance/Functor/Bifunctor.v
+./Instance/Functor/IdentityFunctor.v
+./Instance/Functor/Endofunctor.v
+./Instance/Functor/OppositeFunctor.v
+./Instance/Functor/Profunctor.v
+./Instance/Functor/ConstantFunctor.v
+./Instance/Functor/ComposeFunctor.v
+./Instance/Category/ProductCategory.v
+./Instance/Category/FunctorCategory.v
+./Instance/Category/MonoidCategory.v
+./Instance/Category/Cat.v
 ./NaturalTransformation.v
 ./Category.v
