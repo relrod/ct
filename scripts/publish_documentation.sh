@@ -4,7 +4,7 @@ dir="$(mktemp -d)"
 git clone git@github.com:relrod/ct $dir/repo
 pushd $dir/repo
 ./scripts/generate_CoqProject.sh
-make html
+make -j4 html
 mv html ..
 make clean
 git reset --hard
