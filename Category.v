@@ -2,7 +2,7 @@ Require Import Coq.Program.Tactics.
 Set Primitive Projections.
 Set Universe Polymorphism.
 
-Class Category :=
+Record Category :=
   { ob : Type;
     mor : ob -> ob -> Type;
     comp : forall {a b c : ob}, mor a b -> mor b c -> mor a c;
@@ -20,6 +20,8 @@ Bind Scope morphism_scope with mor.
 Bind Scope object_scope with ob.
 
 Arguments mor {_} _ _, _ _ _.
+Arguments comp {_ _ _ _} _ _, _ _ _ _ _ _.
+Arguments ob {_}, _.
 
 (* Needs Primitive Projections *)
 Arguments id {_ _}, {_} _, _ _.
