@@ -15,6 +15,6 @@ install:
 - travis_wait opam install -y coq
 - opam list
 script:
-- ./generate_CoqProject.sh
+- ./scripts/generate_CoqProject.sh
 - make -j4
 - make html
