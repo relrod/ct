@@ -1,4 +1,6 @@
 Require Import CT.Category.
+Require Import CT.Instance.Category.
+Require Import CT.Instance.Coq.Category.
 Require Export Program.
 
 (** F : A -> B *)
@@ -10,8 +12,20 @@ Record Functor (A B : Category) :=
          F_mor (comp f g) = comp (F_mor f) (F_mor g)
   }.
 
-(** F : A -> A. An endofunctor maps a category to itself. *)
-Definition Endofunctor {C : Category} := Functor C C.
+(** [F : A -> A]. An _endofunctor_ maps a category to itself. *)
+Definition Endofunctor (C : Category) := Functor C C.
+
+(** [F : AxB -> C]. _Bifunctors_ are functors from a product category to another
+    category. *)
+Program Definition Bifunctor (A B C : Category) := Functor (ProductCategory A B) C.
+
+(** [F : C^op -> D]. A _contravariant functor_ flips morphisms. *)
+Program Definition ContravariantFunctor (C D : Category) := Functor (C^op) D.
+
+(** [F : (D^op)xC-> Set]. _Profunctors_ *)
+(** Note: This definition might be wrong - I'm using [CoqType] for Set here.
+    This feels many kinds of wrong. *)
+Program Definition Profunctor (C D : Category) := Bifunctor (D^op) C CoqType.
 
 Arguments F_ob {_ _} _ _.
 Arguments F_mor {_ _} _ {_ _} _, {_ _} _ _ _ _.

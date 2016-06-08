@@ -1,7 +1,6 @@
 Require Import Coq.Program.Tactics.
 Require Import CT.Category.
 Require Import CT.Functor.
-Require Import CT.Instance.Category.
 
 Program Definition OppositeFunctor {C D : Category} (F : Functor C D) : Functor (C^op) (D^op) :=
   {| F_ob := F_ob F;
@@ -41,6 +40,3 @@ Next Obligation.
 Proof.
   rewrite id_left. reflexivity.
 Qed.
-
-(** Bifunctors are functors from a product category AxB -> C *)
-Definition Bifunctor {A B C : Category} := Functor (ProductCategory A B) C.
