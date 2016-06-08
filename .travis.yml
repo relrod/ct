@@ -1,0 +1,20 @@
+sudo: required
+dist: trusty
+language: c
+cache:
+  apt: true
+  directories:
+  - $HOME/.opam
+install:
+- sudo add-apt-repository --yes ppa:avsm/ppa
+- sudo apt-get update -qq
+- sudo apt-get install -qq -y opam
+- opam init -y
+- eval $(opam config env)
+- opam config var root
+- travis_wait opam install -y coq
+- opam list
+script:
+- ./generate_CoqProject.sh
+- make -j4
+- make html
