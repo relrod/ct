@@ -8,23 +8,23 @@ Program Definition FunctorCategory (C D : Category) : Category :=
   {| ob := Functor C D;
      mor := NaturalTransformation;
      id := IdentityNaturalTransformation;
-     comp := @CompositionNaturalTransformation C D
+     comp := @VerticalCompositionNaturalTransformation C D
   |}.
 Next Obligation.
 Proof.
   apply nt_eq.
-  rewrite CompositionNaturalTransformation_assoc.
+  rewrite VerticalCompositionNaturalTransformation_assoc.
   reflexivity.
 Qed.
 Next Obligation.
 Proof.
-  rewrite CompositionNaturalTransformation_assoc.
+  rewrite VerticalCompositionNaturalTransformation_assoc.
   reflexivity.
 Qed.
 Next Obligation.
-Proof. apply CompositionNaturalTransformation_id_left. Qed.
+Proof. apply VerticalCompositionNaturalTransformation_id_left. Qed.
 Next Obligation.
-Proof. apply CompositionNaturalTransformation_id_right. Qed.
+Proof. apply VerticalCompositionNaturalTransformation_id_right. Qed.
 
 (* The category of endofunctors on some category. *)
 Definition EndofunctorCategory (C : Category) := FunctorCategory C C.
