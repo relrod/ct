@@ -21,11 +21,11 @@ Proof.
   reflexivity.
 Qed.
 
-Section VerticalCompositionNaturalTransformation.
+Section VCNaturalTransformation.
   Context {C D : Category} {F G H : Functor C D}.
   Variable (N : NaturalTransformation F G) (O : NaturalTransformation G H).
 
-  Program Definition VerticalCompositionNaturalTransformation : NaturalTransformation F H :=
+  Program Definition VCNaturalTransformation : NaturalTransformation F H :=
     {| nt_components := fun g => comp (nt_components F G N g) (nt_components G H O g) |}.
   Next Obligation.
   Proof.
@@ -39,18 +39,18 @@ Section VerticalCompositionNaturalTransformation.
   Next Obligation.
   Proof.
     symmetry.
-    apply VerticalCompositionNaturalTransformation_obligation_1.
+    apply VCNaturalTransformation_obligation_1.
   Qed.
-End VerticalCompositionNaturalTransformation.
+End VCNaturalTransformation.
 
 (** Composition of natural transformations associates. *)
-Theorem VerticalCompositionNaturalTransformation_assoc :
+Theorem VCNaturalTransformation_assoc :
   forall C D F G H I
          (N : @NaturalTransformation C D H I)
          (O : @NaturalTransformation C D G H)
          (P : @NaturalTransformation C D F G),
-           VerticalCompositionNaturalTransformation (VerticalCompositionNaturalTransformation P O) N =
-           VerticalCompositionNaturalTransformation P (VerticalCompositionNaturalTransformation O N).
+           VCNaturalTransformation (VCNaturalTransformation P O) N =
+           VCNaturalTransformation P (VCNaturalTransformation O N).
 Proof.
   intros.
   apply nt_eq.
@@ -61,10 +61,10 @@ Proof.
 Qed.
 
 (** The identity natural transformations acts as left compositional identity *)
-Theorem VerticalCompositionNaturalTransformation_id_left :
+Theorem VCNaturalTransformation_id_left :
   forall C D F G
          (N : @NaturalTransformation C D F G),
-    VerticalCompositionNaturalTransformation (IdentityNaturalTransformation F) N = N.
+    VCNaturalTransformation (IdentityNaturalTransformation F) N = N.
 Proof.
   intros.
   apply nt_eq.
@@ -75,10 +75,10 @@ Proof.
 Qed.
 
 (** The identity natural transformations acts as right compositional identity *)
-Theorem VerticalCompositionNaturalTransformation_id_right :
+Theorem VCNaturalTransformation_id_right :
   forall C D F G
          (N : @NaturalTransformation C D F G),
-    VerticalCompositionNaturalTransformation N (IdentityNaturalTransformation G) = N.
+    VCNaturalTransformation N (IdentityNaturalTransformation G) = N.
 Proof.
   intros.
   apply nt_eq.
@@ -88,11 +88,11 @@ Proof.
   reflexivity.
 Qed.
 
-Section HorizontalCompositionNaturalTransformation.
+Section HCNaturalTransformation.
   Context {C D E : Category} {F G : Functor C D} {J K : Functor D E}.
   Variable (N : NaturalTransformation F G) (O : NaturalTransformation J K).
 
-  Program Definition HorizontalCompositionNaturalTransformation : NaturalTransformation (ComposeFunctor F J) (ComposeFunctor G K) :=
+  Program Definition HCNaturalTransformation : NaturalTransformation (ComposeFunctor F J) (ComposeFunctor G K) :=
     {| nt_components :=
          fun g => comp (nt_components J K O (F_ob F g)) (F_mor K (nt_components F G N g)) |}.
   Next Obligation.
@@ -109,6 +109,6 @@ Section HorizontalCompositionNaturalTransformation.
   Next Obligation.
   Proof.
     symmetry.
-    apply HorizontalCompositionNaturalTransformation_obligation_1.
+    apply HCNaturalTransformation_obligation_1.
   Qed.
-End HorizontalCompositionNaturalTransformation.
+End HCNaturalTransformation.
