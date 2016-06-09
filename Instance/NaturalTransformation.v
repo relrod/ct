@@ -1,6 +1,7 @@
 Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.NaturalTransformation.
+Require Import CT.Instance.Functor.
 Require Import FunctionalExtensionality.
 
 Program Definition IdentityNaturalTransformation {A B : Category} (F : Functor A B) :
@@ -86,3 +87,28 @@ Proof.
   rewrite id_right.
   reflexivity.
 Qed.
+
+Section HorizontalCompositionNaturalTransformation.
+  Context {C D E : Category} {F G : Functor C D} {J K : Functor D E}.
+  Variable (N : NaturalTransformation F G) (O : NaturalTransformation J K).
+
+  Program Definition HorizontalCompositionNaturalTransformation : NaturalTransformation (ComposeFunctor F J) (ComposeFunctor G K) :=
+    {| nt_components :=
+         fun g => comp (nt_components J K O (F_ob F g)) (F_mor K (nt_components F G N g)) |}.
+  Next Obligation.
+  Proof.
+    rewrite assoc.
+    rewrite nt_commutes.
+    rewrite assoc_sym.
+    rewrite <- F_comp_law.
+    rewrite nt_commutes.
+    rewrite F_comp_law.
+    rewrite assoc.
+    reflexivity.
+  Qed.
+  Next Obligation.
+  Proof.
+    symmetry.
+    apply HorizontalCompositionNaturalTransformation_obligation_1.
+  Qed.
+End HorizontalCompositionNaturalTransformation.
