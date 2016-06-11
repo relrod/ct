@@ -34,8 +34,6 @@ Section VCNaturalTransformation.
   Variable (eta : NaturalTransformation F G).
   Variable (epsilon : NaturalTransformation G H).
   Variable X : ob C.
-  Check nt_components F G eta X.
-  Check nt_components G H epsilon X.
   Program Definition VCNaturalTransformation : NaturalTransformation F H :=
     {| nt_components := fun X => comp (nt_components F G eta X) (nt_components G H epsilon X) |}.
   Next Obligation.
