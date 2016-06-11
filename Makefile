@@ -95,6 +95,7 @@ endif
 ######################
 
 VFILES:=Isomorphism.v\
+  Magma.v\
   Monoid.v\
   Functor.v\
   Instance/Isomorphism.v\
@@ -116,7 +117,8 @@ VFILES:=Isomorphism.v\
   Instance/Category/MonoidCategory.v\
   Instance/Category/Cat.v\
   NaturalTransformation.v\
-  Category.v
+  Category.v\
+  Semigroup.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
 -include $(addsuffix .d,$(VFILES))

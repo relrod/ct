@@ -1,7 +1,11 @@
+Require Import CT.Magma.
+Require Import CT.Semigroup.
+
+Set Primitive Projections.
+
 Record Monoid {T : Type} :=
-  { mu : T -> T -> T;
+  { semigroup : @Semigroup T;
     one : T;
-    monoid_assoc : forall x y z, mu x (mu y z) = mu (mu x y) z;
-    monoid_left_one : forall x, mu one x = x;
-    monoid_right_one : forall x, mu x one = x
+    monoid_left_one : forall x, semigroup.(magma).(mu) one x = x;
+    monoid_right_one : forall x, semigroup.(magma).(mu) x one = x
   }.

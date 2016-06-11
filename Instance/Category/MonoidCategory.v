@@ -1,5 +1,7 @@
 Require Import CT.Category.
+Require Import CT.Magma.
 Require Import CT.Monoid.
+Require Import CT.Semigroup.
 
 (** The category for a given monoid. A monoid is exactly a category with one
     object.
@@ -7,13 +9,13 @@ Require Import CT.Monoid.
 Program Definition MonoidCategory {T} (M : Monoid) : Category :=
   {| ob := unit;
      mor := fun _ _ => T;
-     comp := fun _ _ _ => mu M;
+     comp := fun _ _ _ => M.(semigroup).(magma).(mu);
      id := fun a => one M;
   |}.
 Next Obligation.
-Proof. apply monoid_assoc. Qed.
+Proof. apply semigroup_assoc. Qed.
 Next Obligation.
-Proof.  symmetry. apply monoid_assoc. Qed.
+Proof.  symmetry. apply semigroup_assoc. Qed.
 Next Obligation.
 Proof. rewrite monoid_left_one. reflexivity. Qed.
 Next Obligation.

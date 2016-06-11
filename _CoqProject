@@ -1,5 +1,6 @@
 -R . CT 
 ./Isomorphism.v
+./Magma.v
 ./Monoid.v
 ./Functor.v
 ./Instance/Isomorphism.v
@@ -22,3 +23,4 @@
 ./Instance/Category/Cat.v
 ./NaturalTransformation.v
 ./Category.v
+./Semigroup.v
