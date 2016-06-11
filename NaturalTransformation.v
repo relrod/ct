@@ -11,7 +11,7 @@ F(x) -> G(x) is in B and forall f : x -> y in A, the following commutes:
 <pre>
 F(x) ---F(f)----> F(y)
  |                 |
-nt_components_x   nt_components y
+nt_components x   nt_components y
  |                 |
  v                 v
 G(x) ---G(f)----> G(y)
