@@ -2,7 +2,7 @@ Require Import Coq.Program.Tactics.
 Require Import CT.Category.
 Require Import CT.Functor.
 
-(** Natrual transformations between two functors F, G : A -> B.
+(** * Natrual transformations between two functors F, G : A -> B.
 
 A natural transformation is a family of arrows such that forall x in A,
 F(x) -> G(x) is in B and forall f : x -> y in A, the following commutes:
@@ -26,7 +26,7 @@ Record NaturalTransformation {A B : Category} (F G : Functor A B) :=
         comp (nt_components x) (F_mor G f) = comp (F_mor F f) (nt_components y)
   }.
 
-(** Equivalence of natural transformations *)
+(** Equivalence of natural transformations, by proof irrelevance *)
 Theorem nt_eq : forall A B F G (N M : NaturalTransformation F G),
     @nt_components A B F G N = @nt_components A B F G M ->
     N = M.

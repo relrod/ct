@@ -4,6 +4,14 @@ Require Import CT.NaturalTransformation.
 Require Import CT.Instance.Functor.
 Require Import FunctionalExtensionality.
 
+(** * The identity natural transforamtion...
+
+... [I : F -> F] where [F : Functor C D], maps each [C]-object to the identity
+morphism in [D].
+
+It also acts as identity for vertical composition of natural transforamtions and
+for the 2-category [Cat].
+*)
 Program Definition IdentityNaturalTransformation {A B : Category} (F : Functor A B) :
   NaturalTransformation F F :=
   {| nt_components := fun _ => id
@@ -50,7 +58,7 @@ Section VCNaturalTransformation.
   Qed.
 End VCNaturalTransformation.
 
-(** Composition of natural transformations associates. *)
+(** Vertical composition of natural transformations associates. *)
 Theorem VCNaturalTransformation_assoc :
   forall C D F G H I
          (N : @NaturalTransformation C D H I)
@@ -67,7 +75,8 @@ Proof.
   reflexivity.
 Qed.
 
-(** The identity natural transformations acts as left compositional identity *)
+(** The identity natural transformations acts as left vertical compositional
+    identity *)
 Theorem VCNaturalTransformation_id_left :
   forall C D F G
          (N : @NaturalTransformation C D F G),
@@ -81,7 +90,8 @@ Proof.
   reflexivity.
 Qed.
 
-(** The identity natural transformations acts as right compositional identity *)
+(** The identity natural transformations acts as right vertical compositional
+    identity *)
 Theorem VCNaturalTransformation_id_right :
   forall C D F G
          (N : @NaturalTransformation C D F G),

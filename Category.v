@@ -2,6 +2,16 @@ Require Import Coq.Program.Tactics.
 Set Primitive Projections.
 Set Universe Polymorphism.
 
+(** * Categories
+
+The definition of category can be found in any introductory category theory text
+or on ncatlab.
+
+The interesting thing to note is that objects here are values of the universe
+[Type], morphisms are functions between those values, and the axioms are encoded
+as fields of the [Category] record and must be proven when a [Category] is
+created.
+*)
 Record Category :=
   { ob : Type;
     mor : ob -> ob -> Type;
@@ -30,7 +40,7 @@ Arguments id {_ _}, {_} _, _ _.
    https://coq.inria.fr/refman/Reference-Manual021.html *)
 Coercion ob : Category >-> Sortclass.
 
-(* Given a category, return its opposite category. *)
+(** The opposite category for a category. *)
 Program Definition Op (C : Category) : Category :=
   {| ob := C;
      mor := fun a b => mor b a;

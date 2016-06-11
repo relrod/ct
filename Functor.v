@@ -1,7 +1,13 @@
 Require Import CT.Category.
 Require Export Program.
 
-(** F : A -> B *)
+(** * F : A -> B
+
+Functors map objects in one category to objects in another category and also
+morhpisms in the first category to morphisms in the second category.
+
+They must obey the identity and composition laws encoded below.
+ *)
 Record Functor (A B : Category) :=
   {  F_ob : A -> B;
      F_mor : forall {a b}, mor a b -> mor (F_ob a) (F_ob b);
@@ -15,7 +21,7 @@ Arguments F_mor {_ _} _ {_ _} _, {_ _} _ _ _ _.
 Arguments F_id_law {_ _} _ _.
 Arguments F_comp_law {_ _} _ {_ _ _} _ _.
 
-(** Equivalence of functors *)
+(** Equivalence of functors, by proof irrelevance *)
 Theorem F_eq : forall A B (f1 f2 : Functor A B),
     @F_ob _ _ f1 = @F_ob _ _ f2 ->
     @F_mor _ _ f1 ~= @F_mor _ _ f2 ->
