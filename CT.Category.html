@@ -24,6 +24,26 @@
 <span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a name="lab6"></a><h1 class="section">Categories</h1>
+
+
+<div class="paragraph"> </div>
+
+The definition of category can be found in any introductory category theory text
+or on ncatlab.
+
+<div class="paragraph"> </div>
+
+The interesting thing to note is that objects here are values of the universe
+<span class="inlinecode"><span class="id" title="keyword">Type</span></span>, morphisms are functions between those values, and the axioms are encoded
+as fields of the <span class="inlinecode"><a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a></span> record and must be proven when a <span class="inlinecode"><a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a></span> is
+created.
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Record</span> <a name="Category"><span class="id" title="record">Category</span></a> :=<br/>
 &nbsp;&nbsp;{ <a name="ob"><span class="id" title="projection">ob</span></a> : <span class="id" title="keyword">Type</span>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a name="mor"><span class="id" title="projection">mor</span></a> : <a class="idref" href="CT.Category.html#ob"><span class="id" title="method">ob</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <a class="idref" href="CT.Category.html#ob"><span class="id" title="method">ob</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>;<br/>
@@ -54,6 +74,12 @@
 <span class="id" title="keyword">Coercion</span> <a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> : <span class="id" title="var">Category</span> &gt;-&gt; <span class="id" title="var">Sortclass</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+The opposite category for a category. 
+</div>
+<div class="code">
 <span class="id" title="keyword">Program Definition</span> <a name="Op"><span class="id" title="definition">Op</span></a> (<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a> :=<br/>
 &nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">C</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">a</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>

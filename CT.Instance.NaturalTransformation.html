@@ -26,6 +26,24 @@
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Logic.FunctionalExtensionality.html#"><span class="id" title="library">FunctionalExtensionality</span></a>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a name="lab2"></a><h1 class="section">The identity natural transforamtion...</h1>
+
+
+<div class="paragraph"> </div>
+
+... <span class="inlinecode"><a class="idref" href="CT.Instance.NaturalTransformation.html#I"><span class="id" title="variable">I</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode"><a class="idref" href="CT.NaturalTransformation.html#F"><span class="id" title="variable">F</span></a></span> <span class="inlinecode">→</span> <span class="inlinecode"><a class="idref" href="CT.NaturalTransformation.html#F"><span class="id" title="variable">F</span></a></span> where <span class="inlinecode"><a class="idref" href="CT.NaturalTransformation.html#F"><span class="id" title="variable">F</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode"><a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Isomorphism.html#C"><span class="id" title="variable">C</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Instance.NaturalTransformation.html#D"><span class="id" title="variable">D</span></a></span>, maps each <span class="inlinecode"><a class="idref" href="CT.Isomorphism.html#C"><span class="id" title="variable">C</span></a></span>-object to the identity
+morphism in <span class="inlinecode"><a class="idref" href="CT.Instance.NaturalTransformation.html#D"><span class="id" title="variable">D</span></a></span>.
+
+<div class="paragraph"> </div>
+
+It also acts as identity for vertical composition of natural transforamtions and
+for the 2-category <span class="inlinecode"><a class="idref" href="CT.Instance.Category.Cat.html#Cat"><span class="id" title="definition">Cat</span></a></span>.
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Program Definition</span> <a name="IdentityNaturalTransformation"><span class="id" title="definition">IdentityNaturalTransformation</span></a> {<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>} (<span class="id" title="var">F</span> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.NaturalTransformation.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Instance.NaturalTransformation.html#B"><span class="id" title="variable">B</span></a>) :<br/>
 &nbsp;&nbsp;<a class="idref" href="CT.NaturalTransformation.html#NaturalTransformation"><span class="id" title="record">NaturalTransformation</span></a> <a class="idref" href="CT.Instance.NaturalTransformation.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Instance.NaturalTransformation.html#F"><span class="id" title="variable">F</span></a> :=<br/>
 &nbsp;&nbsp;{| <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">nt_components</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">id</span></a><br/>
@@ -46,7 +64,7 @@
 </div>
 
 <div class="doc">
-<a name="lab1"></a><h1 class="section">Vertical Composition of Natural Transformations</h1>
+<a name="lab3"></a><h1 class="section">Vertical Composition of Natural Transformations</h1>
 
 
 <div class="paragraph"> </div>
@@ -87,7 +105,7 @@ composition" of natural transformation is associative and has an identity.
 </div>
 
 <div class="doc">
-Composition of natural transformations associates. 
+Vertical composition of natural transformations associates. 
 </div>
 <div class="code">
 <span class="id" title="keyword">Theorem</span> <a name="VCNaturalTransformation_assoc"><span class="id" title="lemma">VCNaturalTransformation_assoc</span></a> :<br/>
@@ -110,7 +128,8 @@ Composition of natural transformations associates.
 </div>
 
 <div class="doc">
-The identity natural transformations acts as left compositional identity 
+The identity natural transformations acts as left vertical compositional
+    identity 
 </div>
 <div class="code">
 <span class="id" title="keyword">Theorem</span> <a name="VCNaturalTransformation_id_left"><span class="id" title="lemma">VCNaturalTransformation_id_left</span></a> :<br/>
@@ -130,7 +149,8 @@ The identity natural transformations acts as left compositional identity
 </div>
 
 <div class="doc">
-The identity natural transformations acts as right compositional identity 
+The identity natural transformations acts as right vertical compositional
+    identity 
 </div>
 <div class="code">
 <span class="id" title="keyword">Theorem</span> <a name="VCNaturalTransformation_id_right"><span class="id" title="lemma">VCNaturalTransformation_id_right</span></a> :<br/>
@@ -150,7 +170,7 @@ The identity natural transformations acts as right compositional identity
 </div>
 
 <div class="doc">
-<a name="lab2"></a><h1 class="section">Horizontal Composition of Natural Transformations</h1>
+<a name="lab4"></a><h1 class="section">Horizontal Composition of Natural Transformations</h1>
 
 
 <div class="paragraph"> </div>
