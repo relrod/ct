@@ -16,9 +16,8 @@ Proof.
 Qed.
 Next Obligation.
 Proof.
-  rewrite id_left.
-  rewrite id_right.
-  reflexivity.
+  symmetry.
+  apply IdentityNaturalTransformation_obligation_1.
 Qed.
 
 (** * Vertical Composition of Natural Transformations

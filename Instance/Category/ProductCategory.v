@@ -17,9 +17,8 @@ Next Obligation.
   reflexivity.
 Qed.
 Next Obligation.
-  rewrite assoc.
-  rewrite assoc.
-  reflexivity.
+  symmetry.
+  apply ProductCategory_obligation_1.
 Qed.
 Next Obligation.
   rewrite id_left.

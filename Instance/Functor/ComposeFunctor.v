@@ -8,7 +8,6 @@ Program Definition ComposeFunctor {A B C : Category} (F : Functor A B) (G : Func
   |}.
 Next Obligation.
 Proof.
-  intros.
   rewrite F_id_law.
   rewrite F_id_law.
   reflexivity.

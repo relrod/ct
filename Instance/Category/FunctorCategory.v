@@ -12,15 +12,11 @@ Program Definition FunctorCategory (C D : Category) : Category :=
   |}.
 Next Obligation.
 Proof.
-  apply nt_eq.
   rewrite VCNaturalTransformation_assoc.
   reflexivity.
 Qed.
 Next Obligation.
-Proof.
-  rewrite VCNaturalTransformation_assoc.
-  reflexivity.
-Qed.
+Proof. symmetry. apply FunctorCategory_obligation_1. Qed.
 Next Obligation.
 Proof. apply VCNaturalTransformation_id_left. Qed.
 Next Obligation.

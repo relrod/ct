@@ -13,7 +13,7 @@ Program Definition MonoidCategory {T} (M : Monoid) : Category :=
 Next Obligation.
 Proof. apply monoid_assoc. Qed.
 Next Obligation.
-Proof. rewrite <- monoid_assoc. reflexivity. Qed.
+Proof.  symmetry. apply monoid_assoc. Qed.
 Next Obligation.
 Proof. rewrite monoid_left_one. reflexivity. Qed.
 Next Obligation.
