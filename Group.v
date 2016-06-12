@@ -9,8 +9,8 @@ A group is a monoid with inverses.
 Record Group {T : Type} :=
   { monoid :> @Monoid T;
     inverse : T -> T;
-    gr_inverse_left : forall x : T, mu monoid (inverse x) x = monoid.(one);
-    gr_inverse_right : forall x : T, mu monoid x (inverse x) = monoid.(one)
+    gr_inverse_left : forall x : T, mu monoid (inverse x) x = one monoid;
+    gr_inverse_right : forall x : T, mu monoid x (inverse x) = one monoid
   }.
 
 Lemma group_unique_unop :
