@@ -28,7 +28,7 @@ specialized version of that thing. For example, `FunctorCategory` is a
 derivation because it takes two `Category` parameters to return the functor
 category between them. Similarly, a `MonoidCategory` takes a `Monoid` and
 returns a `Category` with a single object (with composition defined by
-`Monoid`'s `mu`.
+`Monoid`'s `mu`).
 
 These are mostly made-up terms, but we have been using them pretty consistently
 in our documentation/on IRC.
