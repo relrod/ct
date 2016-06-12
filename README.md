@@ -9,6 +9,7 @@ An attempt at a category theory encoding in Coq, for learning purposes.
 * https://arxiv.org/pdf/1505.06430v1.pdf (and https://github.com/amintimany/Categories)
 * The [Homotopy Type Theory](https://github.com/HoTT/Hott) source
 * [Basic Category Theory](http://www.cambridge.org/us/academic/subjects/mathematics/logic-categories-and-sets/basic-category-theory)
+* [copumpkin/categories](https://github.com/copumpkin/categories/) - an Agda encoding of category theory
 
 ## License
 
