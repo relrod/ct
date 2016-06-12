@@ -18,7 +18,7 @@ script:
 - ./scripts/generate_CoqProject.sh
 - make -j4
 - make html
-- ./scripts/publish_documentation.sh
+- ./scripts/publish_documentation.sh || true
 before_install:
 - chmod 700 $HOME/.ssh
 - openssl aes-256-cbc -K $encrypted_46ed5dbda677_key -iv $encrypted_46ed5dbda677_iv
