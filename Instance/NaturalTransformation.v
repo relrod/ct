@@ -145,6 +145,12 @@ Section HCNaturalTransformation.
   Qed.
 End HCNaturalTransformation.
 
+(** * Interchange of horizontal/vertical composition
+
+$$$$
+(\beta' \circ \alpha') * (\beta \circ \alpha) = (\beta' * \beta) \circ (\alpha' * \alpha)
+$$$$
+*)
 Section NaturalTransformationInterchange.
   Context {A A' A'' : Category}.
   Context {F G H : Functor A A'}.
