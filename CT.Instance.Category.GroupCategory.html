@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Category.GroupCategory</title>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Category.GroupCategory</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Group.html#"><span class="id" title="library">CT.Group</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Magma.html#"><span class="id" title="library">CT.Magma</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Monoid.html#"><span class="id" title="library">CT.Monoid</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Semigroup.html#"><span class="id" title="library">CT.Semigroup</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The category for a given monoid. A group is exactly a category with one
+    object in which all morphisms are isomorphisms.
+ 
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="GroupCategory"><span class="id" title="definition">GroupCategory</span></a> {<span class="id" title="var">T</span>} (<span class="id" title="var">G</span> : <a class="idref" href="CT.Group.html#Group"><span class="id" title="record">Group</span></a>) : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">unit</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">T</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">comp</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mu</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">G</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">id</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">one</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">G</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Semigroup.html#semigroup_assoc"><span class="id" title="projection">semigroup_assoc</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">symmetry</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Semigroup.html#semigroup_assoc"><span class="id" title="projection">semigroup_assoc</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_left_one"><span class="id" title="projection">monoid_left_one</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_right_one"><span class="id" title="projection">monoid_right_one</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
