@@ -97,6 +97,7 @@ endif
 VFILES:=Isomorphism.v\
   Magma.v\
   Monoid.v\
+  Group.v\
   Functor.v\
   Instance/Isomorphism.v\
   Instance/Functor.v\
