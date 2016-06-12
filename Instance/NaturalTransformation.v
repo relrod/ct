@@ -147,8 +147,13 @@ End HCNaturalTransformation.
 
 (** * Interchange of horizontal/vertical composition
 
+Given functors \(F\), \(G\), \(H\) : \(C \to D\) and \(F'\), \(G'\), \(H'\) :
+\(D \to E\), and natural transformations \(\alpha : F \Rightarrow G\),
+\(\beta : G \Rightarrow H\), \(\alpha' : F' \Rightarrow G'\), and
+\(\alpha : G' \Rightarrow H'\), then the following holds:
+
 $$$$
-(\beta' \circ \alpha') * (\beta \circ \alpha) = (\beta' * \beta) \circ (\alpha' * \alpha)
+(\beta' \circ \alpha') * (\beta \circ \alpha) = (\beta' * \beta) \circ (\alpha' * \alpha) : F' \circ F \to H' \circ H
 $$$$
 *)
 Section NaturalTransformationInterchange.
