@@ -144,3 +144,38 @@ Section HCNaturalTransformation.
     apply HCNaturalTransformation_obligation_1.
   Qed.
 End HCNaturalTransformation.
+
+Section NaturalTransformationInterchange.
+  Context {A A' A'' : Category}.
+  Context {F G H : Functor A A'}.
+  Context {F' G' H' : Functor A' A''}.
+  Context {alpha : NaturalTransformation F G}.
+  Context {beta : NaturalTransformation G H}.
+  Context {alpha' : NaturalTransformation F' G'}.
+  Context {beta' : NaturalTransformation G' H'}.
+
+  Let l := HCNaturalTransformation (VCNaturalTransformation alpha beta) (VCNaturalTransformation alpha' beta').
+  Let r := VCNaturalTransformation (HCNaturalTransformation alpha alpha') (HCNaturalTransformation beta beta').
+
+  Theorem NaturalTransformationInterchange : l = r.
+  Proof.
+    apply nt_eq.
+    simpl.
+    extensionality X.
+    rewrite F_comp_law.
+    repeat rewrite assoc.
+    match goal with
+      [|- (comp ?B ?A = comp ?C ?A)] =>
+      let H := fresh in
+      cut (B = C); [intro H; rewrite H; trivial|]
+    end.
+    repeat rewrite assoc_sym.
+    match goal with
+      [|- (comp ?B ?A = comp ?B ?C)] =>
+      let H := fresh in
+      cut (A = C); [intro H; rewrite H; trivial|]
+    end.
+    rewrite <- nt_commutes.
+    reflexivity.
+  Qed.
+End NaturalTransformationInterchange.
