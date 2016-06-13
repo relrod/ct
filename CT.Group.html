@@ -59,6 +59,13 @@ A group is a monoid with inverses.
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+This is given by <span class="inlinecode"><a class="idref" href="CT.Monoid.html#monoid_identity_unique"><span class="id" title="lemma">monoid_identity_unique</span></a></span> since a group is a monoid, but we
+    prove it again in a different way, anyway. 
+</div>
+<div class="code">
 <span class="id" title="keyword">Theorem</span> <a name="group_identity_unique"><span class="id" title="lemma">group_identity_unique</span></a> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">∀</span> {<span class="id" title="var">T</span>} (<span class="id" title="var">G</span> : @<a class="idref" href="CT.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Group.html#T"><span class="id" title="variable">T</span></a>) <span class="id" title="var">e</span> <span class="id" title="var">x</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Group.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Group.html#e"><span class="id" title="variable">e</span></a> <a class="idref" href="CT.Group.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Group.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <a class="idref" href="CT.Group.html#e"><span class="id" title="variable">e</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Group.html#G"><span class="id" title="variable">G</span></a>.<br/>
@@ -68,6 +75,22 @@ A group is a monoid with inverses.
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Group.html#gr_inverse_right"><span class="id" title="projection">gr_inverse_right</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <a name="group_inverse_inverse"><span class="id" title="lemma">group_inverse_inverse</span></a> :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> {<span class="id" title="var">T</span>} (<span class="id" title="var">G</span> : @<a class="idref" href="CT.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Group.html#T"><span class="id" title="variable">T</span></a>) <span class="id" title="var">x</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <a class="idref" href="CT.Group.html#G"><span class="id" title="variable">G</span></a> (<a class="idref" href="CT.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <a class="idref" href="CT.Group.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Group.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Group.html#x"><span class="id" title="variable">x</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">transitivity</span> (<a class="idref" href="CT.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">G</span> (<a class="idref" href="CT.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">G</span> (<a class="idref" href="CT.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">G</span> <span class="id" title="var">x</span>)) (<a class="idref" href="CT.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">G</span> (<a class="idref" href="CT.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">G</span> <span class="id" title="var">x</span>) <span class="id" title="var">x</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Group.html#gr_inverse_left"><span class="id" title="projection">gr_inverse_left</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_right_one"><span class="id" title="projection">monoid_right_one</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Semigroup.html#semigroup_assoc"><span class="id" title="projection">semigroup_assoc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Group.html#gr_inverse_left"><span class="id" title="projection">gr_inverse_left</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Monoid.html#monoid_left_one"><span class="id" title="projection">monoid_left_one</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
