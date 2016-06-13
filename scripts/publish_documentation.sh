@@ -12,7 +12,8 @@ git reset --hard
 git checkout gh-pages
 mv ../html/* .
 git add .
-git commit -m 'documentation deploy'
+find -name '*.aux' | xargs rm -v
+git commit -am 'documentation deploy'
 git push origin gh-pages
 popd
 rm -rf "$dir"
