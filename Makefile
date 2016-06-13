@@ -50,9 +50,9 @@ vo_to_obj = $(addsuffix .o,\
 ##########################
 
 COQLIBS?=\
-  -R "." CT
+  -R "CT" CT
 COQDOCLIBS?=\
-  -R "." CT
+  -R "CT" CT
 
 ##########################
 #                        #
@@ -94,35 +94,36 @@ endif
 #                    #
 ######################
 
-VFILES:=Isomorphism.v\
-  Magma.v\
-  Monoid.v\
-  Group.v\
-  Functor.v\
-  Instance/Isomorphism.v\
-  Instance/Functor.v\
-  Instance/NaturalTransformation.v\
-  Instance/Category.v\
-  Instance/Coq/Functor.v\
-  Instance/Coq/Category.v\
-  Instance/Functor/ContravariantFunctor.v\
-  Instance/Functor/Bifunctor.v\
-  Instance/Functor/IdentityFunctor.v\
-  Instance/Functor/Endofunctor.v\
-  Instance/Functor/FaithfulFunctor.v\
-  Instance/Functor/FullFunctor.v\
-  Instance/Functor/FullyFaithfulFunctor.v\
-  Instance/Functor/OppositeFunctor.v\
-  Instance/Functor/Profunctor.v\
-  Instance/Functor/ConstantFunctor.v\
-  Instance/Functor/ComposeFunctor.v\
-  Instance/Category/ProductCategory.v\
-  Instance/Category/FunctorCategory.v\
-  Instance/Category/MonoidCategory.v\
-  Instance/Category/Cat.v\
-  NaturalTransformation.v\
-  Category.v\
-  Semigroup.v
+VFILES:=CT/Isomorphism.v\
+  CT/Monoid.v\
+  CT/Functor.v\
+  CT/Magma.v\
+  CT/Instance/Isomorphism.v\
+  CT/Instance/Functor.v\
+  CT/Instance/NaturalTransformation.v\
+  CT/Instance/Category.v\
+  CT/Instance/Coq/Functor.v\
+  CT/Instance/Coq/Category.v\
+  CT/Instance/Functor/ContravariantFunctor.v\
+  CT/Instance/Functor/Bifunctor.v\
+  CT/Instance/Functor/FullyFaithfulFunctor.v\
+  CT/Instance/Functor/IdentityFunctor.v\
+  CT/Instance/Functor/Endofunctor.v\
+  CT/Instance/Functor/OppositeFunctor.v\
+  CT/Instance/Functor/Profunctor.v\
+  CT/Instance/Functor/FaithfulFunctor.v\
+  CT/Instance/Functor/FullFunctor.v\
+  CT/Instance/Functor/ConstantFunctor.v\
+  CT/Instance/Functor/ComposeFunctor.v\
+  CT/Instance/Category/ProductCategory.v\
+  CT/Instance/Category/FunctorCategory.v\
+  CT/Instance/Category/MonoidCategory.v\
+  CT/Instance/Category/GroupCategory.v\
+  CT/Instance/Category/Cat.v\
+  CT/NaturalTransformation.v\
+  CT/Group.v\
+  CT/Category.v\
+  CT/Semigroup.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
 -include $(addsuffix .d,$(VFILES))
@@ -136,6 +137,7 @@ endif
 
 VO=vo
 VOFILES:=$(VFILES:.v=.$(VO))
+VOFILES1=$(patsubst CT/%,%,$(filter CT/%,$(VOFILES)))
 GLOBFILES:=$(VFILES:.v=.glob)
 GFILES:=$(VFILES:.v=.g)
 HTMLFILES:=$(VFILES:.v=.html)
@@ -143,6 +145,7 @@ GHTMLFILES:=$(VFILES:.v=.g.html)
 OBJFILES=$(call vo_to_obj,$(VOFILES))
 ALLNATIVEFILES=$(OBJFILES:.o=.cmi) $(OBJFILES:.o=.cmo) $(OBJFILES:.o=.cmx) $(OBJFILES:.o=.cmxs)
 NATIVEFILES=$(foreach f, $(ALLNATIVEFILES), $(wildcard $f))
+NATIVEFILES1=$(patsubst CT/%,%,$(filter CT/%,$(NATIVEFILES)))
 ifeq '$(HASNATDYNLINK)' 'true'
 HASNATDYNLINK_OR_EMPTY := yes
 else
@@ -211,7 +214,7 @@ userinstall:
 	+$(MAKE) USERINSTALL=true install
 
 install:
-	cd "." && for i in $(VOFILES) $(VFILES) $(GLOBFILES) $(NATIVEFILES) $(CMOFILES) $(CMIFILES) $(CMAFILES); do \
+	cd "CT" && for i in $(NATIVEFILES1) $(GLOBFILES1) $(VFILES1) $(VOFILES1); do \
 	 install -d "`dirname "$(DSTROOT)"$(COQLIBINSTALL)/CT/$$i`"; \
 	 install -m 0644 $$i "$(DSTROOT)"$(COQLIBINSTALL)/CT/$$i; \
 	done
@@ -224,7 +227,7 @@ install-doc:
 
 uninstall_me.sh: Makefile
 	echo '#!/bin/sh' > $@
-	printf 'cd "$${DSTROOT}"$(COQLIBINSTALL)/CT && rm -f $(VOFILES) $(VFILES) $(GLOBFILES) $(NATIVEFILES) $(CMOFILES) $(CMIFILES) $(CMAFILES) && find . -type d -and -empty -delete\ncd "$${DSTROOT}"$(COQLIBINSTALL) && find "CT" -maxdepth 0 -and -empty -exec rmdir -p \{\} \;\n' >> "$@"
+	printf 'cd "$${DSTROOT}"$(COQLIBINSTALL)/CT && rm -f $(NATIVEFILES1) $(GLOBFILES1) $(VFILES1) $(VOFILES1) && find . -type d -and -empty -delete\ncd "$${DSTROOT}"$(COQLIBINSTALL) && find "CT" -maxdepth 0 -and -empty -exec rmdir -p \{\} \;\n' >> "$@"
 	printf 'cd "$${DSTROOT}"$(COQDOCINSTALL)/CT \\\n' >> "$@"
 	printf '&& rm -f $(shell find "html" -maxdepth 1 -and -type f -print)\n' >> "$@"
 	printf 'cd "$${DSTROOT}"$(COQDOCINSTALL) && find CT/html -maxdepth 0 -and -empty -exec rmdir -p \{\} \;\n' >> "$@"
