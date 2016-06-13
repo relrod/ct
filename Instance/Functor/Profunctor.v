@@ -1,4 +1,3 @@
-Require Import Coq.Program.Tactics.
 Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.Instance.Functor.Bifunctor.
