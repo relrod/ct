@@ -22,16 +22,30 @@
 <h1 class="libtitle">Library CT.Instance.Functor.IdentityFunctor</h1>
 
 <div class="code">
-<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Program.Tactics.html#"><span class="id" title="library">Coq.Program.Tactics</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.Endofunctor.html#"><span class="id" title="library">CT.Instance.Functor.Endofunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.FaithfulFunctor.html#"><span class="id" title="library">CT.Instance.Functor.FaithfulFunctor</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Program Definition</span> <a name="IdentityFunctor"><span class="id" title="definition">IdentityFunctor</span></a> {<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>} : @<a class="idref" href="CT.Instance.Functor.Endofunctor.html#Endofunctor"><span class="id" title="definition">Endofunctor</span></a> <a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#C"><span class="id" title="variable">C</span></a> :=<br/>
 &nbsp;&nbsp;{| <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">x</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">x</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">;</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_mor</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">;</span></a><br/>
 &nbsp;&nbsp;|}.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The identity functor is always faithful. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="identity_is_faithful"><span class="id" title="lemma">identity_is_faithful</span></a> (<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) : <a class="idref" href="CT.Instance.Functor.FaithfulFunctor.html#FaithfulFunctor"><span class="id" title="definition">FaithfulFunctor</span></a> (@<a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#IdentityFunctor"><span class="id" title="definition">IdentityFunctor</span></a> <a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#C"><span class="id" title="variable">C</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 </div>
 </div>
 
