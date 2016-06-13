@@ -8,7 +8,7 @@ A functor \(F : C \to D\) is _faithful_ if \(\forall x, y \in C\), the function
 \(F : C(x, y) \to D(F(x), F(y))\) is injective.
 
 So we require a [Functor] and a proof that injectivity of hom-sets is satisfied.
- *)
+*)
 Section FaithfulFunctor.
   Context {A B : Category}.
   Variable (F : Functor A B).
