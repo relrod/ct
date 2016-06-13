@@ -109,6 +109,7 @@ VFILES:=Isomorphism.v\
   Instance/Functor/Bifunctor.v\
   Instance/Functor/IdentityFunctor.v\
   Instance/Functor/Endofunctor.v\
+  Instance/Functor/FaithfulFunctor.v\
   Instance/Functor/OppositeFunctor.v\
   Instance/Functor/Profunctor.v\
   Instance/Functor/ConstantFunctor.v\
