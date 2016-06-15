@@ -100,6 +100,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Magma.v\
   CT/Instance/Isomorphism.v\
   CT/Instance/NaturalTransformation/NaturalIsomorphism.v\
+  CT/Instance/NaturalTransformation/Composition.v\
   CT/Instance/NaturalTransformation/HCNaturalTransformation.v\
   CT/Instance/NaturalTransformation/IdentityNaturalTransformation.v\
   CT/Instance/NaturalTransformation/VCNaturalTransformation.v\
@@ -124,6 +125,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Category/MonoidCategory.v\
   CT/Instance/Category/GroupCategory.v\
   CT/Instance/Category/Cat.v\
+  CT/Instance/Coq.v\
   CT/NaturalTransformation.v\
   CT/Group.v\
   CT/Category.v\

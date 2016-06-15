@@ -2,7 +2,8 @@ Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.NaturalTransformation.
 Require Import CT.Instance.Functor.
-Require Import CT.Instance.NaturalTransformation.
+Require Import CT.Instance.NaturalTransformation.Composition.
+Require Import CT.Instance.NaturalTransformation.IdentityNaturalTransformation.
 
 Program Definition FunctorCategory (C D : Category) : Category :=
   {| ob := Functor C D;

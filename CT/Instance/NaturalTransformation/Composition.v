@@ -1,8 +1,8 @@
 Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.NaturalTransformation.
-Require Import CT.Instance.NaturalTransformation.HCNaturalTransformation.
-Require Import CT.Instance.NaturalTransformation.VCNaturalTransformation.
+Require Export CT.Instance.NaturalTransformation.HCNaturalTransformation.
+Require Export CT.Instance.NaturalTransformation.VCNaturalTransformation.
 Require Import FunctionalExtensionality.
 
 (** * Interchange of horizontal/vertical composition
