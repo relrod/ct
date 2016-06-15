@@ -100,6 +100,9 @@ VFILES:=CT/Isomorphism.v\
   CT/Magma.v\
   CT/Instance/Isomorphism.v\
   CT/Instance/NaturalTransformation/NaturalIsomorphism.v\
+  CT/Instance/NaturalTransformation/HCNaturalTransformation.v\
+  CT/Instance/NaturalTransformation/IdentityNaturalTransformation.v\
+  CT/Instance/NaturalTransformation/VCNaturalTransformation.v\
   CT/Instance/Functor.v\
   CT/Instance/NaturalTransformation.v\
   CT/Instance/Category.v\
