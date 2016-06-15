@@ -33,6 +33,14 @@ returns a `Category` with a single object (with composition defined by
 These are mostly made-up terms, but we have been using them pretty consistently
 in our documentation/on IRC.
 
+## Notes on notation
+
+We rarely use `Notation` or `Infix` in the library. This is intentional and done
+for added clarity. While Coq's notation system can be extremely helpful
+(especially in combination with various scopes), since this is a library written
+for educational purposes, we wish to not cloud any view of what is actually
+happening. We do sprinkle in use of implicit arguments, however.
+
 ## References
 
 ... so far.
