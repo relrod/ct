@@ -1,9 +1,7 @@
 Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.Isomorphism.
-Require Import CT.NaturalTransformation.
 Require Import CT.Instance.Category.FunctorCategory.
-Require Import FunctionalExtensionality.
 
 (** * Natural Isomorphism
 
