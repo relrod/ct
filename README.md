@@ -5,8 +5,8 @@ An attempt at a category theory encoding in Coq, for learning purposes.
 ## Layout
 
 Core concepts (`Category`, `Functor`, `NaturalTransformation`, `Monoid`, etc.)
-are in the root of the project. Instances and derivations both live in the
-`Instance` directory (and thus the `CT.Instance` namespace.
+are in the `CT` directory. Instances and derivations both live in the
+`CT/Instance` directory (and thus the `CT.Instance` namespace).
 
 Thus if you wish to work with, for example, functor categories, you'll likely
 want to do something like:
@@ -30,8 +30,8 @@ category between them. Similarly, a `MonoidCategory` takes a `Monoid` and
 returns a `Category` with a single object (with composition defined by
 `Monoid`'s `mu`).
 
-These are mostly made-up terms, but we have been using them pretty consistently
-in our documentation/on IRC.
+These (instance, derivation) are mostly made-up terms, but we have been using 
+them pretty consistently in our documentation/on IRC.
 
 ## Notes on notation
 
