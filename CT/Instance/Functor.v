@@ -8,5 +8,6 @@ Require Export CT.Instance.Functor.FullFunctor.
 Require Export CT.Instance.Functor.FullyFaithfulFunctor.
 Require Export CT.Instance.Functor.IdentityFunctor.
 Require Export CT.Instance.Functor.OppositeFunctor.
+Require Export CT.Instance.Functor.ProductFunctor.
 Require Export CT.Instance.Functor.Profunctor.
 (* This file is auto-generated. *)
