@@ -96,6 +96,7 @@ endif
 
 VFILES:=CT/Isomorphism.v\
   CT/Monoid.v\
+  CT/Morphism.v\
   CT/Functor.v\
   CT/Magma.v\
   CT/Instance/Isomorphism.v\
@@ -126,6 +127,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Category/MonoidCategory.v\
   CT/Instance/Category/GroupCategory.v\
   CT/Instance/Category/Cat.v\
+  CT/Instance/Category/ArrowCategory.v\
   CT/Instance/Coq.v\
   CT/NaturalTransformation.v\
   CT/Group.v\

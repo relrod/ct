@@ -2,8 +2,6 @@ Require Import CT.Category.
 
 Set Universe Polymorphism.
 
-
-
 (** Product category. *)
 Program Definition ProductCategory (C D : Category) : Category :=
   {| ob := (@ob C * @ob D);
