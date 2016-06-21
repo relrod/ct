@@ -4,6 +4,7 @@ Require Export CT.Instance.Functor.ConstantFunctor.
 Require Export CT.Instance.Functor.ContravariantFunctor.
 Require Export CT.Instance.Functor.Endofunctor.
 Require Export CT.Instance.Functor.FaithfulFunctor.
+Require Export CT.Instance.Functor.FAlgebra.
 Require Export CT.Instance.Functor.FullFunctor.
 Require Export CT.Instance.Functor.FullyFaithfulFunctor.
 Require Export CT.Instance.Functor.IdentityFunctor.

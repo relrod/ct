@@ -112,6 +112,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Coq/Category.v\
   CT/Instance/Functor/ContravariantFunctor.v\
   CT/Instance/Functor/Bifunctor.v\
+  CT/Instance/Functor/FAlgebra.v\
   CT/Instance/Functor/FullyFaithfulFunctor.v\
   CT/Instance/Functor/IdentityFunctor.v\
   CT/Instance/Functor/Endofunctor.v\
