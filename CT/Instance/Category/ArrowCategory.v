@@ -2,8 +2,6 @@ Require Import CT.Category.
 Require Import CT.Morphism.
 Require Import ProofIrrelevance.
 
-Set Implicit Arguments.
-
 Section ArrowCategory.
   Variable (C : Category).
 
