@@ -23,3 +23,13 @@ Proof.
   rewrite monoid_left_one0.
   trivial.
 Qed.
+
+
+(* Possibly separate this out at some point. *)
+
+(** * Monoid homomorphisms.
+
+Magma homomorphisms that also preserve identity.
+*)
+Definition MonoidHomomorphism {A B} (M : @Monoid A) (N : @Monoid B) :=
+  { f : @MagmaHomomorphism A B M N | magma_hom M N f (one M) = one N }.
