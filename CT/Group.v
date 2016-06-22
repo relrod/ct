@@ -54,3 +54,12 @@ Qed.
 
 (* TODO: inverse unique, inverse over product, l/r cancellation,
    magma/semigroup/monoid/group homomorphisms + laws *)
+
+(* Possibly separate this out at some point. *)
+
+(** * Group homomorphisms.
+
+...are exactly the same as magma homomorphisms.
+*)
+Definition GroupHomomorphism {A B} (M : @Group A) (N : @Group B) :=
+  @MagmaHomomorphism A B M N.
