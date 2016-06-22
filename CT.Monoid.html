@@ -60,6 +60,24 @@ Monoid identity is unique.
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">monoid_left_one0</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab20"></a><h1 class="section">Monoid homomorphisms.</h1>
+
+
+<div class="paragraph"> </div>
+
+Magma homomorphisms that also preserve identity.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <a name="MonoidHomomorphism"><span class="id" title="definition">MonoidHomomorphism</span></a> {<span class="id" title="var">A</span> <span class="id" title="var">B</span>} (<span class="id" title="var">M</span> : @<a class="idref" href="CT.Monoid.html#Monoid"><span class="id" title="record">Monoid</span></a> <a class="idref" href="CT.Monoid.html#A"><span class="id" title="variable">A</span></a>) (<span class="id" title="var">N</span> : @<a class="idref" href="CT.Monoid.html#Monoid"><span class="id" title="record">Monoid</span></a> <a class="idref" href="CT.Monoid.html#B"><span class="id" title="variable">B</span></a>) :=<br/>
+&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Specif.html#72ca3fac4636a1b19c963b12162882cf"><span class="id" title="notation">{</span></a> <span class="id" title="var">f</span> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Specif.html#72ca3fac4636a1b19c963b12162882cf"><span class="id" title="notation">:</span></a> @<a class="idref" href="CT.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Monoid.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Monoid.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Monoid.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="CT.Monoid.html#N"><span class="id" title="variable">N</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Specif.html#72ca3fac4636a1b19c963b12162882cf"><span class="id" title="notation">|</span></a> <a class="idref" href="CT.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Monoid.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="CT.Monoid.html#N"><span class="id" title="variable">N</span></a> <span class="id" title="var">f</span> (<a class="idref" href="CT.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Monoid.html#M"><span class="id" title="variable">M</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Monoid.html#N"><span class="id" title="variable">N</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Specif.html#72ca3fac4636a1b19c963b12162882cf"><span class="id" title="notation">}</span></a>.<br/>
 </div>
 </div>
 
