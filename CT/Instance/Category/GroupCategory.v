@@ -4,7 +4,7 @@ Require Import CT.Magma.
 Require Import CT.Monoid.
 Require Import CT.Semigroup.
 
-(** The category for a given monoid. A group is exactly a category with one
+(** The category for a given group. A group is exactly a category with one
     object in which all morphisms are isomorphisms.
  *)
 Program Definition GroupCategory {T} (G : Group) : Category :=
