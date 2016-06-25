@@ -1,8 +1,8 @@
-Require Import CT.Magma.
-Require Import CT.Monoid.
-Require Import CT.Semigroup.
-Require Import CT.Group.
-Require Import CT.AbelianGroup.
+Require Import CT.Algebra.Magma.
+Require Import CT.Algebra.Monoid.
+Require Import CT.Algebra.Semigroup.
+Require Import CT.Algebra.Group.
+Require Import CT.Algebra.AbelianGroup.
 
 (** * Rngs (pseudo-rings)
 

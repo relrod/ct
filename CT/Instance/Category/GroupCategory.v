@@ -1,8 +1,8 @@
 Require Import CT.Category.
-Require Import CT.Group.
-Require Import CT.Magma.
-Require Import CT.Monoid.
-Require Import CT.Semigroup.
+Require Import CT.Algebra.Group.
+Require Import CT.Algebra.Magma.
+Require Import CT.Algebra.Monoid.
+Require Import CT.Algebra.Semigroup.
 
 (** The category for a given group. A group is exactly a category with one
     object in which all morphisms are isomorphisms.

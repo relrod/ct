@@ -1,4 +1,4 @@
-Require Import CT.Magma.
+Require Import CT.Algebra.Magma.
 
 Set Primitive Projections.
 

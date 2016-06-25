@@ -1,5 +1,5 @@
-Require Import CT.Magma.
-Require Import CT.Semigroup.
+Require Import CT.Algebra.Magma.
+Require Import CT.Algebra.Semigroup.
 Require Import FunctionalExtensionality.
 
 Set Primitive Projections.

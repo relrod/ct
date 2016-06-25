@@ -1,6 +1,6 @@
-Require Import CT.Magma.
-Require Import CT.Monoid.
-Require Import CT.Semigroup.
+Require Import CT.Algebra.Magma.
+Require Import CT.Algebra.Monoid.
+Require Import CT.Algebra.Semigroup.
 
 (** * Groups
 
