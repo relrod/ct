@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Algebra.Rng</title>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Algebra.Rng</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Magma.html#"><span class="id" title="library">CT.Algebra.Magma</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Monoid.html#"><span class="id" title="library">CT.Algebra.Monoid</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Semigroup.html#"><span class="id" title="library">CT.Algebra.Semigroup</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Group.html#"><span class="id" title="library">CT.Algebra.Group</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.AbelianGroup.html#"><span class="id" title="library">CT.Algebra.AbelianGroup</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab21"></a><h1 class="section">Rngs (pseudo-rings)</h1>
+
+
+<div class="paragraph"> </div>
+
+A rng is an abelian group together with a semigroup whose multiplication is
+distributive under group addition. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Record</span> <a name="Rng"><span class="id" title="record">Rng</span></a> {<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>} :=<br/>
+&nbsp;&nbsp;{ <a name="group"><span class="id" title="projection">group</span></a> :&gt; @<a class="idref" href="CT.Algebra.AbelianGroup.html#AbelianGroup"><span class="id" title="record">AbelianGroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#T"><span class="id" title="variable">T</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="semigroup"><span class="id" title="projection">semigroup</span></a> :&gt; @<a class="idref" href="CT.Algebra.Semigroup.html#Semigroup"><span class="id" title="record">Semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#T"><span class="id" title="variable">T</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="semigroup_dist_over_group_l"><span class="id" title="projection">semigroup_dist_over_group_l</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#group"><span class="id" title="method">group</span></a> <a class="idref" href="CT.Algebra.Rng.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Algebra.Rng.html#c"><span class="id" title="variable">c</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#group"><span class="id" title="method">group</span></a> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Algebra.Rng.html#b"><span class="id" title="variable">b</span></a>) (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Algebra.Rng.html#c"><span class="id" title="variable">c</span></a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="semigroup_dist_over_group_r"><span class="id" title="projection">semigroup_dist_over_group_r</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#group"><span class="id" title="method">group</span></a> <a class="idref" href="CT.Algebra.Rng.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Algebra.Rng.html#c"><span class="id" title="variable">c</span></a>) <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.5pl1/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#group"><span class="id" title="method">group</span></a> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Rng.html#semigroup"><span class="id" title="method">semigroup</span></a> <a class="idref" href="CT.Algebra.Rng.html#c"><span class="id" title="variable">c</span></a> <a class="idref" href="CT.Algebra.Rng.html#a"><span class="id" title="variable">a</span></a>)<br/>
+&nbsp;&nbsp;}.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
