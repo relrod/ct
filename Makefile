@@ -95,10 +95,12 @@ endif
 ######################
 
 VFILES:=CT/Isomorphism.v\
+  CT/AbelianGroup.v\
   CT/Monoid.v\
   CT/Morphism.v\
   CT/Functor.v\
   CT/Magma.v\
+  CT/Rng.v\
   CT/Instance/Isomorphism.v\
   CT/Instance/NaturalTransformation/NaturalIsomorphism.v\
   CT/Instance/NaturalTransformation/Composition.v\
@@ -133,7 +135,8 @@ VFILES:=CT/Isomorphism.v\
   CT/NaturalTransformation.v\
   CT/Group.v\
   CT/Category.v\
-  CT/Semigroup.v
+  CT/Semigroup.v\
+  CT/Ring.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
 -include $(addsuffix .d,$(VFILES))
