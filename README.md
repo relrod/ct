@@ -4,7 +4,7 @@ An attempt at a category theory encoding in Coq, for learning purposes.
 
 ## Layout
 
-Core concepts (`Category`, `Functor`, `NaturalTransformation`, `Monoid`, etc.)
+Core concepts (`Category`, `Functor`, `NaturalTransformation`, etc.)
 are in the `CT` directory. Instances and derivations both live in the
 `CT/Instance` directory (and thus the `CT.Instance` namespace). A simple
 algebra hierarchy is found in `CT/Algebra`. Definitions there are largely
