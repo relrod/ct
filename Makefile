@@ -130,13 +130,15 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Coq.v\
   CT/NaturalTransformation.v\
   CT/Category.v\
+  CT/Retract.v\
   CT/Algebra/AbelianGroup.v\
   CT/Algebra/Monoid.v\
   CT/Algebra/Magma.v\
   CT/Algebra/Rng.v\
   CT/Algebra/Group.v\
   CT/Algebra/Semigroup.v\
-  CT/Algebra/Ring.v
+  CT/Algebra/Ring.v\
+  CT/Section.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
 -include $(addsuffix .d,$(VFILES))

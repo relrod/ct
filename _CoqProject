@@ -35,6 +35,7 @@
 ./CT/Instance/Coq.v
 ./CT/NaturalTransformation.v
 ./CT/Category.v
+./CT/Retract.v
 ./CT/Algebra/AbelianGroup.v
 ./CT/Algebra/Monoid.v
 ./CT/Algebra/Magma.v
@@ -42,3 +43,4 @@
 ./CT/Algebra/Group.v
 ./CT/Algebra/Semigroup.v
 ./CT/Algebra/Ring.v
+./CT/Section.v
