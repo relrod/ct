@@ -10,7 +10,7 @@ are in the `CT` directory. Instances and derivations both live in the
 algebra hierarchy is found in `CT/Algebra`. Definitions there are largely
 [decategorified](https://en.wikipedia.org/wiki/Categorification), even when the
 structures can be defined purely categorically. There are instances (e.g.
-`CT.Instance.Category.MonoidCategory` (the category for any given `Monoid`)
+`CT.Instance.Category.MonoidCategory` (the category for any given `Monoid`))
 which make use of them.
 
 The layout of the project is fairly simple. If you wish to work with, for
