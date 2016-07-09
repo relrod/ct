@@ -131,6 +131,7 @@ VFILES:=CT/Isomorphism.v\
   CT/NaturalTransformation.v\
   CT/Category.v\
   CT/Retract.v\
+  CT/Algebra/PointedSet.v\
   CT/Algebra/AbelianGroup.v\
   CT/Algebra/Monoid.v\
   CT/Algebra/Magma.v\
