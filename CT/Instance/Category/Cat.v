@@ -19,4 +19,3 @@ Next Obligation.
 Proof. apply F_eq. reflexivity. reflexivity. Qed.
 Next Obligation.
 Proof. apply F_eq. reflexivity. reflexivity. Qed.
-
