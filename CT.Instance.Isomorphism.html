@@ -50,6 +50,85 @@ itself, by definition.
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_right"><span class="id" title="projection">id_right</span></a>. <span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab7"></a><h1 class="section">Isomorphism is preserved under inverse.</h1>
+
+
+<div class="paragraph"> </div>
+
+That is, if <span class="inlinecode"><a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Functor.html#a"><span class="id" title="variable">a</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Functor.html#b"><span class="id" title="variable">b</span></a></span>, then <span class="inlinecode"><a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Functor.html#b"><span class="id" title="variable">b</span></a></span> <span class="inlinecode"><a class="idref" href="CT.Functor.html#a"><span class="id" title="variable">a</span></a></span>.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="InverseIso"><span class="id" title="definition">InverseIso</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">a</span> <span class="id" title="var">b</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#C"><span class="id" title="variable">C</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">iso</span> : <a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#b"><span class="id" title="variable">b</span></a>) : <a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#a"><span class="id" title="variable">a</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">to</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">from</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">iso</span></a><a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">from</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">to</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.Isomorphism.html#Build_Isomorphism"><span class="id" title="constructor">iso</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">iso</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">iso</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab8"></a><h1 class="section">Isomorphism is preserved under composition.</h1>
+
+
+<div class="paragraph"> </div>
+
+Let \(C\) be a category and \(a, b, c\) be objects in \(C\). Let
+\(f : a \to b\), and \(g : b \to c\) be isomorphisms in \(C\). Then
+\(g \circ f : a \to c\) is also an isomorphism.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="iso_comp_iso"><span class="id" title="lemma">iso_comp_iso</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#C"><span class="id" title="variable">C</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> : <a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#b"><span class="id" title="variable">b</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">g</span> : <a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#c"><span class="id" title="variable">c</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Isomorphism.html#c"><span class="id" title="variable">c</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">f</span>, <span class="id" title="var">g</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">∃</span> (<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <span class="id" title="var">to</span> <span class="id" title="var">to0</span>) (<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <span class="id" title="var">from0</span> <span class="id" title="var">from</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#assoc"><span class="id" title="projection">assoc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="CT.Category.html#assoc"><span class="id" title="projection">assoc</span></a> <span class="id" title="var">C</span> <span class="id" title="var">from0</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">inv_left</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_right"><span class="id" title="projection">id_right</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#assoc"><span class="id" title="projection">assoc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="CT.Category.html#assoc"><span class="id" title="projection">assoc</span></a> <span class="id" title="var">C</span> <span class="id" title="var">to</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">inv_right0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_right"><span class="id" title="projection">id_right</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Defined</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The three above derivations (<span class="inlinecode"><a class="idref" href="CT.Instance.Isomorphism.html#IdentityIso"><span class="id" title="definition">IdentityIso</span></a></span>, <span class="inlinecode"><a class="idref" href="CT.Instance.Isomorphism.html#InverseIso"><span class="id" title="definition">InverseIso</span></a></span>, <span class="inlinecode"><a class="idref" href="CT.Instance.Isomorphism.html#iso_comp_iso"><span class="id" title="lemma">iso_comp_iso</span></a></span>)
+together form an equivalence relation. At some point we should use
+<span class="inlinecode"><span class="id" title="var">Coq.Relations.Relation_Definitions</span></span> to make it so.
+
+</div>
+<div class="code">
 </div>
 </div>
 
