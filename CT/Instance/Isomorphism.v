@@ -15,3 +15,22 @@ Next Obligation.
 Proof.
   rewrite id_right. reflexivity.
 Qed.
+
+Program Definition InverseIso
+        {C : Category}
+        {a b : @ob C}
+        (iso : Isomorphism a b) : Isomorphism b a :=
+  {| to := from a b iso;
+     from := to a b iso
+  |}.
+Next Obligation.
+Proof.
+  destruct iso.
+  simpl.
+  assumption.
+Qed.
+Next Obligation.
+  destruct iso.
+  simpl.
+  assumption.
+Qed.
