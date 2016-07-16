@@ -16,7 +16,7 @@ Record Isomorphism {C : Category} (a b : @ob C) :=
   { to : mor a b;
     from : mor b a;
     inv_left : comp from to = id;
-    inv_right : comp to from = id;
+    inv_right : comp to from = id
   }.
 
 (** * Isomorphism is preserved under composition.
@@ -27,7 +27,7 @@ Let \(C\) be a category and \(a, b, c\) be objects in \(C\). Let
 *)
 Theorem iso_comp_iso
         {C : Category}
-        {a b c : C}
+        {a b c : @ob C}
         (f : Isomorphism a b)
         (g : Isomorphism b c) :
   Isomorphism a c.
