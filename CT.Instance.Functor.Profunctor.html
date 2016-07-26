@@ -31,6 +31,7 @@
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.Bifunctor.html#"><span class="id" title="library">CT.Instance.Functor.Bifunctor</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Coq.Category.html#"><span class="id" title="library">CT.Instance.Coq.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Category.Opposite.html#"><span class="id" title="library">CT.Instance.Category.Opposite</span></a>.<br/>
 
 <br/>
 </div>
@@ -40,7 +41,7 @@
     This feels many kinds of wrong. 
 </div>
 <div class="code">
-<span class="id" title="keyword">Program Definition</span> <a name="Profunctor"><span class="id" title="definition">Profunctor</span></a> (<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) := <a class="idref" href="CT.Instance.Functor.Bifunctor.html#Bifunctor"><span class="id" title="definition">Bifunctor</span></a> (<a class="idref" href="CT.Instance.Functor.Profunctor.html#D"><span class="id" title="variable">D</span></a><a class="idref" href="CT.Category.html#cacc4a91c4895144a931936cac22406e"><span class="id" title="notation">^</span></a><a class="idref" href="CT.Category.html#cacc4a91c4895144a931936cac22406e"><span class="id" title="notation">op</span></a>) <a class="idref" href="CT.Instance.Functor.Profunctor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqType"><span class="id" title="definition">CoqType</span></a>.<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="Profunctor"><span class="id" title="definition">Profunctor</span></a> (<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) := <a class="idref" href="CT.Instance.Functor.Bifunctor.html#Bifunctor"><span class="id" title="definition">Bifunctor</span></a> (<a class="idref" href="CT.Instance.Functor.Profunctor.html#D"><span class="id" title="variable">D</span></a><a class="idref" href="CT.Instance.Category.Opposite.html#cacc4a91c4895144a931936cac22406e"><span class="id" title="notation">^</span></a><a class="idref" href="CT.Instance.Category.Opposite.html#cacc4a91c4895144a931936cac22406e"><span class="id" title="notation">op</span></a>) <a class="idref" href="CT.Instance.Functor.Profunctor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqType"><span class="id" title="definition">CoqType</span></a>.<br/>
 </div>
 </div>
 
