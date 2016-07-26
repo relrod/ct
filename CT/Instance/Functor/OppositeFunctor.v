@@ -1,5 +1,6 @@
 Require Import CT.Category.
 Require Import CT.Functor.
+Require Import CT.Instance.Category.Opposite.
 
 Program Definition OppositeFunctor {C D : Category} (F : Functor C D) : Functor (C^op) (D^op) :=
   {| F_ob := F_ob F;

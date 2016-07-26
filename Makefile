@@ -124,6 +124,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Category/ProductCategory.v\
   CT/Instance/Category/FunctorCategory.v\
   CT/Instance/Category/MonoidCategory.v\
+  CT/Instance/Category/Opposite.v\
   CT/Instance/Category/GroupCategory.v\
   CT/Instance/Category/Cat.v\
   CT/Instance/Category/ArrowCategory.v\

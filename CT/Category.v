@@ -39,17 +39,3 @@ Arguments id {_ _}, {_} _, _ _.
 (* TODO: I need to figure out how this works.
    https://coq.inria.fr/refman/Reference-Manual021.html *)
 Coercion ob : Category >-> Sortclass.
-
-(** The opposite category for a category. *)
-Program Definition Op (C : Category) : Category :=
-  {| ob := C;
-     mor := fun a b => mor b a;
-     comp := fun _ _ _ f g => comp g f;
-     id := fun a => @id C a;
-     assoc := fun _ _ _ _ _ _ _ => @assoc_sym _ _ _ _ _ _ _ _;
-     assoc_sym := fun _ _ _ _ _ _ _ => @assoc _ _ _ _ _ _ _ _;
-     id_left := fun _ _ => @id_right _ _ _;
-     id_right := fun _ _ => @id_left _ _ _
-  |}.
-
-Notation "A '^op'" := (Op A) (at level 10).
