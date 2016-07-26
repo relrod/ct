@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 pushd CT/Instance
+  grep -l '\(\* This file is auto-generated. \*\)' . -R | xargs rm -v
   for d in `find -type d -print | tail -n +2`; do
     coqfile="$(echo "$d" | sed 's/^\.\///').v"
     [ -f "$coqfile" ] && rm "$coqfile"
