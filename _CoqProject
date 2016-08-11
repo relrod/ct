@@ -1,5 +1,6 @@
 -R CT CT 
 ./CT/Isomorphism.v
+./CT/Algebra.v
 ./CT/Morphism.v
 ./CT/Functor.v
 ./CT/Instance/Isomorphism.v
@@ -45,4 +46,5 @@
 ./CT/Algebra/Group.v
 ./CT/Algebra/Semigroup.v
 ./CT/Algebra/Ring.v
+./CT/Instance.v
 ./CT/Section.v

@@ -1,3 +1,4 @@
+Require Import Coq.Program.Tactics.
 Set Primitive Projections.
 
 Record PointedSet {set : Type} :=
@@ -39,4 +40,22 @@ Proof.
   intros.
   destruct x.
   reflexivity.
+Qed.
+
+(** * Composition of point-preserving maps. *)
+Program Definition ppm_composition
+        {T U V : Type}
+        {A : @PointedSet T}
+        {B : @PointedSet U}
+        {C : @PointedSet V}
+        (map1 : PointPreservingMap A B)
+        (map2 : PointPreservingMap B C) :
+  PointPreservingMap A C :=
+  {| point_pres_map := fun a => (point_pres_map B C map2) ((point_pres_map A B map1) a) |}.
+Next Obligation.
+Proof.
+  destruct A, B, C, map1, map2.
+  simpl in *.
+  rewrite point_pres_law0.
+  assumption.
 Qed.

@@ -95,6 +95,7 @@ endif
 ######################
 
 VFILES:=CT/Isomorphism.v\
+  CT/Algebra.v\
   CT/Morphism.v\
   CT/Functor.v\
   CT/Instance/Isomorphism.v\
@@ -140,6 +141,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Algebra/Group.v\
   CT/Algebra/Semigroup.v\
   CT/Algebra/Ring.v\
+  CT/Instance.v\
   CT/Section.v
 
 ifneq ($(filter-out archclean clean cleanall printenv,$(MAKECMDGOALS)),)
