@@ -1,4 +1,5 @@
 Require Import Coq.Program.Tactics.
+Require Import ProofIrrelevance.
 Set Primitive Projections.
 
 Record PointedSet {set : Type} :=
@@ -42,6 +43,19 @@ Proof.
   reflexivity.
 Qed.
 
+(** * Equality of point-preserving maps, assuming proof irrelevance. *)
+Theorem ppm_eq : forall A B F G (N M : PointPreservingMap F G),
+    @point_pres_map A B F G N = @point_pres_map A B F G M ->
+    N = M.
+Proof.
+  intros.
+  destruct N, M.
+  simpl in *.
+  subst.
+  f_equal.
+  apply proof_irrelevance.
+Qed.
+
 (** * Composition of point-preserving maps. *)
 Program Definition ppm_composition
         {T U V : Type}
@@ -58,4 +72,27 @@ Proof.
   simpl in *.
   rewrite point_pres_law0.
   assumption.
+Qed.
+
+(** * Identity point-preserving map. *)
+Program Definition ppm_id
+        {T : Type}
+        {A : @PointedSet T} :
+  PointPreservingMap A A :=
+  {| point_pres_map := fun a => a |}.
+
+(** * Association of composition of point-preserving maps. *)
+Program Definition ppm_composition_assoc
+        {T : Type}
+        {A B C D : @PointedSet T}
+        (f : PointPreservingMap A B)
+        (g : PointPreservingMap B C)
+        (h : PointPreservingMap C D) :
+  ppm_composition f (ppm_composition g h) =
+  ppm_composition (ppm_composition f g) h.
+Proof.
+  destruct f, g, h.
+  apply ppm_eq.
+  simpl.
+  reflexivity.
 Qed.
