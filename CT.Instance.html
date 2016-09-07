@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.ArrowCategory.html#"><span class="id" title="library">CT.Instance.Category.ArrowCategory</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.Cat.html#"><span class="id" title="library">CT.Instance.Category.Cat</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.FunctorCategory.html#"><span class="id" title="library">CT.Instance.Category.FunctorCategory</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.GroupCategory.html#"><span class="id" title="library">CT.Instance.Category.GroupCategory</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.MonoidCategory.html#"><span class="id" title="library">CT.Instance.Category.MonoidCategory</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.Opposite.html#"><span class="id" title="library">CT.Instance.Category.Opposite</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Category.ProductCategory.html#"><span class="id" title="library">CT.Instance.Category.ProductCategory</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Coq.Category.html#"><span class="id" title="library">CT.Instance.Coq.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Coq.Functor.html#"><span class="id" title="library">CT.Instance.Coq.Functor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.Bifunctor.html#"><span class="id" title="library">CT.Instance.Functor.Bifunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#"><span class="id" title="library">CT.Instance.Functor.ComposeFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.ConstantFunctor.html#"><span class="id" title="library">CT.Instance.Functor.ConstantFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.ContravariantFunctor.html#"><span class="id" title="library">CT.Instance.Functor.ContravariantFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.Endofunctor.html#"><span class="id" title="library">CT.Instance.Functor.Endofunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.FaithfulFunctor.html#"><span class="id" title="library">CT.Instance.Functor.FaithfulFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.FAlgebra.html#"><span class="id" title="library">CT.Instance.Functor.FAlgebra</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.FullFunctor.html#"><span class="id" title="library">CT.Instance.Functor.FullFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.FullyFaithfulFunctor.html#"><span class="id" title="library">CT.Instance.Functor.FullyFaithfulFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#"><span class="id" title="library">CT.Instance.Functor.IdentityFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.OppositeFunctor.html#"><span class="id" title="library">CT.Instance.Functor.OppositeFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#"><span class="id" title="library">CT.Instance.Functor.ProductFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.Profunctor.html#"><span class="id" title="library">CT.Instance.Functor.Profunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Isomorphism.html#"><span class="id" title="library">CT.Instance.Isomorphism</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.NaturalTransformation.Composition.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.Composition</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.NaturalTransformation.HCNaturalTransformation.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.HCNaturalTransformation</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.NaturalTransformation.IdentityNaturalTransformation.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.IdentityNaturalTransformation</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.NaturalTransformation.NaturalIsomorphism.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.NaturalIsomorphism</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.NaturalTransformation.VCNaturalTransformation.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.VCNaturalTransformation</span></a>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
