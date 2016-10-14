@@ -99,6 +99,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Morphism.v\
   CT/Functor.v\
   CT/Instance/Isomorphism.v\
+  CT/Instance/Algebra.v\
   CT/Instance/NaturalTransformation/NaturalIsomorphism.v\
   CT/Instance/NaturalTransformation/Composition.v\
   CT/Instance/NaturalTransformation/HCNaturalTransformation.v\
@@ -130,6 +131,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Category/Cat.v\
   CT/Instance/Category/ArrowCategory.v\
   CT/Instance/Coq.v\
+  CT/Instance/Algebra/PointedSetCategory.v\
   CT/NaturalTransformation.v\
   CT/Category.v\
   CT/Retract.v\
