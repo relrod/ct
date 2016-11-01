@@ -19,6 +19,7 @@ Require Export CT.Instance.Functor.FullFunctor.
 Require Export CT.Instance.Functor.FullyFaithfulFunctor.
 Require Export CT.Instance.Functor.IdentityFunctor.
 Require Export CT.Instance.Functor.OppositeFunctor.
+Require Export CT.Instance.Functor.Presheaf.
 Require Export CT.Instance.Functor.ProductFunctor.
 Require Export CT.Instance.Functor.Profunctor.
 Require Export CT.Instance.Isomorphism.

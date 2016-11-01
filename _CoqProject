@@ -20,6 +20,7 @@
 ./CT/Instance/Functor/FAlgebra.v
 ./CT/Instance/Functor/FullyFaithfulFunctor.v
 ./CT/Instance/Functor/IdentityFunctor.v
+./CT/Instance/Functor/Presheaf.v
 ./CT/Instance/Functor/Endofunctor.v
 ./CT/Instance/Functor/OppositeFunctor.v
 ./CT/Instance/Functor/Profunctor.v

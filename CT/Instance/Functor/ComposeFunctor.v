@@ -1,7 +1,7 @@
 Require Import CT.Category.
 Require Import CT.Functor.
 
-Program Definition ComposeFunctor {A B C : Category} (F : Functor A B) (G : Functor B C): Functor A C :=
+Program Definition ComposeFunctor {A B C : Category} (F : Functor A B) (G : Functor B C) : Functor A C :=
   {| F_ob := fun c => F_ob G (F_ob F c);
      F_mor := fun _ _ f => F_mor G (F_mor F f);
   |}.
