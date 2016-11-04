@@ -6,7 +6,7 @@ Require Import CT.Instance.Coq.Category.
 
 (** * Hom Functors
 
-A hom functor for a category \(C\) is a functor \(C^{op} \times C\) \to Set\).
+A hom functor for a category \(C\) is a functor \(C^{op} \times C \to Set\).
 
 In our case, we use [CoqType] in place of Set.
 
