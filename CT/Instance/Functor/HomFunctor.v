@@ -10,7 +10,7 @@ A hom functor for a category \(C\) is a functor \(C^{op} \times C\) \to Set\).
 
 In our case, we use [CoqType] in place of Set.
 
-The functor must send \((c, c') \in ob(C^{op} \times C) to the set of morphisms
+The functor must send \((c, c') \in ob(C^{op} \times C\) to the set of morphisms
 \(c \to c'\) in \(C\), and send a pair of morphisms
 \((f^{op} : c \to d, g : c' \to d')\) to the function
 \(Hom_C(c, c') \to Hom_C(d, d')\) which sends
