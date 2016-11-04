@@ -122,6 +122,7 @@ VFILES:=CT/Isomorphism.v\
   CT/Instance/Functor/OppositeFunctor.v\
   CT/Instance/Functor/Profunctor.v\
   CT/Instance/Functor/ProductFunctor.v\
+  CT/Instance/Functor/HomFunctor.v\
   CT/Instance/Functor/FaithfulFunctor.v\
   CT/Instance/Functor/FullFunctor.v\
   CT/Instance/Functor/ConstantFunctor.v\

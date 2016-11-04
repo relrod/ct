@@ -7,6 +7,7 @@ Require Export CT.Instance.Functor.FaithfulFunctor.
 Require Export CT.Instance.Functor.FAlgebra.
 Require Export CT.Instance.Functor.FullFunctor.
 Require Export CT.Instance.Functor.FullyFaithfulFunctor.
+Require Export CT.Instance.Functor.HomFunctor.
 Require Export CT.Instance.Functor.IdentityFunctor.
 Require Export CT.Instance.Functor.OppositeFunctor.
 Require Export CT.Instance.Functor.Presheaf.
