@@ -1,7 +1,7 @@
 Require Import CT.Automata.Moore.
 Require Import CT.Category.
 
-(** The category [Aut] of Moore automata.
+(** * The category [Aut] of Moore automata.
  *)
 Program Definition MooreCategory : Category :=
   {| ob := Moore;

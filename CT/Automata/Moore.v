@@ -25,7 +25,7 @@ Section Moore.
         f_Q (q0 a) = q0 b
     }.
 
-  (** * Moore machine morphisms compose. *)
+  (** Moore machine morphisms compose. *)
   Program Definition MooreMorphism_composition
           {A B C : Moore}
           (map1 : MooreMorphism A B)
@@ -58,7 +58,7 @@ Section Moore.
     reflexivity.
   Qed.
 
-  (** * Moore machine identity morphisms hold. *)
+  (** Moore machine identity morphisms hold. *)
   Program Definition MooreMorphism_identity
           {A : Moore} :
     MooreMorphism A A :=
@@ -67,7 +67,7 @@ Section Moore.
        f_Y := fun a => a
     |}.
 
-  (** * Equality of Moore morphisms, assuming proof irrelevance. *)
+  (** Equality of Moore morphisms, assuming proof irrelevance. *)
   Theorem MooreMorphism_eq : forall A B (N M : MooreMorphism A B),
       @f_Q A B N = @f_Q A B M ->
       @f_Sigma A B N = @f_Sigma A B M ->
@@ -82,7 +82,7 @@ Section Moore.
       apply proof_irrelevance.
   Qed.
 
-  (** * Composition of Moore morphism is associative. *)
+  (** Composition of Moore morphism is associative. *)
   Program Definition MooreMorphism_assoc
           {A B C D : Moore}
           (f : MooreMorphism A B)
