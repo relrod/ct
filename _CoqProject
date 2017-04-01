@@ -13,6 +13,7 @@
 ./CT/Functor.v
 ./CT/Algebra.v
 ./CT/Section.v
+./CT/Automata.v
 ./CT/NaturalTransformation.v
 ./CT/Instance/Functor/IdentityFunctor.v
 ./CT/Instance/Functor/Endofunctor.v
@@ -35,9 +36,12 @@
 ./CT/Instance/Isomorphism.v
 ./CT/Instance/Functor.v
 ./CT/Instance/Algebra.v
+./CT/Instance/Automata.v
 ./CT/Instance/NaturalTransformation.v
 ./CT/Instance/Coq.v
 ./CT/Instance/Category.v
+./CT/Instance/Automata/Moore.v
+./CT/Instance/Automata/Moore/Category.v
 ./CT/Instance/NaturalTransformation/NaturalIsomorphism.v
 ./CT/Instance/NaturalTransformation/VCNaturalTransformation.v
 ./CT/Instance/NaturalTransformation/HCNaturalTransformation.v
