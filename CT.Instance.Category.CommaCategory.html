@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Category.CommaCategory</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Category.CommaCategory</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a name="CommaCategory"><span class="id" title="section">CommaCategory</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Variable</span> (<a name="CommaCategory.C"><span class="id" title="variable">C</span></a> <a name="CommaCategory.D"><span class="id" title="variable">D</span></a> <a name="CommaCategory.E"><span class="id" title="variable">E</span></a> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Variable</span> (<a name="CommaCategory.f"><span class="id" title="variable">f</span></a> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.E"><span class="id" title="variable">E</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Variable</span> (<a name="CommaCategory.g"><span class="id" title="variable">g</span></a> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.D"><span class="id" title="variable">D</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.E"><span class="id" title="variable">E</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Record</span> <a name="CommaCategoryOb"><span class="id" title="record">CommaCategoryOb</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ <a name="comma_a"><span class="id" title="projection">comma_a</span></a> : <a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.C"><span class="id" title="variable">C</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="comma_b"><span class="id" title="projection">comma_b</span></a> : <a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.D"><span class="id" title="variable">D</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="comma_a_b"><span class="id" title="projection">comma_a_b</span></a> : @<a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.E"><span class="id" title="variable">E</span></a> (<a class="idref" href="CT.Functor.html#F_ob"><span class="id" title="projection">F_ob</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_a"><span class="id" title="method">comma_a</span></a>) (<a class="idref" href="CT.Functor.html#F_ob"><span class="id" title="projection">F_ob</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_b"><span class="id" title="method">comma_b</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Record</span> <a name="CommaCategoryMor"><span class="id" title="record">CommaCategoryMor</span></a> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategoryOb"><span class="id" title="record">CommaCategoryOb</span></a>):=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ <a name="comma_beta"><span class="id" title="projection">comma_beta</span></a> : @<a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.C"><span class="id" title="variable">C</span></a> (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_a"><span class="id" title="projection">comma_a</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_a"><span class="id" title="projection">comma_a</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#b"><span class="id" title="variable">b</span></a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="comma_gamma"><span class="id" title="projection">comma_gamma</span></a> : @<a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.D"><span class="id" title="variable">D</span></a> (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_b"><span class="id" title="projection">comma_b</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_b"><span class="id" title="projection">comma_b</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#b"><span class="id" title="variable">b</span></a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="comma_mor_law"><span class="id" title="projection">comma_mor_law</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.6/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">(</span></a><a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> (<a class="idref" href="CT.Functor.html#F_mor"><span class="id" title="projection">F_mor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_beta"><span class="id" title="method">comma_beta</span></a>) (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_a_b"><span class="id" title="projection">comma_a_b</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#b"><span class="id" title="variable">b</span></a>)<a class="idref" href="http://coq.inria.fr/distrib/8.6/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.6/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.6/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">(</span></a><a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> (<a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_a_b"><span class="id" title="projection">comma_a_b</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Functor.html#F_mor"><span class="id" title="projection">F_mor</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory.g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.Instance.Category.CommaCategory.html#comma_gamma"><span class="id" title="method">comma_gamma</span></a>)<a class="idref" href="http://coq.inria.fr/distrib/8.6/stdlib/Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">)</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="CT.Instance.Category.CommaCategory.html#CommaCategory"><span class="id" title="section">CommaCategory</span></a>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
