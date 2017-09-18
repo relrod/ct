@@ -7,6 +7,8 @@ In the future, we might encode a topological approach and prove them equivalent.
 A lattice is a structure with meet, join, top, bottom, such that:
   - meet and join are idempotent, commutative, associative
   - join a (meet a b) = a, and, meet a (join a b) = a
+
+(See https://ncatlab.org/nlab/show/lattice)
 *)
 
 (* TODO: We should formalize and abstract meet and join *)
