@@ -55,6 +55,7 @@ however.
 * The [Homotopy Type Theory](https://github.com/HoTT/HoTT) source
 * [Basic Category Theory](http://www.cambridge.org/us/academic/subjects/mathematics/logic-categories-and-sets/basic-category-theory)
 * [copumpkin/categories](https://github.com/copumpkin/categories/) - an Agda encoding of category theory
+* http://www.cs.ox.ac.uk/ralf.hinze/publications/TFP09.pdf (and https://github.com/jwiegley/coq-lattice/)
 
 ## License
 
