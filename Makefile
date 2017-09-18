@@ -109,9 +109,11 @@ VFILES:=CT/Algebra/Semigroup.v\
   CT/Algebra/Monoid.v\
   CT/Algebra/Rng.v\
   CT/Algebra/PointedSet.v\
+  CT/Algebra/Lattice.v\
   CT/Retract.v\
   CT/Morphism.v\
   CT/Automata.v\
+  CT/Order/PartiallyOrderedSet.v\
   CT/Category.v\
   CT/Section.v\
   CT/NaturalTransformation.v\
