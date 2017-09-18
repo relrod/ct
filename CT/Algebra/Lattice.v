@@ -84,4 +84,49 @@ Section Lattice.
     reflexivity.
     assumption.
   Qed.
+
+  Theorem join_lub :
+    forall (a b : A),
+    forall x,
+      le A o a x /\ le A o b x <-> le A o (join A l a b) x.
+  Proof.
+    split. intros.
+    intuition.
+    apply (join_consistency o l) in H0.
+    apply (join_consistency o l) in H1.
+    apply (join_consistency o l).
+    assumption.
+    rewrite <- join_assoc.
+    rewrite <- H1.
+    apply H0.
+    assumption.
+    assumption.
+    intros. split.
+    apply (join_consistency o l) in H.
+    apply (join_consistency o l).
+    assumption.
+    rewrite H.
+    rewrite <- (join_assoc A l a).
+    rewrite (join_assoc A l a).
+    rewrite (join_assoc A l a).
+    rewrite (join_assoc A l a).
+    rewrite join_idem.
+    reflexivity.
+    assumption.
+    apply (join_consistency o l) in H.
+    apply (join_consistency o l).
+    assumption.
+    rewrite H.
+    rewrite <- (join_assoc A l a).
+    rewrite (join_assoc A l a).
+    rewrite (join_comm A l (join A l a b) x).
+    rewrite join_assoc.
+    rewrite join_comm.
+    rewrite join_assoc.
+    rewrite join_assoc.
+    rewrite join_assoc.
+    rewrite join_idem.
+    reflexivity.
+    assumption.
+  Qed.
 End Lattice.
