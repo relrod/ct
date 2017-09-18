@@ -13,7 +13,7 @@ A lattice is a structure with meet, join, top, bottom, such that:
 
 (* TODO: We should formalize and abstract meet and join *)
 
-Record Lattice (element : Type) :=
+Record Lattice {element : Type} :=
   { meet : element -> element -> element;
     join : element -> element -> element;
 
@@ -29,21 +29,21 @@ Record Lattice (element : Type) :=
     absorption_2 : forall a b, meet a (join a b) = a
   }.
 
-Record LOSet {A : Type} (o : PartiallyOrderedSet A) (l : Lattice A) :=
-  { meet_consistency : forall a b, le A o a b <-> a = meet A l a b;
-    join_consistency : forall a b, le A o a b <-> b = join A l a b
+Record LOSet {A : Type} (o : PartiallyOrderedSet A) (l : @Lattice A) :=
+  { meet_consistency : forall a b, le A o a b <-> a = meet l a b;
+    join_consistency : forall a b, le A o a b <-> b = join l a b
   }.
 
 Section Lattice.
   Context (A : Type).
-  Context {l : Lattice A}.
+  Context {l : @Lattice A}.
   Context {o : PartiallyOrderedSet A}.
   Context {ll : LOSet o l}.
 
   Theorem meet_glb :
     forall (a b : A),
     forall x,
-      le A o x a /\ le A o x b <-> le A o x (meet A l a b).
+      le A o x a /\ le A o x b <-> le A o x (meet l a b).
   Proof.
     split. intros.
     intuition.
@@ -59,13 +59,13 @@ Section Lattice.
     apply (meet_consistency o l).
     assumption.
     rewrite H.
-    rewrite (meet_comm A l x (meet A l a b)).
-    rewrite <- (meet_assoc A l a).
-    rewrite <- (meet_assoc A l a).
-    rewrite (meet_comm A l (meet A l b x) a).
-    rewrite (meet_assoc A l a).
-    rewrite (meet_assoc A l a).
-    rewrite (meet_assoc A l a).
+    rewrite (meet_comm l x (meet l a b)).
+    rewrite <- (meet_assoc l a).
+    rewrite <- (meet_assoc l a).
+    rewrite (meet_comm l (meet l b x) a).
+    rewrite (meet_assoc l a).
+    rewrite (meet_assoc l a).
+    rewrite (meet_assoc l a).
     rewrite meet_idem.
     reflexivity.
     assumption.
@@ -73,14 +73,14 @@ Section Lattice.
     apply (meet_consistency o l).
     assumption.
     rewrite H.
-    rewrite (meet_comm A l x (meet A l a b)).
+    rewrite (meet_comm l x (meet l a b)).
     rewrite <- meet_assoc.
     rewrite <- meet_assoc.
     rewrite <- meet_assoc.
-    rewrite (meet_comm A l b (meet A l x b)).
+    rewrite (meet_comm l b (meet l x b)).
     rewrite <- meet_assoc.
     rewrite meet_idem.
-    rewrite (meet_comm A l x b).
+    rewrite (meet_comm l x b).
     reflexivity.
     assumption.
   Qed.
@@ -88,7 +88,7 @@ Section Lattice.
   Theorem join_lub :
     forall (a b : A),
     forall x,
-      le A o a x /\ le A o b x <-> le A o (join A l a b) x.
+      le A o a x /\ le A o b x <-> le A o (join l a b) x.
   Proof.
     split. intros.
     intuition.
@@ -106,10 +106,10 @@ Section Lattice.
     apply (join_consistency o l).
     assumption.
     rewrite H.
-    rewrite <- (join_assoc A l a).
-    rewrite (join_assoc A l a).
-    rewrite (join_assoc A l a).
-    rewrite (join_assoc A l a).
+    rewrite <- (join_assoc l a).
+    rewrite (join_assoc l a).
+    rewrite (join_assoc l a).
+    rewrite (join_assoc l a).
     rewrite join_idem.
     reflexivity.
     assumption.
@@ -117,9 +117,9 @@ Section Lattice.
     apply (join_consistency o l).
     assumption.
     rewrite H.
-    rewrite <- (join_assoc A l a).
-    rewrite (join_assoc A l a).
-    rewrite (join_comm A l (join A l a b) x).
+    rewrite <- (join_assoc l a).
+    rewrite (join_assoc l a).
+    rewrite (join_comm l (join l a b) x).
     rewrite join_assoc.
     rewrite join_comm.
     rewrite join_assoc.
@@ -147,8 +147,8 @@ A homomorphism with these laws is necessarily monotone, though we don't prove
 that here right now.
 *)
 
-Record LatticeHomomorphism {t1 t2 : Type} (l1 : Lattice t1) (l2 : Lattice t2) :=
+Record LatticeHomomorphism {t1 t2 : Type} (l1 : @Lattice t1) (l2 : @Lattice t2) :=
   { f :  t1 -> t2;
-    lat_hom_pres_meet : forall a b, f (meet t1 l1 a b) = meet t2 l2 (f a) (f b);
-    lat_hom_pres_join : forall a b, f (join t1 l1 a b) = join t2 l2 (f a) (f b)
+    lat_hom_pres_meet : forall a b, f (meet l1 a b) = meet l2 (f a) (f b);
+    lat_hom_pres_join : forall a b, f (join l1 a b) = join l2 (f a) (f b)
   }.
