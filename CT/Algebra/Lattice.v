@@ -138,10 +138,10 @@ function from the carrier set of $A$ to the carrier set of $B$ that preserves
 meet, join, and where required, top and bottom.
 
 We have:
-  - \(f(x /\ y) = f(x) /\ f(y)\)
+  - \((x\) meet \(y) = f(x)\) meet \(f(y)\)
   - \(f(\top) = \top\)
   - \(f(\bot) = \bot\)
-  - \((x \/ y) = f(x) \/ f(y)\)
+  - \((x\) join \(y) = f(x)\) join \(f(y)\)
 
 A homomorphism with these laws is necessarily monotone, though we don't prove
 that here right now.
