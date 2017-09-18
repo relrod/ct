@@ -130,3 +130,25 @@ Section Lattice.
     assumption.
   Qed.
 End Lattice.
+
+(** * Lattice homomorphisms
+
+A lattice homomorphism $f : A -> B$ where $A$ and $B$ are lattices, is a
+function from the carrier set of $A$ to the carrier set of $B$ that preserves
+meet, join, and where required, top and bottom.
+
+We have:
+  - $f(x /\ y) = f(x) /\ f(y)$
+  - $f(\top) = \top$
+  - $f(\bot) = \bot$
+  - $f(x \/ y) = f(x) \/ f(y)$
+
+A homomorphism with these laws is necessarily monotone, though we don't prove
+that here right now.
+*)
+
+Record LatticeHomomorphism {t1 t2 : Type} (l1 : Lattice t1) (l2 : Lattice t2) :=
+  { f :  t1 -> t2;
+    lat_hom_pres_meet : forall a b, f (meet t1 l1 a b) = meet t2 l2 (f a) (f b);
+    lat_hom_pres_join : forall a b, f (join t1 l1 a b) = join t2 l2 (f a) (f b)
+  }.
