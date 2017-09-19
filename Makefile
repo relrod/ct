@@ -119,8 +119,10 @@ VFILES:=CT/Algebra/Semigroup.v\
   CT/NaturalTransformation.v\
   CT/Isomorphism.v\
   CT/Algebra.v\
+  CT/Order.v\
   CT/Instance/Coq/Category.v\
   CT/Instance/Coq/Functor.v\
+  CT/Instance/Algebra/Lat.v\
   CT/Instance/Algebra/PointedSetCategory.v\
   CT/Instance/Automata.v\
   CT/Instance/Functor/Bifunctor.v\
