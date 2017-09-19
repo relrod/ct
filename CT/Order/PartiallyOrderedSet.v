@@ -1,4 +1,4 @@
-Record PartiallyOrderedSet (element : Type) :=
+Record PartiallyOrderedSet {element : Type} :=
   { le : element -> element -> Prop;
     reflexive : forall a, le a a;
     transitive : forall a b c, le a b /\ le b c -> le a c;
