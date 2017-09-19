@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Algebra.Lat</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Algebra.Lat</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Lattice.html#"><span class="id" title="library">CT.Algebra.Lattice</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Order.PartiallyOrderedSet.html#"><span class="id" title="library">CT.Order.PartiallyOrderedSet</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.6.1/stdlib/Coq.Program.Tactics.html#"><span class="id" title="library">Coq.Program.Tactics</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab3"></a><h1 class="section">Lat: The category of lattices.</h1>
+
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="Lat"><span class="id" title="definition">Lat</span></a> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">Lattice</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">LatticeHomomorphism</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">comp</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">lattice_hom_composition</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">id</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">lattice_hom_id</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">assoc</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <span class="id" title="keyword">fun</span> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">lattice_hom_composition_assoc</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Lattice.html#lattice_hom_composition_assoc"><span class="id" title="definition">lattice_hom_composition_assoc</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Lattice.html#lattice_hom_eq"><span class="id" title="lemma">lattice_hom_eq</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Lattice.html#lattice_hom_eq"><span class="id" title="lemma">lattice_hom_eq</span></a>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
