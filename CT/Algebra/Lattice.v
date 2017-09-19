@@ -106,8 +106,40 @@ Section Lattice.
     forall a b x,
       le o a x /\ le o b x <-> le o (join lat a b) x.
   Proof.
-    (* TODO: Redo this proof. *)
-    Admitted.
+    split. intros.
+    intuition.
+    apply (join_consistency loset) in H0.
+    apply (join_consistency loset) in H1.
+    apply (join_consistency loset).
+    rewrite H0.
+    rewrite join_assoc.
+    rewrite <- (join_assoc lat a).
+    rewrite (join_comm lat b a).
+    rewrite (join_assoc lat a).
+    rewrite join_idem.
+    rewrite H1.
+    rewrite <- (join_assoc lat a).
+    rewrite (join_assoc lat b).
+    rewrite join_idem.
+    reflexivity.
+    intros. split.
+    apply (join_consistency loset) in H.
+    apply (join_consistency loset).
+    rewrite H.
+    rewrite join_assoc.
+    rewrite join_assoc.
+    rewrite join_idem.
+    reflexivity.
+    apply (join_consistency loset) in H.
+    apply (join_consistency loset).
+    rewrite H.
+    rewrite <- (join_assoc lat a).
+    rewrite (join_comm lat a (join lat b x)).
+    rewrite join_assoc.
+    rewrite join_assoc.
+    rewrite join_idem.
+    reflexivity.
+  Qed.
 End Lattice.
 
 (** * Lattice homomorphisms
