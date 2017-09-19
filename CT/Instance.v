@@ -1,3 +1,4 @@
+Require Export CT.Instance.Algebra.Lat.
 Require Export CT.Instance.Algebra.PointedSetCategory.
 Require Export CT.Instance.Automata.Moore.Category.
 Require Export CT.Instance.Category.ArrowCategory.

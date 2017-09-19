@@ -138,9 +138,6 @@ Program Definition lattice_hom_composition
         {A : Lattice}
         {B : Lattice}
         {C : Lattice}
-        {T : element A}
-        {U : element B}
-        {V : element C}
         (map1 : LatticeHomomorphism A B)
         (map2 : LatticeHomomorphism B C) :
   LatticeHomomorphism A C :=
@@ -176,19 +173,12 @@ Proof.
 Qed.
 
 (** * Identity lattice homomorphism. *)
-Program Definition lattice_hom_id
-        {A : Lattice}
-        {T : element A}:
-  LatticeHomomorphism A A :=
+Program Definition lattice_hom_id {A : Lattice} : LatticeHomomorphism A A :=
   {| f := fun a => a |}.
 
 (** * Association of composition of lattice homomorphisms. *)
 Program Definition lattice_hom_composition_assoc
         {A B C D : Lattice}
-        {T : element A}
-        {U : element B}
-        {V : element C}
-        {W : element D}
         (f : LatticeHomomorphism A B)
         (g : LatticeHomomorphism B C)
         (h : LatticeHomomorphism C D) :
