@@ -100,8 +100,7 @@ Section Lattice.
     rewrite meet_idem.
     rewrite (meet_comm lat x b).
     reflexivity.
-Qed.
-
+  Qed.
 
   Theorem join_lub :
     forall a b x,
@@ -113,8 +112,8 @@ End Lattice.
 
 (** * Lattice homomorphisms
 
-A lattice homomorphism $f : A -> B$ where $A$ and $B$ are lattices, is a
-function from the carrier set of $A$ to the carrier set of $B$ that preserves
+A lattice homomorphism \(f : A -> B\) where \(A, B\) are lattices, is a
+function from the carrier set of \(A\) to the carrier set of $B$ that preserves
 meet, join, and where required, top and bottom.
 
 We have:
