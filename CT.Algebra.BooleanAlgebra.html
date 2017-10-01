@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Algebra.BooleanAlgebra</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Algebra.BooleanAlgebra</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.Lattice.html#"><span class="id" title="library">CT.Algebra.Lattice</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Order.PartiallyOrderedSet.html#"><span class="id" title="library">CT.Order.PartiallyOrderedSet</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.6.1/stdlib/Coq.Program.Basics.html#"><span class="id" title="library">Coq.Program.Basics</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <a class="idref" href="http://coq.inria.fr/distrib/8.6.1/stdlib/Coq.Setoids.Setoid.html#"><span class="id" title="library">Setoid</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab22"></a><h1 class="section">Boolean Algebras</h1>
+
+
+<div class="paragraph"> </div>
+
+There are many equivalent definitions of a boolean algebra, but the one we take
+builds on our definition of a <span class="inlinecode"><a class="idref" href="CT.Algebra.Lattice.html#Lattice"><span class="id" title="section">Lattice</span></a></span>. In this definition, a <span class="inlinecode"><a class="idref" href="CT.Algebra.BooleanAlgebra.html#BooleanAlgebra"><span class="id" title="record">BooleanAlgebra</span></a></span>
+is a <span class="inlinecode"><a class="idref" href="CT.Algebra.Lattice.html#Lattice"><span class="id" title="section">Lattice</span></a></span> with an additional function <span class="inlinecode"><a class="idref" href="CT.Algebra.BooleanAlgebra.html#notB"><span class="id" title="projection">notB</span></a></span> which is an endomorphism over
+the carrier set that satisfies:
+
+<div class="paragraph"> </div>
+
+<ul class="doclist">
+<li> le (meet a b) c  iff  le a (join (notB b) c)
+
+</li>
+</ul>
+
+<div class="paragraph"> </div>
+
+We use <span class="inlinecode"><a class="idref" href="CT.Algebra.BooleanAlgebra.html#notB"><span class="id" title="projection">notB</span></a></span> instead of <span class="inlinecode"><span class="id" title="var">not</span></span> so as not to conflict with
+<span class="inlinecode"><span class="id" title="var">not</span></span> <span class="inlinecode">:</span> <span class="inlinecode"><span class="id" title="keyword">Prop</span></span> <span class="inlinecode">→</span> <span class="inlinecode"><span class="id" title="keyword">Prop</span></span>.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Record</span> <a name="BooleanAlgebra"><span class="id" title="record">BooleanAlgebra</span></a> :=<br/>
+&nbsp;&nbsp;{ <a name="L"><span class="id" title="projection">L</span></a> : <a class="idref" href="CT.Algebra.Lattice.html#Lattice"><span class="id" title="record">Lattice</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="notB"><span class="id" title="projection">notB</span></a> : <a class="idref" href="CT.Algebra.Lattice.html#element"><span class="id" title="projection">element</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.6.1/stdlib/Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <a class="idref" href="CT.Algebra.Lattice.html#element"><span class="id" title="projection">element</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="condB"><span class="id" title="projection">condB</span></a> : <span class="id" title="keyword">∀</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <a class="idref" href="CT.Algebra.Lattice.html#element"><span class="id" title="projection">element</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Order.PartiallyOrderedSet.html#le"><span class="id" title="projection">le</span></a> (<a class="idref" href="CT.Algebra.Lattice.html#poset"><span class="id" title="projection">poset</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a>) (<a class="idref" href="CT.Algebra.Lattice.html#meet"><span class="id" title="projection">meet</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#b"><span class="id" title="variable">b</span></a>) <a class="idref" href="CT.Algebra.BooleanAlgebra.html#c"><span class="id" title="variable">c</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.6.1/stdlib/Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">↔</span></a> <a class="idref" href="CT.Order.PartiallyOrderedSet.html#le"><span class="id" title="projection">le</span></a> (<a class="idref" href="CT.Algebra.Lattice.html#poset"><span class="id" title="projection">poset</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a>) <a class="idref" href="CT.Algebra.BooleanAlgebra.html#a"><span class="id" title="variable">a</span></a> (<a class="idref" href="CT.Algebra.Lattice.html#join"><span class="id" title="projection">join</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#L"><span class="id" title="method">L</span></a> (<a class="idref" href="CT.Algebra.BooleanAlgebra.html#notB"><span class="id" title="method">notB</span></a> <a class="idref" href="CT.Algebra.BooleanAlgebra.html#b"><span class="id" title="variable">b</span></a>) <a class="idref" href="CT.Algebra.BooleanAlgebra.html#c"><span class="id" title="variable">c</span></a>)<br/>
+&nbsp;&nbsp;}.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
