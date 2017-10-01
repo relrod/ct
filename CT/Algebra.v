@@ -1,4 +1,5 @@
 Require Export CT.Algebra.AbelianGroup.
+Require Export CT.Algebra.BooleanAlgebra.
 Require Export CT.Algebra.Group.
 Require Export CT.Algebra.Lattice.
 Require Export CT.Algebra.Magma.

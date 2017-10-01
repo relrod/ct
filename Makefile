@@ -107,6 +107,7 @@ VFILES:=CT/Algebra/Semigroup.v\
   CT/Algebra/Group.v\
   CT/Algebra/Ring.v\
   CT/Algebra/Monoid.v\
+  CT/Algebra/BooleanAlgebra.v\
   CT/Algebra/Rng.v\
   CT/Algebra/PointedSet.v\
   CT/Algebra/Lattice.v\
