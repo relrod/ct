@@ -115,6 +115,7 @@ VFILES:=CT/Algebra/Semigroup.v\
   CT/Morphism.v\
   CT/Automata.v\
   CT/Order/PartiallyOrderedSet.v\
+  CT/Language/Dyck.v\
   CT/Category.v\
   CT/Section.v\
   CT/NaturalTransformation.v\
