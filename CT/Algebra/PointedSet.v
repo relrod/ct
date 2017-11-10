@@ -54,9 +54,10 @@ Proof.
   subst.
   f_equal.
   intros.
-  (*apply proof_irrelevance.*)
-  admit.
-(*Qed.*) Admitted.
+  rewrite H4.
+  reflexivity.
+  apply proof_irrelevance.
+Qed.
 
 (** * Composition of point-preserving maps. *)
 Program Definition ppm_composition
