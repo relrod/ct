@@ -53,8 +53,10 @@ Proof.
   simpl in *.
   subst.
   f_equal.
-  apply proof_irrelevance.
-Qed.
+  intros.
+  (*apply proof_irrelevance.*)
+  admit.
+(*Qed.*) Admitted.
 
 (** * Composition of point-preserving maps. *)
 Program Definition ppm_composition
