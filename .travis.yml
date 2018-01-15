@@ -24,3 +24,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_46ed5dbda677_key -iv $encrypted_46ed5dbda677_iv
   -in ct_ghpages_id_rsa.enc -out $HOME/.ssh/id_rsa -d
 - chmod 600 $HOME/.ssh/id_rsa
+
+notifications:
+  webhooks: "https://ingest.devmode.cloud/hooks/travisci?channel=#dagd"
