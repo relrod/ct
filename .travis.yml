@@ -26,4 +26,4 @@ before_install:
 - chmod 600 $HOME/.ssh/id_rsa
 
 notifications:
-  webhooks: "https://ingest.devmode.cloud/hooks/travisci?channel=#dagd"
+  webhooks: "https://sl.da.gd/travisci?channel=#dagd"
