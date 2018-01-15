@@ -2,7 +2,9 @@ Require Import CT.Automata.Moore.
 Require Import CT.Category.
 
 (** * The category [Aut] of Moore automata.
- *)
+
+Motivation: https://ncatlab.org/nlab/show/automaton
+*)
 Program Definition MooreCategory : Category :=
   {| ob := Moore;
      mor := MooreMorphism;

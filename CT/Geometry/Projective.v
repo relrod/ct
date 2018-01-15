@@ -1,4 +1,4 @@
-(** Synthetic Projective Geometry
+(** * Synthetic Projective Geometry
 
 Following the work outlined here:
   http://www.maths.ed.ac.uk/~aar/papers/beutel.pdf
@@ -6,7 +6,7 @@ Following the work outlined here:
 
 Require Import Coq.Relations.Relations.
 
-(** Geometry
+(** ** Geometry
 
 A geometry is a set together with a so-called "incidence" relation that is
 symmetric and reflexive. That is, a set together with a tolerance relation
