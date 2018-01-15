@@ -16,8 +16,9 @@ Specifically in our case, it's a set (rather, a type), with a [Relation]
 and proofs that the [Relation] is a tolerance relation.
 *)
 
-Record Geometry (t : Type) :=
-  { geom_incidence : relation t;
-    geom_symm : symmetric t geom_incidence;
-    geom_refl : reflexive t geom_incidence
+Record Geometry :=
+  { geom_point : Type;
+    geom_incidence : relation geom_point;
+    geom_symm : symmetric geom_point geom_incidence;
+    geom_refl : reflexive geom_point geom_incidence
   }.
