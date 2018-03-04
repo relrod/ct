@@ -69,7 +69,43 @@ Proof.
   trivial.
 Qed.
 
-(* TODO: inverse over product, l/r cancellation,
+(** Inverses over products.
+
+This gives an ugly proof of \((ab^{-1}) = b^{-1}a^{-1}\).
+*)
+Theorem group_inverse_of_product {T} (G : @Group T) :
+  forall a b,
+    inverse G (mu G a b) = mu G (inverse G b) (inverse G a).
+Proof.
+  intros.
+  assert (mu G (mu G a b) (inverse G (mu G a b)) = one G).
+  apply gr_inverse_right.
+  assert (mu G (mu G a b) (mu G (inverse G b) (inverse G a)) = one G).
+  assert (mu G (mu G a b) (mu G (inverse G b) (inverse G a)) =
+          mu G (mu G a (mu G b (inverse G b))) (inverse G a)).
+  rewrite semigroup_assoc.
+  rewrite semigroup_assoc.
+  trivial.
+  rewrite H0.
+  rewrite gr_inverse_right.
+  rewrite monoid_right_one.
+  apply gr_inverse_right.
+  rewrite <- (group_inverse_unique G (mu G a b) (mu G (inverse G b) (inverse G a))).
+  rewrite group_inverse_inverse.
+  trivial.
+  rewrite semigroup_assoc.
+  assert (mu G (mu G (mu G (inverse G b) (inverse G a)) a) b =
+          mu G (mu G (inverse G b) (mu G (inverse G a) a)) b).
+  rewrite semigroup_assoc.
+  trivial.
+  rewrite H1.
+  rewrite gr_inverse_left.
+  rewrite monoid_right_one.
+  apply gr_inverse_left.
+  assumption.
+Qed.
+
+(* TODO: l/r cancellation,
    magma/semigroup/monoid/group homomorphisms + laws *)
 
 (* Possibly separate this out at some point. *)
