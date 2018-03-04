@@ -71,7 +71,7 @@ Qed.
 
 (** Inverses over products.
 
-This gives an ugly proof of \((ab^{-1}) = b^{-1}a^{-1}\).
+This gives an ugly proof of \((ab)^{-1} = b^{-1}a^{-1}\).
 *)
 Theorem group_inverse_of_product {T} (G : @Group T) :
   forall a b,
