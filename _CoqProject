@@ -22,6 +22,7 @@
 ./CT/Isomorphism.v
 ./CT/Algebra.v
 ./CT/Order.v
+./CT/Geometry.v
 ./CT/Instance/Coq/Category.v
 ./CT/Instance/Coq/Functor.v
 ./CT/Instance/Algebra/Lat.v

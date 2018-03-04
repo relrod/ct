@@ -24,17 +24,10 @@ Lemma group_unique_unop :
   reflexivity.
 Qed.
 
-(** This is given by [monoid_identity_unique] since a group is a monoid, but we
-    prove it again in a different way, anyway. *)
-Theorem group_identity_unique :
-  forall {T} (G : @Group T) e x,
-    mu G e x = x -> e = one G.
+Theorem group_identity_unique {T} (G : @Group T) e :
+  (forall x, mu G x e = x) -> e = one G.
 Proof.
-  intros.
-  rewrite (group_unique_unop G e x x).
-  rewrite gr_inverse_right.
-  reflexivity.
-  assumption.
+  apply (monoid_identity_unique e).
 Qed.
 
 Theorem group_inverse_inverse :
