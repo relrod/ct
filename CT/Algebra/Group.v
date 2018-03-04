@@ -45,7 +45,31 @@ Proof.
   reflexivity.
 Qed.
 
-(* TODO: inverse unique, inverse over product, l/r cancellation,
+(**
+Uniqueness of inverses. This proof is basically a replica of Dummit and Foote.
+*)
+Theorem group_inverse_unique {T} (G : @Group T) c :
+  forall a,
+    mu G a c = one G ->
+    mu G c a = one G ->
+    inverse G a = c.
+Proof.
+  intros.
+  assert (c = mu G c (one G)).
+  rewrite monoid_right_one.
+  trivial.
+  assert (one G = mu G a (inverse G a)).
+  rewrite gr_inverse_right.
+  trivial.
+  rewrite H2 in H1.
+  rewrite semigroup_assoc in H1.
+  rewrite H0 in H1.
+  rewrite H1.
+  rewrite monoid_left_one.
+  trivial.
+Qed.
+
+(* TODO: inverse over product, l/r cancellation,
    magma/semigroup/monoid/group homomorphisms + laws *)
 
 (* Possibly separate this out at some point. *)
