@@ -18,3 +18,27 @@ Record Ring {T : Type} :=
       forall a b c,
         mu monoid (mu group b c) a = mu group (mu monoid b a) (mu monoid c a)
   }.
+
+(* Possibly separate this out at some point. *)
+
+(** * Ring homomorphisms.
+
+Ring homomorphisms preserve identities and are homomorphisms for both the
+group and monoid structures within the ring.
+
+It would be nice to piggyback off of [MagmaHomomorphism] some day, but this
+seems difficult(?).
+*)
+Record RingHomomorphism {A B} (M : @Ring A) (N : @Ring B) :=
+  { ring_hom : A -> B;
+    ring_monoid_hom_law :
+      forall (a b : A),
+        ring_hom (mu (monoid M) a b) =
+        mu (monoid N) (ring_hom a) (ring_hom b);
+    ring_group_hom_law :
+      forall (a b : A),
+        ring_hom (mu (group M) a b) =
+        mu (group N) (ring_hom a) (ring_hom b);
+    ring_id_hom_law :
+      ring_hom (one (monoid M)) = one (monoid N)
+  }.
