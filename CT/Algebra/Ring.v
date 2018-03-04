@@ -23,8 +23,8 @@ Record Ring {T : Type} :=
 
 (** * Ring homomorphisms.
 
-Ring homomorphisms preserve identities and are homomorphisms for both the
-group and monoid structures within the ring.
+Ring homomorphisms preserve multiplicative identities and are homomorphisms for
+both the group and monoid structures within the ring.
 
 It would be nice to piggyback off of [MagmaHomomorphism] some day, but this
 seems difficult(?).

@@ -20,3 +20,25 @@ Record Rng {T : Type} :=
         mu semigroup (mu group b c) a =
         mu group (mu semigroup b a) (mu semigroup c a)
   }.
+
+(* Possibly separate this out at some point. *)
+
+(** * Rng homomorphisms.
+
+Rng homomorphisms are homomorphisms for both the group and monoid structures
+within the ring.
+
+It would be nice to piggyback off of [MagmaHomomorphism] some day, but this
+seems difficult(?).
+*)
+Record RngHomomorphism {A B} (M : @Rng A) (N : @Rng B) :=
+  { rng_hom : A -> B;
+    rng_monoid_hom_law :
+      forall (a b : A),
+        rng_hom (mu (monoid M) a b) =
+        mu (monoid N) (rng_hom a) (rng_hom b);
+    rng_group_hom_law :
+      forall (a b : A),
+        rng_hom (mu (group M) a b) =
+        mu (group N) (rng_hom a) (rng_hom b)
+  }.
