@@ -7,6 +7,12 @@ Record Magma {T : Type} :=
   { mu : T -> T -> T
   }.
 
+Fixpoint mu_power {T : Type} (M : @Magma T) (t : T) (n : nat) :=
+  match n with
+  | 0 => t
+  | S n => mu_power M (mu M t t) n
+  end.
+
 (* Possibly separate this out at some point. *)
 
 (** * Magma homomorphisms.
