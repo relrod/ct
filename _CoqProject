@@ -25,8 +25,13 @@
 ./CT/Geometry.v
 ./CT/Instance/Coq/Category.v
 ./CT/Instance/Coq/Functor.v
+./CT/Instance/Algebra/Ab.v
+./CT/Instance/Algebra/Grp.v
+./CT/Instance/Algebra/Ring.v
 ./CT/Instance/Algebra/Lat.v
 ./CT/Instance/Algebra/PointedSetCategory.v
+./CT/Instance/Algebra/Monoid.v
+./CT/Instance/Algebra/Rng.v
 ./CT/Instance/Automata.v
 ./CT/Instance/Functor/Bifunctor.v
 ./CT/Instance/Functor/IdentityFunctor.v

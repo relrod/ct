@@ -6,4 +6,5 @@
 *.mli
 *.d
 Makefile.bak
+Makefile.conf
 html
