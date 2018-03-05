@@ -27,6 +27,10 @@
 <h1 class="libtitle">Library CT.Algebra.Magma</h1>
 
 <div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Program.Tactics.html#"><span class="id" title="library">Coq.Program.Tactics</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Logic.ProofIrrelevance.html#"><span class="id" title="library">ProofIrrelevance</span></a>.<br/>
+
+<br/>
 <span class="id" title="keyword">Set</span> <span class="id" title="var">Primitive</span> <span class="id" title="var">Projections</span>.<br/>
 
 <br/>
@@ -40,7 +44,7 @@
 </div>
 
 <div class="doc">
-<a name="lab24"></a><h1 class="section">Magma homomorphisms.</h1>
+<a name="lab32"></a><h1 class="section">Magma homomorphisms.</h1>
 
 
 <div class="paragraph"> </div>
@@ -56,6 +60,90 @@ Must obey this law:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="method">magma_hom</span></a> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Magma.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="CT.Algebra.Magma.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Algebra.Magma.html#b"><span class="id" title="variable">b</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Magma.html#N"><span class="id" title="variable">N</span></a> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="method">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="method">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#b"><span class="id" title="variable">b</span></a>)<br/>
 &nbsp;&nbsp;}.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab33"></a><h1 class="section">Composition of maps.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="magma_hom_composition"><span class="id" title="definition">magma_hom_composition</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span> : <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">A</span> : @<a class="idref" href="CT.Algebra.Magma.html#Magma"><span class="id" title="record">Magma</span></a> <a class="idref" href="CT.Algebra.Magma.html#T"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">B</span> : @<a class="idref" href="CT.Algebra.Magma.html#Magma"><span class="id" title="record">Magma</span></a> <a class="idref" href="CT.Algebra.Magma.html#U"><span class="id" title="variable">U</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">C</span> : @<a class="idref" href="CT.Algebra.Magma.html#Magma"><span class="id" title="record">Magma</span></a> <a class="idref" href="CT.Algebra.Magma.html#V"><span class="id" title="variable">V</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">map1</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">map2</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#C"><span class="id" title="variable">C</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#C"><span class="id" title="variable">C</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">C</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">map2</span></a><a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">)</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">((</span></a><a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">map1</span></a><a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">)</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">a</span></a><a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">)</span></a> |}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">A</span>, <span class="id" title="var">B</span>, <span class="id" title="var">C</span>, <span class="id" title="var">map1</span>, <span class="id" title="var">map2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> ×.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">magma_hom_law0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">magma_hom_law1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab34"></a><h1 class="section">Equality of maps, assuming proof irrelevance.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="magma_hom_eq"><span class="id" title="lemma">magma_hom_eq</span></a> : <span class="id" title="keyword">∀</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">F</span> <span class="id" title="var">G</span> (<span class="id" title="var">N</span> <span class="id" title="var">M</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Algebra.Magma.html#G"><span class="id" title="variable">G</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;@<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Algebra.Magma.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Algebra.Magma.html#N"><span class="id" title="variable">N</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> @<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Algebra.Magma.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Algebra.Magma.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#N"><span class="id" title="variable">N</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Magma.html#M"><span class="id" title="variable">M</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">N</span>, <span class="id" title="var">M</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> ×.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">subst</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">f_equal</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Logic.ProofIrrelevance.html#proof_irrelevance"><span class="id" title="axiom">proof_irrelevance</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab35"></a><h1 class="section">Associativity of composition of maps.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="magma_hom_composition_assoc"><span class="id" title="definition">magma_hom_composition_assoc</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">C</span> <span class="id" title="var">D</span> : @<a class="idref" href="CT.Algebra.Magma.html#Magma"><span class="id" title="record">Magma</span></a> <a class="idref" href="CT.Algebra.Magma.html#T"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">g</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Magma.html#C"><span class="id" title="variable">C</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">h</span> : <a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Algebra.Magma.html#D"><span class="id" title="variable">D</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom_composition"><span class="id" title="definition">magma_hom_composition</span></a> <a class="idref" href="CT.Algebra.Magma.html#f"><span class="id" title="variable">f</span></a> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom_composition"><span class="id" title="definition">magma_hom_composition</span></a> <a class="idref" href="CT.Algebra.Magma.html#g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.Algebra.Magma.html#h"><span class="id" title="variable">h</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.7.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom_composition"><span class="id" title="definition">magma_hom_composition</span></a> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom_composition"><span class="id" title="definition">magma_hom_composition</span></a> <a class="idref" href="CT.Algebra.Magma.html#f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.Algebra.Magma.html#g"><span class="id" title="variable">g</span></a>) <a class="idref" href="CT.Algebra.Magma.html#h"><span class="id" title="variable">h</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">f</span>, <span class="id" title="var">g</span>, <span class="id" title="var">h</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Magma.html#magma_hom_eq"><span class="id" title="lemma">magma_hom_eq</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab36"></a><h1 class="section">Identity map.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="magma_hom_id"><span class="id" title="definition">magma_hom_id</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">M</span> : @<a class="idref" href="CT.Algebra.Magma.html#Magma"><span class="id" title="record">Magma</span></a> <a class="idref" href="CT.Algebra.Magma.html#A"><span class="id" title="variable">A</span></a>} :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#MagmaHomomorphism"><span class="id" title="record">MagmaHomomorphism</span></a> <a class="idref" href="CT.Algebra.Magma.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="CT.Algebra.Magma.html#M"><span class="id" title="variable">M</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">magma_hom</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Algebra.Magma.html#Build_MagmaHomomorphism"><span class="id" title="constructor">a</span></a> |}.<br/>
 </div>
 </div>
 
