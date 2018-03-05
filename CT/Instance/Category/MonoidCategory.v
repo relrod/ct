@@ -9,7 +9,7 @@ Require Import CT.Algebra.Semigroup.
 Program Definition MonoidCategory {T} (M : Monoid) : Category :=
   {| ob := unit;
      mor := fun _ _ => T;
-     comp := fun _ _ _ => M.(semigroup).(magma).(mu);
+     comp := fun _ _ _ => mu M;
      id := fun a => one M;
   |}.
 Next Obligation.
