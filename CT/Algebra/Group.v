@@ -105,8 +105,34 @@ Proof.
   assumption.
 Qed.
 
-(* TODO: l/r cancellation,
-   magma/semigroup/monoid/group homomorphisms + laws *)
+(** * Cancellation Laws *)
+Theorem group_cancel_left {T} (G : @Group T) :
+  forall a u v,
+    mu G a u = mu G a v -> u = v.
+Proof.
+  intros.
+  assert (mu G (inverse G a) (mu G a u) = mu G (inverse G a) (mu G a v)).
+  rewrite H.
+  trivial.
+  repeat rewrite semigroup_assoc in H0.
+  rewrite gr_inverse_left in H0.
+  repeat rewrite monoid_left_one in H0.
+  assumption.
+Qed.
+
+Theorem group_cancel_right {T} (G : @Group T) :
+  forall a u v,
+    mu G u a = mu G v a -> u = v.
+Proof.
+  intros.
+  assert (mu G (mu G u a) (inverse G a) = mu G (mu G v a) (inverse G a)).
+  rewrite H.
+  trivial.
+  repeat rewrite <- semigroup_assoc in H0.
+  rewrite gr_inverse_right in H0.
+  repeat rewrite monoid_right_one in H0.
+  assumption.
+Qed.
 
 (* Possibly separate this out at some point. *)
 
