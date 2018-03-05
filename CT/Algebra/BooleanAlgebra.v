@@ -17,7 +17,7 @@ We use [notB] instead of [not] so as not to conflict with
 *)
 
 Record BooleanAlgebra :=
-  { L : Lattice;
+  { L :> Lattice;
     notB : element L -> element L;
     condB : forall a b c : element L,
         le (poset L) (meet L a b) c <-> le (poset L) a (join L (notB b) c)
