@@ -26,32 +26,18 @@ Program Definition semigroup_hom_composition
         {C : @Semigroup V}
         (map1 : SemigroupHomomorphism A B)
         (map2 : SemigroupHomomorphism B C) :
-  SemigroupHomomorphism A C :=
-  {| magma_hom := fun a => (magma_hom B C map2) ((magma_hom A B map1) a) |}.
-Next Obligation.
-Proof.
-  destruct A, B, C, map1, map2.
-  simpl in *.
-  rewrite magma_hom_law.
-  rewrite magma_hom_law0.
-  trivial.
-Qed.
+  SemigroupHomomorphism A C
+  := magma_hom_composition map1 map2.
 
 (** * Equality of maps, assuming proof irrelevance. *)
-Theorem semigroup_hom_eq : forall A B F G (N M : SemigroupHomomorphism F G),
+Program Definition semigroup_hom_eq
+        {A B : Type}
+        {F : @Semigroup A}
+        {G : @Semigroup B}
+        (N M : SemigroupHomomorphism F G) :
     @magma_hom A B F G N = @magma_hom A B F G M ->
-    N = M.
-Proof.
-  intros.
-  destruct N, M.
-  simpl in *.
-  subst.
-  f_equal.
-  intros.
-  rewrite H4.
-  trivial.
-  apply proof_irrelevance.
-Qed.
+    N = M
+  := magma_hom_eq A B F G N M.
 
 (** * Associativity of composition of maps. *)
 Program Definition semigroup_hom_composition_assoc
@@ -61,17 +47,12 @@ Program Definition semigroup_hom_composition_assoc
         (g : SemigroupHomomorphism B C)
         (h : SemigroupHomomorphism C D) :
   semigroup_hom_composition f (semigroup_hom_composition g h) =
-  semigroup_hom_composition (semigroup_hom_composition f g) h.
-Proof.
-  destruct f, g, h.
-  apply semigroup_hom_eq.
-  simpl.
-  reflexivity.
-Qed.
+  semigroup_hom_composition (semigroup_hom_composition f g) h
+  := magma_hom_composition_assoc f g h.
 
 (** * Identity map. *)
 Program Definition semigroup_hom_id
         {A : Type}
         {M : @Semigroup A} :
   SemigroupHomomorphism M M :=
-  {| magma_hom := fun a => a |}.
+  magma_hom_id.
