@@ -1,6 +1,8 @@
+Require Import Coq.Program.Tactics.
 Require Import CT.Algebra.Magma.
 Require Import CT.Algebra.Semigroup.
 Require Import FunctionalExtensionality.
+Require Import ProofIrrelevance.
 
 Set Primitive Projections.
 
@@ -24,12 +26,86 @@ Proof.
   trivial.
 Qed.
 
-
 (* Possibly separate this out at some point. *)
 
 (** * Monoid homomorphisms.
 
 Magma homomorphisms that also preserve identity.
 *)
-Definition MonoidHomomorphism {A B} (M : @Monoid A) (N : @Monoid B) :=
-  { f : @MagmaHomomorphism A B M N | magma_hom M N f (one M) = one N }.
+Record MonoidHomomorphism {A B} (M : @Monoid A) (N : @Monoid B) :=
+  { monoid_hom :> @MagmaHomomorphism A B M N;
+    monoid_hom_id_law : magma_hom M N monoid_hom (one M) = one N
+  }.
+
+(** * Composition of maps. *)
+Program Definition monoid_hom_composition
+        {T U V : Type}
+        {A : @Monoid T}
+        {B : @Monoid U}
+        {C : @Monoid V}
+        (map1 : MonoidHomomorphism A B)
+        (map2 : MonoidHomomorphism B C) :
+  MonoidHomomorphism A C :=
+  {| monoid_hom :=
+       {| magma_hom := fun a => (magma_hom B C map2) ((magma_hom A B map1) a)
+       |}
+  |}.
+Next Obligation.
+Proof.
+  destruct A, B, C, map1, map2.
+  simpl in *.
+  rewrite magma_hom_law.
+  rewrite magma_hom_law.
+  trivial.
+Qed.
+Next Obligation.
+  destruct A, B, C, map1, map2.
+  simpl in *.
+  rewrite monoid_hom_id_law0.
+  rewrite monoid_hom_id_law1.
+  trivial.
+Qed.
+
+(** * Equality of maps, assuming proof irrelevance. *)
+Theorem monoid_hom_eq : forall A B F G (M N : MonoidHomomorphism F G),
+    @monoid_hom A B F G M = @monoid_hom A B F G N ->
+    M = N.
+Proof.
+  intros.
+  destruct M, N.
+  simpl in *.
+  subst.
+  f_equal.
+  intros.
+  rewrite H4.
+  trivial.
+  apply proof_irrelevance.
+Qed.
+
+(** * Associativity of composition of maps. *)
+Program Definition monoid_hom_composition_assoc
+        {T : Type}
+        {A B C D : @Monoid T}
+        (f : MonoidHomomorphism A B)
+        (g : MonoidHomomorphism B C)
+        (h : MonoidHomomorphism C D) :
+  monoid_hom_composition f (monoid_hom_composition g h) =
+  monoid_hom_composition (monoid_hom_composition f g) h.
+Proof.
+  destruct f, g, h.
+  apply monoid_hom_eq.
+  simpl.
+  f_equal.
+  intros.
+  rewrite H4.
+  trivial.
+  apply proof_irrelevance.
+  (* There's got to be a better way. *)
+Qed.
+
+(** * Identity map. *)
+Program Definition monoid_hom_id
+        {A : Type}
+        {M : @Monoid A} :
+  MonoidHomomorphism M M :=
+  {| monoid_hom := {| magma_hom := fun a => a |} |}.
