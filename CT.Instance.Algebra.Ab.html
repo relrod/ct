@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Algebra.Ab</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Algebra.Ab</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Algebra.AbelianGroup.html#"><span class="id" title="library">CT.Algebra.AbelianGroup</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab58"></a><h1 class="section">Ab: The category of abelian groups.</h1>
+
+
+<div class="paragraph"> </div>
+
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="Ab"><span class="id" title="definition">Ab</span></a> (<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>) : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ob</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">@</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">AbelianGroup</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">T</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">mor</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">GroupHomomorphism</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">comp</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ab_group_hom_composition</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">id</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ab_group_hom_id</span></a><a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">assoc</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Category.html#Build_Category"><span class="id" title="constructor">ab_group_hom_composition_assoc</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.AbelianGroup.html#ab_group_hom_composition_assoc"><span class="id" title="definition">ab_group_hom_composition_assoc</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.AbelianGroup.html#ab_group_hom_eq"><span class="id" title="definition">ab_group_hom_eq</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.AbelianGroup.html#ab_group_hom_eq"><span class="id" title="definition">ab_group_hom_eq</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
