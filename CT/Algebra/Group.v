@@ -116,3 +116,42 @@ Qed.
 *)
 Definition GroupHomomorphism {A B} (M : @Group A) (N : @Group B) :=
   @MagmaHomomorphism A B M N.
+
+(** * Composition of maps. *)
+Program Definition group_hom_composition
+        {T U V : Type}
+        {A : @Group T}
+        {B : @Group U}
+        {C : @Group V}
+        (map1 : GroupHomomorphism A B)
+        (map2 : GroupHomomorphism B C) :
+  GroupHomomorphism A C
+  := magma_hom_composition map1 map2.
+
+(** * Equality of maps, assuming proof irrelevance. *)
+Program Definition group_hom_eq
+        {A B : Type}
+        {F : @Group A}
+        {G : @Group B}
+        (N M : GroupHomomorphism F G) :
+    @magma_hom A B F G N = @magma_hom A B F G M ->
+    N = M
+  := magma_hom_eq A B F G N M.
+
+(** * Associativity of composition of maps. *)
+Program Definition group_hom_composition_assoc
+        {T : Type}
+        {A B C D : @Group T}
+        (f : GroupHomomorphism A B)
+        (g : GroupHomomorphism B C)
+        (h : GroupHomomorphism C D) :
+  group_hom_composition f (group_hom_composition g h) =
+  group_hom_composition (group_hom_composition f g) h
+  := magma_hom_composition_assoc f g h.
+
+(** * Identity map. *)
+Program Definition group_hom_id
+        {A : Type}
+        {M : @Group A} :
+  GroupHomomorphism M M :=
+  magma_hom_id.
