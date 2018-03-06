@@ -15,8 +15,4 @@ Program Definition MonoidCategory {T} (M : Monoid) : Category :=
 Next Obligation.
 Proof. apply semigroup_assoc. Qed.
 Next Obligation.
-Proof.  symmetry. apply semigroup_assoc. Qed.
-Next Obligation.
-Proof. rewrite monoid_left_one. reflexivity. Qed.
-Next Obligation.
-Proof. rewrite monoid_right_one. reflexivity. Qed.
+Proof. symmetry. apply semigroup_assoc. Qed.
