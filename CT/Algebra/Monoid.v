@@ -35,6 +35,16 @@ Proof.
   trivial.
 Qed.
 
+Corollary monoid_identity_commutes {T} {M : @Monoid T} :
+  forall a,
+    mu M a (one M) = mu M (one M) a.
+Proof.
+  intros.
+  rewrite monoid_left_one.
+  rewrite monoid_right_one.
+  trivial.
+Qed.
+
 (* Possibly separate this out at some point. *)
 
 (** * Monoid homomorphisms.
