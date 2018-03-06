@@ -159,6 +159,33 @@ Proof.
   assumption.
 Qed.
 
+(** \(ab = ba\) iff \(aba^{-1} = b\) *)
+Theorem group_commutative_conj {T} (G : @Group T) :
+  forall a b,
+    mu G a b = mu G b a <-> mu G a (mu G b (inverse G a)) = b.
+Proof.
+  intros.
+  split.
+  intros.
+  rewrite semigroup_assoc.
+  rewrite H.
+  rewrite <- semigroup_assoc.
+  rewrite gr_inverse_right.
+  trivial.
+  intros.
+  rewrite <- H.
+  assert (mu G (mu G a (mu G b (inverse G a))) a =
+          mu G a (mu G b (mu G (inverse G a) a))).
+  rewrite <- semigroup_assoc.
+  rewrite <- semigroup_assoc.
+  auto.
+  rewrite H0.
+  rewrite gr_inverse_left.
+  rewrite H.
+  rewrite monoid_right_one.
+  trivial.
+Qed.
+
 (* Possibly separate this out at some point. *)
 
 (** * Group homomorphisms.
