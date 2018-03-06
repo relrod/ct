@@ -13,7 +13,13 @@ Record Monoid {T : Type} :=
     monoid_right_one : forall x, semigroup.(magma).(mu) x one = x
   }.
 
-(** Monoid identity is unique. *)
+Fixpoint mu_power {T : Type} (M : @Monoid T) (t : T) (n : nat) :=
+  match n with
+  | 0 => one M
+  | S n => mu M t (mu_power M t n)
+  end.
+
+(** ** Monoid identity is unique. *)
 Theorem monoid_identity_unique {T} {M : @Monoid T} e :
   (forall x, mu M x e = x) -> e = one M.
 Proof.
