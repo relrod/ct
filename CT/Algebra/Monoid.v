@@ -13,6 +13,9 @@ Record Monoid {T : Type} :=
     monoid_right_one : forall x, semigroup.(magma).(mu) x one = x
   }.
 
+Hint Resolve monoid_right_one.
+Hint Resolve monoid_left_one.
+
 Fixpoint mu_power {T : Type} (M : @Monoid T) (t : T) (n : nat) :=
   match n with
   | 0 => one M
