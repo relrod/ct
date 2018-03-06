@@ -145,6 +145,20 @@ Proof.
   trivial.
 Qed.
 
+(** If \(x^2 = x\) then \(x = e\). *)
+Theorem group_squared_identity {T} (G : @Group T) :
+  forall x, mu_power G x 2 = x -> x = one G.
+Proof.
+  intros.
+  simpl in H.
+  rewrite monoid_right_one in H.
+  rewrite <- (group_cancel_right G (inverse G x)) in H.
+  rewrite <- semigroup_assoc in H.
+  rewrite gr_inverse_right in H.
+  rewrite monoid_right_one in H.
+  assumption.
+Qed.
+
 (* Possibly separate this out at some point. *)
 
 (** * Group homomorphisms.
