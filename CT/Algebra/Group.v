@@ -186,6 +186,18 @@ Proof.
   trivial.
 Qed.
 
+Theorem ab_e_is_ba_e {T} (G : @Group T) :
+    forall a b,
+      mu G a b = one G -> mu G b a = one G.
+Proof.
+  intros.
+  rewrite <- (group_cancel_left G a).
+  rewrite semigroup_assoc.
+  rewrite monoid_identity_commutes.
+  rewrite group_cancel_right.
+  assumption.
+Qed.
+
 (* Possibly separate this out at some point. *)
 
 (** * Group homomorphisms.
