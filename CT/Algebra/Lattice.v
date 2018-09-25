@@ -144,9 +144,9 @@ End Lattice.
 
 (** * Lattice homomorphisms
 
-A lattice homomorphism \(f : A -> B\) where \(A, B\) are lattices, is a
-function from the carrier set of \(A\) to the carrier set of $B$ that preserves
-meet, join, and where required, top and bottom.
+A lattice homomorphism \(f : A \to B\) where \(A, B\) are lattices, is a
+function from the carrier set of \(A\) to the carrier set of \(B\) that
+preserves meet, join, and where required, top and bottom.
 
 We have:
   - \((x\) meet \(y) = f(x)\) meet \(f(y)\)
