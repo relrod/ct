@@ -2,8 +2,6 @@ Require Import CT.Algebra.Magma.
 Require Import CT.Algebra.Group.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Grp: The category of groups
 
 *)

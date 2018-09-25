@@ -1,8 +1,6 @@
 Require Import CT.Algebra.AbelianGroup.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Ab: The category of abelian groups.
 
 *)

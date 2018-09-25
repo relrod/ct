@@ -2,8 +2,6 @@ Require Import CT.Algebra.Magma.
 Require Import CT.Algebra.Monoid.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Mon: The category of monoids.
 
 *)

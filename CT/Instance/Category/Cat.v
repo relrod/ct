@@ -2,8 +2,6 @@ Require Import CT.Category.
 Require Import CT.Functor.
 Require Import CT.Instance.Functor.
 
-Set Universe Polymorphism.
-
 (** This is the category of Categories. :) *)
 Program Definition Cat : Category :=
   {| ob := Category;

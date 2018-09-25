@@ -1,8 +1,6 @@
 Require Import CT.Algebra.Ring.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Rings form a category.
 
 *)

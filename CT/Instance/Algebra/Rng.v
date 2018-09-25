@@ -1,8 +1,6 @@
 Require Import CT.Algebra.Rng.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Rngs form a category.
 
 *)

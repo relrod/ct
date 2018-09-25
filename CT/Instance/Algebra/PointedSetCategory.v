@@ -1,8 +1,6 @@
 Require Import CT.Algebra.PointedSet.
 Require Import CT.Category.
 
-Set Universe Polymorphism.
-
 (** * Pointed sets form a category.
 
 The category is equivalent (but NOT isomorphic) to the category of sets with

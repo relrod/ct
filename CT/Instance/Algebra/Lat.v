@@ -3,8 +3,6 @@ Require Import CT.Category.
 Require Import CT.Order.PartiallyOrderedSet.
 Require Import Coq.Program.Tactics.
 
-Set Universe Polymorphism.
-
 (** * Lat: The category of lattices.
 *)
 Program Definition Lat : Category :=
