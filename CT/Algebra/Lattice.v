@@ -159,7 +159,7 @@ that here right now.
 *)
 
 Record LatticeHomomorphism (l1 l2 : Lattice) :=
-  { f :  element l1 -> element l2;
+  { f : element l1 -> element l2;
     lat_hom_pres_meet : forall a b, f (meet l1 a b) = meet l2 (f a) (f b);
     lat_hom_pres_join : forall a b, f (join l1 a b) = join l2 (f a) (f b)
   }.
