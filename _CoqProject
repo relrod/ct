@@ -62,6 +62,7 @@
 ./CT/Instance/Algebra.v
 ./CT/Instance/Automata/Moore.v
 ./CT/Instance/Automata/Moore/Category.v
+./CT/Instance/Automata/Mealy/Category.v
 ./CT/Instance/NaturalTransformation/HCNaturalTransformation.v
 ./CT/Instance/NaturalTransformation/IdentityNaturalTransformation.v
 ./CT/Instance/NaturalTransformation/VCNaturalTransformation.v
@@ -70,5 +71,6 @@
 ./CT/Instance/Coq.v
 ./CT/Instance/Functor.v
 ./CT/Automata/Moore.v
+./CT/Automata/Mealy.v
 ./CT/Functor.v
 ./CT/Instance.v
