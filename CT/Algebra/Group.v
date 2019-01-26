@@ -245,3 +245,79 @@ Program Definition group_hom_id
         {M : @Group A} :
   GroupHomomorphism M M :=
   magma_hom_id.
+
+
+(** * Preservation of identity.
+
+This is something we need to show because it's kind of a "happy accident"
+that magma homomorphisms work as group homomorphisms.
+*)
+Theorem group_hom_pres_id {T U : Type} (A : @Group T) (B : @Group U) :
+  forall (f : GroupHomomorphism A B) (a : T),
+    magma_hom A B f (one A) = one B.
+Proof.
+  intros.
+  assert (magma_hom A B f (one A) = magma_hom A B f (mu A (one A) (one A))).
+  rewrite monoid_right_one. trivial.
+  rewrite magma_hom_law in H.
+  apply f_equal with
+    (f := fun t => mu B (inverse B (magma_hom A B f (one A))) t) in H.
+  rewrite gr_inverse_left in H.
+  rewrite semigroup_assoc in H.
+  rewrite gr_inverse_left in H.
+  rewrite monoid_left_one in H.
+  symmetry in H.
+  apply H.
+Qed.
+
+(** If \(ab = 1\), then necessarily \(ba=1\) as well. *)
+Lemma group_commutative_one {T} {G : @Group T} :
+  forall a b, mu G a b = one G -> mu G b a = one G.
+Proof.
+  intros.
+  apply f_equal with (f := fun t => mu G b t) in H.
+  rewrite semigroup_assoc in H.
+  rewrite monoid_identity_commutes in H.
+  rewrite group_cancel_right in H.
+  trivial.
+Qed.
+
+(** Given \(a \in G\) with \(ab = 1\), \(b\) must be the inverse to \(a\). *)
+Lemma group_equals_one_implies_inverse {T : Type} (A : @Group T) (g : T) :
+  forall x,
+    mu A g x = one A -> x = inverse A g.
+Proof.
+  intros.
+  assert (mu A g (inverse A g) = one A).
+  apply gr_inverse_right.
+  assert (mu A g x = mu A x g).
+  rewrite H.
+  rewrite group_commutative_one.
+  trivial.
+  trivial.
+  assert (mu A x g = one A).
+  apply group_commutative_one.
+  trivial.
+  symmetry.
+  apply (group_inverse_unique A x g H H2).
+Qed.
+
+(** * Preservation of inverses.
+
+This can now be shown by making use of [group_hom_pres_id].
+*)
+Theorem group_hom_pres_inverse {T U : Type} (A : @Group T) (B : @Group U) :
+  forall (f : GroupHomomorphism A B) (a : T),
+    magma_hom A B f (inverse A a) = inverse B (magma_hom A B f a).
+Proof.
+  intros.
+  assert (mu B (magma_hom A B f a) (magma_hom A B f (inverse A a)) =
+          magma_hom A B f (mu A a (inverse A a))).
+  rewrite magma_hom_law.
+  trivial.
+  rewrite gr_inverse_right in H.
+  rewrite group_hom_pres_id in H.
+  apply group_equals_one_implies_inverse in H.
+  assumption.
+  assumption.
+Qed.
