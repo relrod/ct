@@ -53,9 +53,6 @@ Proof.
   simpl in *.
   subst.
   f_equal.
-  intros.
-  rewrite H4.
-  reflexivity.
   apply proof_irrelevance.
 Qed.
 

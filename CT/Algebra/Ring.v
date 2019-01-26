@@ -90,10 +90,6 @@ Proof.
   subst.
   f_equal.
   intros.
-  rewrite H4.
-  rewrite H5.
-  rewrite H6.
-  trivial.
   apply proof_irrelevance.
   apply proof_irrelevance.
   apply proof_irrelevance.
