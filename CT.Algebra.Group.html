@@ -36,7 +36,7 @@
 </div>
 
 <div class="doc">
-<a name="lab18"></a><h1 class="section">Groups</h1>
+<a name="lab72"></a><h1 class="section">Groups</h1>
 
 
 <div class="paragraph"> </div>
@@ -164,7 +164,7 @@ This gives an ugly proof of \((ab)^{-1} = b^{-1}a^{-1}\).
 </div>
 
 <div class="doc">
-<a name="lab19"></a><h1 class="section">Cancellation Laws</h1>
+<a name="lab73"></a><h1 class="section">Cancellation Laws</h1>
 
 </div>
 <div class="code">
@@ -279,7 +279,7 @@ If \(x^2 = x\) then \(x = e\).
 </div>
 
 <div class="doc">
-<a name="lab20"></a><h1 class="section">Group homomorphisms.</h1>
+<a name="lab74"></a><h1 class="section">Group homomorphisms.</h1>
 
 
 <div class="paragraph"> </div>
@@ -295,7 +295,7 @@ If \(x^2 = x\) then \(x = e\).
 </div>
 
 <div class="doc">
-<a name="lab21"></a><h1 class="section">Composition of maps.</h1>
+<a name="lab75"></a><h1 class="section">Composition of maps.</h1>
 
 </div>
 <div class="code">
@@ -313,7 +313,7 @@ If \(x^2 = x\) then \(x = e\).
 </div>
 
 <div class="doc">
-<a name="lab22"></a><h1 class="section">Equality of maps, assuming proof irrelevance.</h1>
+<a name="lab76"></a><h1 class="section">Equality of maps, assuming proof irrelevance.</h1>
 
 </div>
 <div class="code">
@@ -330,7 +330,7 @@ If \(x^2 = x\) then \(x = e\).
 </div>
 
 <div class="doc">
-<a name="lab23"></a><h1 class="section">Associativity of composition of maps.</h1>
+<a name="lab77"></a><h1 class="section">Associativity of composition of maps.</h1>
 
 </div>
 <div class="code">
@@ -348,7 +348,7 @@ If \(x^2 = x\) then \(x = e\).
 </div>
 
 <div class="doc">
-<a name="lab24"></a><h1 class="section">Identity map.</h1>
+<a name="lab78"></a><h1 class="section">Identity map.</h1>
 
 </div>
 <div class="code">
@@ -357,6 +357,111 @@ If \(x^2 = x\) then \(x = e\).
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">M</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a>} :<br/>
 &nbsp;&nbsp;<a class="idref" href="CT.Algebra.Group.html#GroupHomomorphism"><span class="id" title="definition">GroupHomomorphism</span></a> <a class="idref" href="CT.Algebra.Group.html#M"><span class="id" title="variable">M</span></a> <a class="idref" href="CT.Algebra.Group.html#M"><span class="id" title="variable">M</span></a> :=<br/>
 &nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom_id"><span class="id" title="definition">magma_hom_id</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab79"></a><h1 class="section">Preservation of identity.</h1>
+
+
+<div class="paragraph"> </div>
+
+This is something we need to show because it's kind of a "happy accident"
+that magma homomorphisms work as group homomorphisms.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="group_hom_pres_id"><span class="id" title="lemma">group_hom_pres_id</span></a> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> : <span class="id" title="keyword">Type</span>} (<span class="id" title="var">A</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">B</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#U"><span class="id" title="variable">U</span></a>) :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">f</span> : <a class="idref" href="CT.Algebra.Group.html#GroupHomomorphism"><span class="id" title="definition">GroupHomomorphism</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a>) (<span class="id" title="var">a</span> : <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Group.html#f"><span class="id" title="variable">f</span></a> (<a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> (<a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> (<a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>) (<a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>))).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Monoid.html#monoid_right_one"><span class="id" title="projection">monoid_right_one</span></a>. <span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Magma.html#magma_hom_law"><span class="id" title="projection">magma_hom_law</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#f_equal"><span class="id" title="lemma">f_equal</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> := <span class="id" title="keyword">fun</span> <span class="id" title="var">t</span> ⇒ <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">B</span> (<a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">B</span> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> (<a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>))) <a class="idref" href="CT.Algebra.Group.html#t"><span class="id" title="variable">t</span></a>) <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#gr_inverse_left"><span class="id" title="projection">gr_inverse_left</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Semigroup.html#semigroup_assoc"><span class="id" title="projection">semigroup_assoc</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#gr_inverse_left"><span class="id" title="projection">gr_inverse_left</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Monoid.html#monoid_left_one"><span class="id" title="projection">monoid_left_one</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+If \(ab = 1\), then necessarily \(ba=1\) as well. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a name="group_commutative_one"><span class="id" title="lemma">group_commutative_one</span></a> {<span class="id" title="var">T</span>} {<span class="id" title="var">G</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>} :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>, <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Group.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Algebra.Group.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Algebra.Group.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Algebra.Group.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Group.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Algebra.Group.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="CT.Algebra.Group.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Algebra.Group.html#G"><span class="id" title="variable">G</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#f_equal"><span class="id" title="lemma">f_equal</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">f</span> := <span class="id" title="keyword">fun</span> <span class="id" title="var">t</span> ⇒ <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">G</span> <span class="id" title="var">b</span> <a class="idref" href="CT.Algebra.Group.html#t"><span class="id" title="variable">t</span></a>) <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Semigroup.html#semigroup_assoc"><span class="id" title="projection">semigroup_assoc</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Monoid.html#monoid_identity_commutes"><span class="id" title="lemma">monoid_identity_commutes</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#group_cancel_right"><span class="id" title="lemma">group_cancel_right</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Given \(a \in G\) with \(ab = 1\), \(b\) must be the inverse to \(a\). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a name="group_equals_one_implies_inverse"><span class="id" title="lemma">group_equals_one_implies_inverse</span></a> {<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>} (<span class="id" title="var">A</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">g</span> : <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>) :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> <span class="id" title="var">x</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.Algebra.Group.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a> <a class="idref" href="CT.Algebra.Group.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#g"><span class="id" title="variable">g</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> <span class="id" title="var">g</span> (<a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">A</span> <span class="id" title="var">g</span>) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Group.html#gr_inverse_right"><span class="id" title="projection">gr_inverse_right</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> <span class="id" title="var">g</span> <span class="id" title="var">x</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> <span class="id" title="var">x</span> <span class="id" title="var">g</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#group_commutative_one"><span class="id" title="lemma">group_commutative_one</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> <span class="id" title="var">x</span> <span class="id" title="var">g</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Monoid.html#one"><span class="id" title="projection">one</span></a> <span class="id" title="var">A</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Group.html#group_commutative_one"><span class="id" title="lemma">group_commutative_one</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<a class="idref" href="CT.Algebra.Group.html#group_inverse_unique"><span class="id" title="lemma">group_inverse_unique</span></a> <span class="id" title="var">A</span> <span class="id" title="var">x</span> <span class="id" title="var">g</span> <span class="id" title="var">H</span> <span class="id" title="var">H2</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab80"></a><h1 class="section">Preservation of inverses.</h1>
+
+
+<div class="paragraph"> </div>
+
+This can now be shown by making use of <span class="inlinecode"><a class="idref" href="CT.Algebra.Group.html#group_hom_pres_id"><span class="id" title="lemma">group_hom_pres_id</span></a></span>.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="group_hom_pres_inverse"><span class="id" title="lemma">group_hom_pres_inverse</span></a> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> : <span class="id" title="keyword">Type</span>} (<span class="id" title="var">A</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">B</span> : @<a class="idref" href="CT.Algebra.Group.html#Group"><span class="id" title="record">Group</span></a> <a class="idref" href="CT.Algebra.Group.html#U"><span class="id" title="variable">U</span></a>) :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">f</span> : <a class="idref" href="CT.Algebra.Group.html#GroupHomomorphism"><span class="id" title="definition">GroupHomomorphism</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a>) (<span class="id" title="var">a</span> : <a class="idref" href="CT.Algebra.Group.html#T"><span class="id" title="variable">T</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Group.html#f"><span class="id" title="variable">f</span></a> (<a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#a"><span class="id" title="variable">a</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <a class="idref" href="CT.Algebra.Group.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Algebra.Group.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Algebra.Group.html#f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.Algebra.Group.html#a"><span class="id" title="variable">a</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">B</span> (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> <span class="id" title="var">a</span>) (<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> (<a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">A</span> <span class="id" title="var">a</span>)) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Algebra.Magma.html#magma_hom"><span class="id" title="projection">magma_hom</span></a> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> (<a class="idref" href="CT.Algebra.Magma.html#mu"><span class="id" title="projection">mu</span></a> <span class="id" title="var">A</span> <span class="id" title="var">a</span> (<a class="idref" href="CT.Algebra.Group.html#inverse"><span class="id" title="projection">inverse</span></a> <span class="id" title="var">A</span> <span class="id" title="var">a</span>))).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Magma.html#magma_hom_law"><span class="id" title="projection">magma_hom_law</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#gr_inverse_right"><span class="id" title="projection">gr_inverse_right</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Algebra.Group.html#group_hom_pres_id"><span class="id" title="lemma">group_hom_pres_id</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Algebra.Group.html#group_equals_one_implies_inverse"><span class="id" title="lemma">group_equals_one_implies_inverse</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 </div>
 </div>
 
