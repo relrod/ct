@@ -26,6 +26,8 @@ Record NaturalTransformation {A B : Category} (F G : Functor A B) :=
         comp (nt_components x) (F_mor G f) = comp (F_mor F f) (nt_components y)
   }.
 
+Arguments nt_components {_} {_} _ _ _, {_} {_} {_} {_} _.
+
 (** Equivalence of natural transformations, by proof irrelevance *)
 Theorem nt_eq : forall A B F G (N M : NaturalTransformation F G),
     @nt_components A B F G N = @nt_components A B F G M ->
