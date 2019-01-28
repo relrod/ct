@@ -23,7 +23,9 @@
 ./CT/Algebra.v
 ./CT/Order.v
 ./CT/Geometry.v
+./CT/Monad.v
 ./CT/Instance/Coq/Category.v
+./CT/Instance/Coq/Monad.v
 ./CT/Instance/Coq/Functor.v
 ./CT/Instance/Algebra/Ab.v
 ./CT/Instance/Algebra/Grp.v
@@ -63,6 +65,7 @@
 ./CT/Instance/Automata/Moore.v
 ./CT/Instance/Automata/Moore/Category.v
 ./CT/Instance/Automata/Mealy/Category.v
+./CT/Instance/Automata/Mealy.v
 ./CT/Instance/NaturalTransformation/HCNaturalTransformation.v
 ./CT/Instance/NaturalTransformation/IdentityNaturalTransformation.v
 ./CT/Instance/NaturalTransformation/VCNaturalTransformation.v
