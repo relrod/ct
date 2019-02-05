@@ -1,10 +1,7 @@
-Require Import CT.Category.
-Require Import CT.Functor.
 Require Import CT.Monad.
 Require Import CT.NaturalTransformation.
 Require Import CT.Instance.Coq.Category.
 Require Import CT.Instance.Coq.Functor.
-Require Import CT.Instance.Functor.Endofunctor.
 Require Import CT.Instance.Functor.ComposeFunctor.
 Require Import CT.Instance.Functor.IdentityFunctor.
 Require Import FunctionalExtensionality List.
