@@ -6,6 +6,7 @@ pushd $dir/repo
 ./scripts/generate_CoqProject.sh
 make -j4 html
 ./scripts/add_mathjax.sh
+./scripts/add_included_by.sh
 mv html ..
 make clean
 git reset --hard
