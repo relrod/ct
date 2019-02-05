@@ -39,6 +39,79 @@
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#"><span class="id" title="library">FunctionalExtensionality</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#"><span class="id" title="library">List</span></a>.<br/>
 
 <br/>
+<span class="id" title="keyword">Section</span> <a name="CoqListMonad"><span class="id" title="section">CoqListMonad</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Program Definition</span> <a name="CoqListMuNT"><span class="id" title="definition">CoqListMuNT</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.NaturalTransformation.html#NaturalTransformation"><span class="id" title="record">NaturalTransformation</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Coq.Functor.html#CoqListFunctor"><span class="id" title="definition">CoqListFunctor</span></a> <a class="idref" href="CT.Instance.Coq.Functor.html#CoqListFunctor"><span class="id" title="definition">CoqListFunctor</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Instance.Coq.Functor.html#CoqListFunctor"><span class="id" title="definition">CoqListFunctor</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{| <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">nt_components</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">concat</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">b</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|}.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHq</span>. <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#map_app"><span class="id" title="lemma">map_app</span></a>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">IHq</span>. <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#map_app"><span class="id" title="lemma">map_app</span></a>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Program Definition</span> <a name="CoqListEtaNT"><span class="id" title="definition">CoqListEtaNT</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.NaturalTransformation.html#NaturalTransformation"><span class="id" title="record">NaturalTransformation</span></a> <a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#IdentityFunctor"><span class="id" title="definition">IdentityFunctor</span></a> <a class="idref" href="CT.Instance.Coq.Functor.html#CoqListFunctor"><span class="id" title="definition">CoqListFunctor</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{| <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">nt_components</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">{</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">A</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">}</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">x</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">:</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">A</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">)</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">@</span></a><a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">cons</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">A</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">x</span></a> <a class="idref" href="CT.NaturalTransformation.html#Build_NaturalTransformation"><span class="id" title="constructor">nil</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Program Definition</span> <a name="CoqListMonad"><span class="id" title="definition">CoqListMonad</span></a> : @<a class="idref" href="CT.Monad.html#Monad"><span class="id" title="record">Monad</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqType"><span class="id" title="definition">CoqType</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{| <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">T</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">CoqListFunctor</span></a><a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">eta</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">CoqListEtaNT</span></a><a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">mu</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Monad.html#Build_Monad"><span class="id" title="constructor">CoqListMuNT</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|}.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHx</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#map_app"><span class="id" title="lemma">map_app</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#concat_app"><span class="id" title="lemma">concat_app</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#concat"><span class="id" title="definition">concat</span></a> <span class="id" title="var">a</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#concat"><span class="id" title="definition">concat</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#map"><span class="id" title="definition">map</span></a> (<span class="id" title="keyword">fun</span> <span class="id" title="var">x0</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="var">q</span> ⇒ <a class="idref" href="CT.Instance.Coq.Monad.html#x0"><span class="id" title="variable">x0</span></a>) <span class="id" title="var">a</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Lists.List.html#map_id"><span class="id" title="lemma">map_id</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHx</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHx</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="CT.Instance.Coq.Monad.html#CoqListMonad"><span class="id" title="section">CoqListMonad</span></a>.<br/>
+
+<br/>
 <span class="id" title="keyword">Section</span> <a name="CoqOptionMonad"><span class="id" title="section">CoqOptionMonad</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Program Definition</span> <a name="CoqOptionMuNT"><span class="id" title="definition">CoqOptionMuNT</span></a> :<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.NaturalTransformation.html#NaturalTransformation"><span class="id" title="record">NaturalTransformation</span></a><br/>
