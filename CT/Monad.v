@@ -1,4 +1,5 @@
 Require Import CT.Category.
+Require Import CT.Functor.
 Require Import CT.NaturalTransformation.
 Require Import CT.Instance.Functor.ComposeFunctor.
 Require Import CT.Instance.Functor.Endofunctor.
@@ -6,8 +7,6 @@ Require Import CT.Instance.Functor.IdentityFunctor.
 Require Export CT.Instance.NaturalTransformation.HCNaturalTransformation.
 Require Export CT.Instance.NaturalTransformation.IdentityNaturalTransformation.
 Require Export CT.Instance.NaturalTransformation.VCNaturalTransformation.
-Require Import ProofIrrelevance.
-
 
 (** Monad.
 
@@ -15,13 +14,14 @@ A monad is an endofunctor on \(C\) together with two natural transformations,
 \(\eta\) and \(\mu\) which satisfy two coherence conditions.
  *)
 
-Record Monad
-       {C : Category}
-       (T : Endofunctor C)
-       (eta : NaturalTransformation (@IdentityFunctor C) T)
-       (mu : NaturalTransformation (ComposeFunctor T T) T) :=
+Record Monad {C : Category} :=
+  { T : Endofunctor C;
+    (* return *)
+    eta : NaturalTransformation (@IdentityFunctor C) T;
+    (* join *)
+    mu : NaturalTransformation (ComposeFunctor T T) T;
 
-  { (* Coherence: *)
+    (* Coherence: *)
     monad_coherence_assoc :
       nt_components (VCNaturalTransformation (HCNaturalTransformation mu (IdentityNaturalTransformation T)) mu) =
       nt_components (VCNaturalTransformation (HCNaturalTransformation (IdentityNaturalTransformation T) mu) mu);
@@ -35,16 +35,5 @@ Record Monad
       nt_components (IdentityNaturalTransformation T);
   }.
 
-Theorem monad_equivalence :
-  forall {C}
-         {T : Endofunctor C}
-         (eta : NaturalTransformation (@IdentityFunctor C) T)
-         (mu : NaturalTransformation (ComposeFunctor T T) T)
-         (mon1 mon2 : @Monad C T eta mu),
-    mon1 = mon2.
-Proof.
-  intros.
-  destruct mon1, mon2.
-  f_equal;
-    apply proof_irrelevance.
-Qed.
+Definition bind {C : Category} (m : @Monad C) x :=
+  nt_components (mu m) (F_ob (T m) x).
