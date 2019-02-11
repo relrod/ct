@@ -2,9 +2,7 @@ Require Import CT.Algebra.Magma.
 Require Import CT.Algebra.Monoid.
 Require Import CT.Category.
 
-(** * Mon: The category of monoids.
-
-*)
+(** * Mon: The category of monoids. *)
 Program Definition Mon (T : Type) : Category :=
   {| ob := @Monoid T;
      mor := MonoidHomomorphism;

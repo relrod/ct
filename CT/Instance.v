@@ -16,6 +16,7 @@ Require Export CT.Instance.Category.Opposite.
 Require Export CT.Instance.Category.ProductCategory.
 Require Export CT.Instance.Coq.Category.
 Require Export CT.Instance.Coq.Functor.
+Require Export CT.Instance.Coq.Monad.
 Require Export CT.Instance.Functor.Bifunctor.
 Require Export CT.Instance.Functor.ComposeFunctor.
 Require Export CT.Instance.Functor.ConstantFunctor.
