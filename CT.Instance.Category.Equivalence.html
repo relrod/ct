@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Category.Equivalence</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Category.Equivalence</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Isomorphism.html#"><span class="id" title="library">CT.Isomorphism</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#"><span class="id" title="library">CT.Instance.Functor.ComposeFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#"><span class="id" title="library">CT.Instance.Functor.IdentityFunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.NaturalTransformation.NaturalIsomorphism.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.NaturalIsomorphism</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.NaturalTransformation.IdentityNaturalTransformation.html#"><span class="id" title="library">CT.Instance.NaturalTransformation.IdentityNaturalTransformation</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Record</span> <a name="CategoryEquivalence"><span class="id" title="record">CategoryEquivalence</span></a> (<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) :=<br/>
+&nbsp;&nbsp;{ <a name="F"><span class="id" title="projection">F</span></a> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#D"><span class="id" title="variable">D</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="G"><span class="id" title="projection">G</span></a> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#D"><span class="id" title="variable">D</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#C"><span class="id" title="variable">C</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="ceq_nat_iso1"><span class="id" title="projection">ceq_nat_iso1</span></a> : <a class="idref" href="CT.Instance.NaturalTransformation.NaturalIsomorphism.html#NaturalIsomorphism"><span class="id" title="definition">NaturalIsomorphism</span></a> (<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#G"><span class="id" title="method">G</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#F"><span class="id" title="method">F</span></a>) (@<a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#IdentityFunctor"><span class="id" title="definition">IdentityFunctor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#D"><span class="id" title="variable">D</span></a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="ceq_nat_iso2"><span class="id" title="projection">ceq_nat_iso2</span></a> : <a class="idref" href="CT.Instance.NaturalTransformation.NaturalIsomorphism.html#NaturalIsomorphism"><span class="id" title="definition">NaturalIsomorphism</span></a> (<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#F"><span class="id" title="method">F</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#G"><span class="id" title="method">G</span></a>) (@<a class="idref" href="CT.Instance.Functor.IdentityFunctor.html#IdentityFunctor"><span class="id" title="definition">IdentityFunctor</span></a> <a class="idref" href="CT.Instance.Category.Equivalence.html#C"><span class="id" title="variable">C</span></a>)<br/>
+&nbsp;&nbsp;}.<br/>
+</div>
+</div>
+
+<div id="footer" style="padding: 10px;"><p>This module is included by:</p><ul><li><a href="CT.Instance.Category.html">CT.Instance.Category</a></li> </ul>
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
