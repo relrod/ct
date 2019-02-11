@@ -4,7 +4,7 @@ Require Import CT.Instance.Category.ProductCategory.
 Require Import CT.Instance.Functor.Endofunctor.
 
 (** [F : AxB -> C]. _Bifunctors_ are functors from a product category to another
-    category. These (or rather their specialized form [ProductFunctor] show up
+    category. These (or rather their specialized form [ProductFunctor]) show up
     as tensors in [MonoidalCategory] instances.
 *)
 Program Definition Bifunctor (A B C : Category) := Functor (ProductCategory A B) C.
