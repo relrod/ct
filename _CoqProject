@@ -54,6 +54,7 @@
 ./CT/Instance/NaturalTransformation.v
 ./CT/Instance/Isomorphism.v
 ./CT/Instance/Category/ProductCategory.v
+./CT/Instance/Category/Equivalence.v
 ./CT/Instance/Category/CommaCategory.v
 ./CT/Instance/Category/FunctorCategory.v
 ./CT/Instance/Category/Opposite.v

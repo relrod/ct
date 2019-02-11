@@ -1,5 +1,6 @@
 Require Export CT.Instance.Category.ArrowCategory.
 Require Export CT.Instance.Category.Cat.
+Require Export CT.Instance.Category.Equivalence.
 Require Export CT.Instance.Category.FunctorCategory.
 Require Export CT.Instance.Category.GroupCategory.
 Require Export CT.Instance.Category.Monoidal.
