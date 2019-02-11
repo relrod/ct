@@ -29,7 +29,8 @@
 <div class="code">
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
-<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.Bifunctor.html#"><span class="id" title="library">CT.Instance.Functor.Bifunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="CT.Instance.Functor.Bifunctor.html#"><span class="id" title="library">CT.Instance.Functor.Bifunctor</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Functor.Endofunctor.html#"><span class="id" title="library">CT.Instance.Functor.Endofunctor</span></a>.<br/>
 
 <br/>
 </div>
@@ -40,6 +41,72 @@ A product functor \(F\) on a category \(C\) is a <span class="inlinecode"><a cla
 </div>
 <div class="code">
 <span class="id" title="keyword">Program Definition</span> <a name="ProductFunctor"><span class="id" title="definition">ProductFunctor</span></a> (<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) := <a class="idref" href="CT.Instance.Functor.Bifunctor.html#Bifunctor"><span class="id" title="definition">Bifunctor</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This is just an alias for <span class="inlinecode"><a class="idref" href="CT.Instance.Functor.ProductFunctor.html#ProductFunctor"><span class="id" title="definition">ProductFunctor</span></a></span>. It is often used as a tensor
+    product. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <a name="Tensor"><span class="id" title="definition">Tensor</span></a> := <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#ProductFunctor"><span class="id" title="definition">ProductFunctor</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The endofunctor \(- \otimes y\) for a given tensor functor \(t\) and
+    given \(y \in Ob(C)\). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="_tensor"><span class="id" title="definition">_tensor</span></a> {<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>} (<span class="id" title="var">t</span> : <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#Tensor"><span class="id" title="definition">Tensor</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">y</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a>)<br/>
+&nbsp;&nbsp;: <a class="idref" href="CT.Instance.Functor.Endofunctor.html#Endofunctor"><span class="id" title="definition">Endofunctor</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">t</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">a</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">,</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">y</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">);</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_mor</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">bimap</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">id</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="CT.Instance.Functor.Bifunctor.html#bimap"><span class="id" title="definition">bimap</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">t</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">F_id_law</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">t</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">F_comp_law</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_left"><span class="id" title="projection">id_left</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The endofunctor \(y \otimes -\) for a given tensor functor \(t\) and
+    given \(y \in Ob(C)\). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="tensor_"><span class="id" title="definition">tensor_</span></a> {<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>} (<span class="id" title="var">t</span> : <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#Tensor"><span class="id" title="definition">Tensor</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">y</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a>)<br/>
+&nbsp;&nbsp;: <a class="idref" href="CT.Instance.Functor.Endofunctor.html#Endofunctor"><span class="id" title="definition">Endofunctor</span></a> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#C"><span class="id" title="variable">C</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">t</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">y</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">,</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">a</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">);</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_mor</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">bimap</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">id</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">f</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="CT.Instance.Functor.ProductFunctor.html#_tensor_obligation_1"><span class="id" title="lemma">_tensor_obligation_1</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">t</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">F_comp_law</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_left"><span class="id" title="projection">id_left</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
 </div>
 </div>
 
