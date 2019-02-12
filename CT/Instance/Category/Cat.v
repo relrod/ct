@@ -10,7 +10,7 @@ Program Definition Cat : Category :=
      id := @IdentityFunctor
   |}.
 Next Obligation.
-Proof. apply F_eq. reflexivity. reflexivity. Qed.
+Proof. apply functor_comp_assoc. Qed.
 Next Obligation.
 Proof. symmetry. apply Cat_obligation_1. Qed.
 Next Obligation.
