@@ -14,6 +14,6 @@ Proof. apply F_eq. reflexivity. reflexivity. Qed.
 Next Obligation.
 Proof. symmetry. apply Cat_obligation_1. Qed.
 Next Obligation.
-Proof. apply F_eq. reflexivity. reflexivity. Qed.
+Proof. apply comp_identity_left. trivial. Qed.
 Next Obligation.
-Proof. apply F_eq. reflexivity. reflexivity. Qed.
+Proof. apply comp_identity_right. trivial. Qed.
