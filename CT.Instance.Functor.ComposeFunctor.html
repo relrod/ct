@@ -47,10 +47,33 @@
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Functor.html#F_comp_law"><span class="id" title="projection">F_comp_law</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Functor composition is associative. Assumes proof irrelevance :( 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="functor_comp_assoc"><span class="id" title="lemma">functor_comp_assoc</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">F</span> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#B"><span class="id" title="variable">B</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">G</span> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#C"><span class="id" title="variable">C</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="id" title="var">H</span> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#D"><span class="id" title="variable">D</span></a>} :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#F"><span class="id" title="variable">F</span></a> (<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#G"><span class="id" title="variable">G</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#H"><span class="id" title="variable">H</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> (<a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#ComposeFunctor"><span class="id" title="definition">ComposeFunctor</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#G"><span class="id" title="variable">G</span></a>) <a class="idref" href="CT.Instance.Functor.ComposeFunctor.html#H"><span class="id" title="variable">H</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">F</span>, <span class="id" title="var">G</span>, <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Functor.html#F_eq"><span class="id" title="lemma">F_eq</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 </div>
 </div>
 
-<div id="footer" style="padding: 10px;"><p>This module is included by:</p><ul><li><a href="CT.Instance.Category.Equivalence.html">CT.Instance.Category.Equivalence</a></li> <li><a href="CT.Instance.Coq.Monad.html">CT.Instance.Coq.Monad</a></li> <li><a href="CT.Instance.Functor.html">CT.Instance.Functor</a></li> <li><a href="CT.Instance.NaturalTransformation.HCNaturalTransformation.html">CT.Instance.NaturalTransformation.HCNaturalTransformation</a></li> </ul>
+<div id="footer" style="padding: 10px;"><p>This module is included by:</p><ul><li><a href="CT.Instance.Category.Equivalence.html">CT.Instance.Category.Equivalence</a></li> <li><a href="CT.Instance.Coq.Monad.html">CT.Instance.Coq.Monad</a></li> <li><a href="CT.Instance.Functor.html">CT.Instance.Functor</a></li> <li><a href="CT.Instance.Functor.IdentityFunctor.html">CT.Instance.Functor.IdentityFunctor</a></li> <li><a href="CT.Instance.NaturalTransformation.HCNaturalTransformation.html">CT.Instance.NaturalTransformation.HCNaturalTransformation</a></li> </ul>
 <hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
 </div>
 
