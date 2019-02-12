@@ -42,3 +42,28 @@ Proof.
   apply F_eq;
     reflexivity.
 Qed.
+
+(** Composition of anything with the [IdentityFunctor] the original thing. *)
+Theorem comp_identity_right :
+  forall {A B : Category} (F : Functor A B) (G : Functor B B),
+    G = @IdentityFunctor B ->
+    ComposeFunctor F G = F.
+Proof.
+  intros.
+  unfold ComposeFunctor.
+  subst.
+  apply F_eq;
+    reflexivity.
+Qed.
+
+Theorem comp_identity_left :
+  forall {A B : Category} (F : Functor A B) (G : Functor A A),
+    G = @IdentityFunctor A ->
+    ComposeFunctor G F = F.
+Proof.
+  intros.
+  unfold ComposeFunctor.
+  subst.
+  apply F_eq;
+    reflexivity.
+Qed.
