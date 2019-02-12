@@ -17,3 +17,20 @@ Proof.
   rewrite F_comp_law.
   reflexivity.
 Qed.
+
+(** Functor composition is associative. Assumes proof irrelevance :( *)
+Theorem functor_comp_assoc
+        {A B C D : Category}
+        {F : Functor A B}
+        {G : Functor B C}
+        {H : Functor C D} :
+  ComposeFunctor F (ComposeFunctor G H) =
+  ComposeFunctor (ComposeFunctor F G) H.
+Proof.
+  destruct F, G, H.
+  apply F_eq.
+  simpl.
+  trivial.
+  simpl.
+  trivial.
+Qed.
