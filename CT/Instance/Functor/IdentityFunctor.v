@@ -1,5 +1,6 @@
 Require Import CT.Category.
 Require Import CT.Functor.
+Require Import CT.Instance.Functor.ComposeFunctor.
 Require Import CT.Instance.Functor.Endofunctor.
 Require Import CT.Instance.Functor.FaithfulFunctor.
 Require Import CT.Instance.Functor.FullFunctor.
@@ -24,4 +25,20 @@ Proof.
   exists f.
   simpl.
   reflexivity.
+Qed.
+
+(** Composition of [IdentityFunctor]s is still the [IdentityFunctor]. *)
+Theorem comp_identity_identity :
+  forall {C : Category} (F G : @Endofunctor C),
+    F = @IdentityFunctor C ->
+    G = @IdentityFunctor C ->
+    ComposeFunctor F G = @IdentityFunctor C.
+Proof.
+  intros.
+  unfold ComposeFunctor.
+  subst.
+  simpl.
+  unfold IdentityFunctor at 5.
+  apply F_eq;
+    reflexivity.
 Qed.
