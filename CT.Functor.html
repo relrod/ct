@@ -28,6 +28,7 @@
 
 <div class="code">
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Isomorphism.html#"><span class="id" title="library">CT.Isomorphism</span></a>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Program.Program.html#"><span class="id" title="library">Program</span></a>.<br/>
 
 <br/>
@@ -83,6 +84,33 @@ Equivalence of functors, by proof irrelevance
 &nbsp;&nbsp;<span class="id" title="tactic">f_equal</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.ProofIrrelevance.html#proof_irrelevance"><span class="id" title="axiom">proof_irrelevance</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.ProofIrrelevance.html#proof_irrelevance"><span class="id" title="axiom">proof_irrelevance</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<span class="inlinecode"><a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a></span>s preserve isomorphism. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <a name="functor_pres_iso"><span class="id" title="lemma">functor_pres_iso</span></a> :<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> {<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">F</span> : <a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> <a class="idref" href="CT.Functor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Functor.html#D"><span class="id" title="variable">D</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">a</span> <span class="id" title="var">b</span> : <a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Functor.html#C"><span class="id" title="variable">C</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> : @<a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Functor.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Functor.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Functor.html#b"><span class="id" title="variable">b</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;@<a class="idref" href="CT.Isomorphism.html#Isomorphism"><span class="id" title="record">Isomorphism</span></a> <a class="idref" href="CT.Functor.html#D"><span class="id" title="variable">D</span></a> (<a class="idref" href="CT.Functor.html#F_ob"><span class="id" title="projection">F_ob</span></a> <a class="idref" href="CT.Functor.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Functor.html#a"><span class="id" title="variable">a</span></a>) (<a class="idref" href="CT.Functor.html#F_ob"><span class="id" title="projection">F_ob</span></a> <a class="idref" href="CT.Functor.html#F"><span class="id" title="variable">F</span></a> <a class="idref" href="CT.Functor.html#b"><span class="id" title="variable">b</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">f</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">∃</span> (<a class="idref" href="CT.Functor.html#F_mor"><span class="id" title="projection">F_mor</span></a> <span class="id" title="var">F</span> <span class="id" title="var">to</span>) (<a class="idref" href="CT.Functor.html#F_mor"><span class="id" title="projection">F_mor</span></a> <span class="id" title="var">F</span> <span class="id" title="var">from</span>).<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="CT.Functor.html#F_comp_law"><span class="id" title="projection">F_comp_law</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">inv_left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Functor.html#F_id_law"><span class="id" title="projection">F_id_law</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="CT.Functor.html#F_comp_law"><span class="id" title="projection">F_comp_law</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">inv_right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Functor.html#F_id_law"><span class="id" title="projection">F_id_law</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 </div>
 </div>
