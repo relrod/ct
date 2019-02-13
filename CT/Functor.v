@@ -1,4 +1,5 @@
 Require Import CT.Category.
+Require Import CT.Isomorphism.
 Require Export Program.
 
 (** * F : A -> B
@@ -36,4 +37,25 @@ Proof.
   f_equal.
   apply proof_irrelevance.
   apply proof_irrelevance.
+Qed.
+
+(** [Functor]s preserve isomorphism. *)
+Theorem functor_pres_iso :
+  forall {C D : Category}
+         (F : Functor C D)
+         (a b : ob C)
+         (f : @Isomorphism C a b),
+    @Isomorphism D (F_ob F a) (F_ob F b).
+Proof.
+  intros.
+  destruct f.
+  exists (F_mor F to) (F_mor F from).
+  - rewrite <- F_comp_law.
+    rewrite inv_left.
+    rewrite F_id_law.
+    trivial.
+  - rewrite <- F_comp_law.
+    rewrite inv_right.
+    rewrite F_id_law.
+    trivial.
 Qed.
