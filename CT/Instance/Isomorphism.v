@@ -1,6 +1,8 @@
 Require Import CT.Category.
 Require Import CT.Isomorphism.
 
+Set Universe Polymorphism.
+
 (** The identity isomorphism between objects. Each object in C is isomorphic to
 itself, by definition. *)
 Program Definition IdentityIso {C : Category} (a : @ob C) : Isomorphism a a :=

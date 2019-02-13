@@ -1,5 +1,7 @@
 Require Import CT.Category.
 
+Set Universe Polymorphism.
+
 (** Isomorphism between objects in a category.
 
 The idea is that if a morphism \(f\) is an isomorphism, then there exists
