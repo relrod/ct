@@ -11,7 +11,7 @@ Require Import CT.Instance.NaturalTransformation.NaturalIsomorphism.
     A monoidal category is a category \(C\) together with a functor
     \(C \times C \to C\) which performs the tensor product, an identity element
     \(I\) which lives in \(C\), and three natural isomorphisms which serve to
-    force associativity of the tensor operator, and that \I(\) acts as a left
+    force associativity of the tensor operator, and that \(I\) acts as a left
     and right identity. The coherence conditions about the natural isomorphisms
     give rise to laws known as the triangle identity and the pentagon identity.
  *)
