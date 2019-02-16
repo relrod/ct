@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.BinaryProduct</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.BinaryProduct</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab86"></a><h1 class="section">Binary products</h1>
+
+
+<div class="paragraph"> </div>
+
+as per https://ncatlab.org/nlab/show/cartesian+product
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Record</span> <a name="BinaryProduct"><span class="id" title="record">BinaryProduct</span></a> {<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>} (<span class="id" title="var">x1</span> <span class="id" title="var">x2</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>) :=<br/>
+&nbsp;&nbsp;{ <a name="x1x2"><span class="id" title="projection">x1x2</span></a> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="p1"><span class="id" title="projection">p1</span></a> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#x1x2"><span class="id" title="method">x1x2</span></a> <a class="idref" href="CT.BinaryProduct.html#x1"><span class="id" title="variable">x1</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="p2"><span class="id" title="projection">p2</span></a> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#x1x2"><span class="id" title="method">x1x2</span></a> <a class="idref" href="CT.BinaryProduct.html#x2"><span class="id" title="variable">x2</span></a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="bin_prod_mor"><span class="id" title="projection">bin_prod_mor</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">Q</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">Qp1</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1"><span class="id" title="variable">x1</span></a>) (<span class="id" title="var">Qp2</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x2"><span class="id" title="variable">x2</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1x2"><span class="id" title="method">x1x2</span></a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="bin_prod_comp1"><span class="id" title="projection">bin_prod_comp1</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">Q</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">Qp1</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1"><span class="id" title="variable">x1</span></a>) (<span class="id" title="var">Qp2</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x2"><span class="id" title="variable">x2</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> (<a class="idref" href="CT.BinaryProduct.html#bin_prod_mor"><span class="id" title="method">bin_prod_mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp1"><span class="id" title="variable">Qp1</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp2"><span class="id" title="variable">Qp2</span></a>) <a class="idref" href="CT.BinaryProduct.html#p1"><span class="id" title="method">p1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp1"><span class="id" title="variable">Qp1</span></a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="bin_prod_comp2"><span class="id" title="projection">bin_prod_comp2</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">Q</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">Qp1</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1"><span class="id" title="variable">x1</span></a>) (<span class="id" title="var">Qp2</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x2"><span class="id" title="variable">x2</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> (<a class="idref" href="CT.BinaryProduct.html#bin_prod_mor"><span class="id" title="method">bin_prod_mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp1"><span class="id" title="variable">Qp1</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp2"><span class="id" title="variable">Qp2</span></a>) <a class="idref" href="CT.BinaryProduct.html#p2"><span class="id" title="method">p2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp2"><span class="id" title="variable">Qp2</span></a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a name="bin_prod_unique"><span class="id" title="projection">bin_prod_unique</span></a> :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">Q</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>) (<span class="id" title="var">Qp1</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1"><span class="id" title="variable">x1</span></a>) (<span class="id" title="var">Qp2</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x2"><span class="id" title="variable">x2</span></a>) (<span class="id" title="var">f</span> <span class="id" title="var">g</span> : <a class="idref" href="CT.Category.html#mor"><span class="id" title="projection">mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Q"><span class="id" title="variable">Q</span></a> <a class="idref" href="CT.BinaryProduct.html#x1x2"><span class="id" title="method">x1x2</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <a class="idref" href="CT.BinaryProduct.html#f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.BinaryProduct.html#p1"><span class="id" title="method">p1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp1"><span class="id" title="variable">Qp1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <a class="idref" href="CT.BinaryProduct.html#f"><span class="id" title="variable">f</span></a> <a class="idref" href="CT.BinaryProduct.html#p2"><span class="id" title="method">p2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp2"><span class="id" title="variable">Qp2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <a class="idref" href="CT.BinaryProduct.html#g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.BinaryProduct.html#p1"><span class="id" title="method">p1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp1"><span class="id" title="variable">Qp1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.Category.html#comp"><span class="id" title="projection">comp</span></a> <a class="idref" href="CT.BinaryProduct.html#g"><span class="id" title="variable">g</span></a> <a class="idref" href="CT.BinaryProduct.html#p2"><span class="id" title="method">p2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#Qp2"><span class="id" title="variable">Qp2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#f"><span class="id" title="variable">f</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372"><span class="id" title="notation">=</span></a> <a class="idref" href="CT.BinaryProduct.html#g"><span class="id" title="variable">g</span></a><br/>
+&nbsp;&nbsp;}.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The type that must be satisfied to prove a category has binary products. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <a name="has_products"><span class="id" title="definition">has_products</span></a> (<span class="id" title="var">C</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.BinaryProduct.html#C"><span class="id" title="variable">C</span></a>), <a class="idref" href="CT.BinaryProduct.html#BinaryProduct"><span class="id" title="record">BinaryProduct</span></a> <a class="idref" href="CT.BinaryProduct.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.BinaryProduct.html#b"><span class="id" title="variable">b</span></a>.<br/>
+</div>
+</div>
+
+<div id="footer" style="padding: 10px;"><p>This module is included by:</p><ul><li><a href="CT.Instance.Coq.BinaryProduct.html">CT.Instance.Coq.BinaryProduct</a></li> </ul>
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

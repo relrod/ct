@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CT.Instance.Coq.BinaryProduct</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .code { font-family: "Ubuntu Mono", monospace !important; font-size: 100% !important; }
+</style>
+
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CT.Instance.Coq.BinaryProduct</h1>
+
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.BinaryProduct.html#"><span class="id" title="library">CT.BinaryProduct</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Instance.Coq.Category.html#"><span class="id" title="library">CT.Instance.Coq.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#"><span class="id" title="library">FunctionalExtensionality</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="CoqType_product"><span class="id" title="definition">CoqType_product</span></a> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqType"><span class="id" title="definition">CoqType</span></a>) : <a class="idref" href="CT.BinaryProduct.html#BinaryProduct"><span class="id" title="record">BinaryProduct</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#b"><span class="id" title="variable">b</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">x1x2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">×</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)%</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">type</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p1</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fst</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">snd</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">bin_prod_mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">,</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> ×.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">f</span> <span class="id" title="var">q</span>), (<span class="id" title="var">g</span> <span class="id" title="var">q</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>, <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">subst</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <a name="CoqType_has_products"><span class="id" title="lemma">CoqType_has_products</span></a> : <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqType"><span class="id" title="definition">CoqType</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#CoqType_product"><span class="id" title="definition">CoqType_product</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="CoqProp_product"><span class="id" title="definition">CoqProp_product</span></a> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqProp"><span class="id" title="definition">CoqProp</span></a>) : <a class="idref" href="CT.BinaryProduct.html#BinaryProduct"><span class="id" title="record">BinaryProduct</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#b"><span class="id" title="variable">b</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">x1x2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">×</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)%</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">type</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p1</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fst</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">snd</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">bin_prod_mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">,</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> ×.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">f</span> <span class="id" title="var">q</span>), (<span class="id" title="var">g</span> <span class="id" title="var">q</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>, <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">subst</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <a name="CoqProp_has_products"><span class="id" title="lemma">CoqProp_has_products</span></a> : <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqProp"><span class="id" title="definition">CoqProp</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#CoqProp_product"><span class="id" title="definition">CoqProp_product</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="CoqSet_product"><span class="id" title="definition">CoqSet_product</span></a> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> : @<a class="idref" href="CT.Category.html#ob"><span class="id" title="projection">ob</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqSet"><span class="id" title="definition">CoqSet</span></a>) : <a class="idref" href="CT.BinaryProduct.html#BinaryProduct"><span class="id" title="record">BinaryProduct</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#a"><span class="id" title="variable">a</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#b"><span class="id" title="variable">b</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">x1x2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">×</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)%</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">type</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p1</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fst</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">p2</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">snd</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">bin_prod_mor</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">fun</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">_</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">⇒</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">(</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">a</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">,</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">b</span></a> <a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">c</span></a><a class="idref" href="CT.BinaryProduct.html#Build_BinaryProduct"><span class="id" title="constructor">)</span></a><br/>
+&nbsp;&nbsp;|}.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">extensionality</span> <span class="id" title="var">q</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="keyword">fun</span> <span class="id" title="var">p</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.8.2/stdlib//Coq.Logic.FunctionalExtensionality.html#equal_f"><span class="id" title="lemma">equal_f</span></a> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#p"><span class="id" title="variable">p</span></a> <span class="id" title="var">q</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> ×.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">f</span> <span class="id" title="var">q</span>), (<span class="id" title="var">g</span> <span class="id" title="var">q</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>, <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">subst</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <a name="CoqSet_has_products"><span class="id" title="lemma">CoqSet_has_products</span></a> : <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a> <a class="idref" href="CT.Instance.Coq.Category.html#CoqSet"><span class="id" title="definition">CoqSet</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="CT.BinaryProduct.html#has_products"><span class="id" title="definition">has_products</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="CT.Instance.Coq.BinaryProduct.html#CoqSet_product"><span class="id" title="definition">CoqSet_product</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+
+<div id="footer" style="padding: 10px;"><p>This module is included by:</p><ul><li><a href="CT.Instance.Coq.html">CT.Instance.Coq</a></li> </ul>
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
