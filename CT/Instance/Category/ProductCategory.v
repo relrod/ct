@@ -1,4 +1,5 @@
 Require Import CT.Category.
+Require Import CT.Functor.
 
 (** Product category. *)
 Program Definition ProductCategory (C D : Category) : Category :=
@@ -26,3 +27,12 @@ Next Obligation.
   rewrite id_right.
   reflexivity.
 Qed.
+
+(** * Projection functors from [ProductCategory] to one of its components *)
+Program Definition ProductCategory_p1 (C D : Category) :
+  Functor (ProductCategory C D) C :=
+  {| F_ob := fst; |}.
+
+Program Definition ProductCategory_p2 (C D : Category) :
+  Functor (ProductCategory C D) D :=
+  {| F_ob := snd; |}.
