@@ -16,6 +16,7 @@ Require Export CT.Instance.Category.Monoidal.
 Require Export CT.Instance.Category.MonoidCategory.
 Require Export CT.Instance.Category.Opposite.
 Require Export CT.Instance.Category.ProductCategory.
+Require Export CT.Instance.Coq.BinaryProduct.
 Require Export CT.Instance.Coq.Category.
 Require Export CT.Instance.Coq.Functor.
 Require Export CT.Instance.Coq.Monad.

@@ -26,6 +26,7 @@
 ./CT/Monad.v
 ./CT/Instance/Coq/Category.v
 ./CT/Instance/Coq/Monad.v
+./CT/Instance/Coq/BinaryProduct.v
 ./CT/Instance/Coq/Functor.v
 ./CT/Instance/Algebra/Ab.v
 ./CT/Instance/Algebra/Grp.v
@@ -77,5 +78,6 @@
 ./CT/Instance/Functor.v
 ./CT/Automata/Moore.v
 ./CT/Automata/Mealy.v
+./CT/BinaryProduct.v
 ./CT/Functor.v
 ./CT/Instance.v

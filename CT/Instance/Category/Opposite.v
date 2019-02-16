@@ -2,7 +2,7 @@ Require Import CT.Category.
 
 (** The opposite category for a category. *)
 Program Definition Op (C : Category) : Category :=
-  {| ob := C;
+  {| ob := @ob C;
      mor := fun a b => mor b a;
      comp := fun _ _ _ f g => comp g f;
      id := fun a => @id C a;
