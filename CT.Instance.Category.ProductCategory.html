@@ -28,6 +28,7 @@
 
 <div class="code">
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Category.html#"><span class="id" title="library">CT.Category</span></a>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="CT.Functor.html#"><span class="id" title="library">CT.Functor</span></a>.<br/>
 
 <br/>
 </div>
@@ -61,6 +62,23 @@ Product category.
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="CT.Category.html#id_right"><span class="id" title="projection">id_right</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab84"></a><h1 class="section">Projection functors from <span class="inlinecode"><a class="idref" href="CT.Instance.Category.ProductCategory.html#ProductCategory"><span class="id" title="definition">ProductCategory</span></a></span> to one of its components</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Program Definition</span> <a name="ProductCategory_p1"><span class="id" title="definition">ProductCategory_p1</span></a> (<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> (<a class="idref" href="CT.Instance.Category.ProductCategory.html#ProductCategory"><span class="id" title="definition">ProductCategory</span></a> <a class="idref" href="CT.Instance.Category.ProductCategory.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Category.ProductCategory.html#D"><span class="id" title="variable">D</span></a>) <a class="idref" href="CT.Instance.Category.ProductCategory.html#C"><span class="id" title="variable">C</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">fst</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">;</span></a> |}.<br/>
+
+<br/>
+<span class="id" title="keyword">Program Definition</span> <a name="ProductCategory_p2"><span class="id" title="definition">ProductCategory_p2</span></a> (<span class="id" title="var">C</span> <span class="id" title="var">D</span> : <a class="idref" href="CT.Category.html#Category"><span class="id" title="record">Category</span></a>) :<br/>
+&nbsp;&nbsp;<a class="idref" href="CT.Functor.html#Functor"><span class="id" title="record">Functor</span></a> (<a class="idref" href="CT.Instance.Category.ProductCategory.html#ProductCategory"><span class="id" title="definition">ProductCategory</span></a> <a class="idref" href="CT.Instance.Category.ProductCategory.html#C"><span class="id" title="variable">C</span></a> <a class="idref" href="CT.Instance.Category.ProductCategory.html#D"><span class="id" title="variable">D</span></a>) <a class="idref" href="CT.Instance.Category.ProductCategory.html#D"><span class="id" title="variable">D</span></a> :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">F_ob</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">:=</span></a> <a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">snd</span></a><a class="idref" href="CT.Functor.html#Build_Functor"><span class="id" title="constructor">;</span></a> |}.<br/>
 </div>
 </div>
 
