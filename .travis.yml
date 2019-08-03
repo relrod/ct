@@ -12,6 +12,7 @@ install:
 - opam init -y
 - eval $(opam config env)
 - opam config var root
+- opam pin add camlp5 7.08
 - travis_wait opam install -y coq
 - opam list
 script:
