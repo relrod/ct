@@ -1,4 +1,8 @@
 Require Import CT.Category.
+Require Import CT.Instance.Category.FunctorCategory.
+Require Import CT.Instance.Category.ProductCategory.
+
+Set Universe Polymorphism.
 
 (** The opposite category for a category. *)
 Program Definition Op (C : Category) : Category :=
@@ -19,3 +23,17 @@ Theorem c_op_op_is_c :
 Proof.
   trivial.
 Qed.
+
+Theorem op_preserves_functors :
+  forall C D,
+    (FunctorCategory C D)^op = FunctorCategory (C^op) (D^op).
+Proof.
+  admit.
+Admitted.
+
+Theorem op_preserves_products :
+  forall C D,
+    (ProductCategory C D)^op = ProductCategory (C^op) (D^op).
+Proof.
+  admit.
+Admitted.

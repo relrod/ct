@@ -36,3 +36,4 @@ Program Definition ProductCategory_p1 (C D : Category) :
 Program Definition ProductCategory_p2 (C D : Category) :
   Functor (ProductCategory C D) D :=
   {| F_ob := snd; |}.
+
