@@ -13,3 +13,9 @@ Program Definition Op (C : Category) : Category :=
   |}.
 
 Notation "A '^op'" := (Op A) (at level 10).
+
+Theorem c_op_op_is_c :
+  forall C, C^op^op = C.
+Proof.
+  trivial.
+Qed.
